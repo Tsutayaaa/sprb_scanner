@@ -1,0 +1,62 @@
+{
+  "accession": "GCF_000016645.1",
+  "annotation": {
+    "name": "GCF_000016645.1-RS_2025_12_11",
+    "provider": "NCBI RefSeq",
+    "releaseDate": "2025-12-11",
+    "stats": {
+      "geneCounts": {
+        "total": 5249,
+        "proteinCoding": 5139,
+        "nonCoding": 83,
+        "pseudogene": 27
+      }
+    },
+    "method": "Best-placed reference protein set; GeneMarkS-2+",
+    "pipeline": "NCBI Prokaryotic Genome Annotation Pipeline (PGAP)",
+    "softwareVersion": "6.10"
+  },
+  "downloaded_at": "2026-10-18T10:13:42.073666+00:00",
+  "files": {
+    "GCF_000016645.1_ASM1664v1_genomic.fna": {
+      "sha256": "a33840d21eb6d45c978cfa79d304b707ee782deb46a3990966aa275b063f978f",
+      "bytes": 6173147
+    },
+    "genomic.gbff": {
+      "sha256": "8b4ee0e1736eaa7686af2adeac7b75eb6fd2f6b824695ef94a5fe3d9b7ae296b",
+      "bytes": 15455473
+    },
+    "genomic.gff": {
+      "sha256": "534f8ad13a02da6f2622c74d69a577d8010d2eb091470970f072179d512d6f76",
+      "bytes": 3318806
+    },
+    "protein.faa": {
+      "sha256": "ce15c9efe6c6139aaf2f5679b25530f7bd23688867a7e28efceb827a165c2358",
+      "bytes": 2198231
+    }
+  },
+  "contigs": 1,
+  "cds": 5166,
+  "mapped_proteins": 5139,
+  "faa_records": 5138,
+  "reference_genes": {
+    "sprB": {
+      "old_locus_tag": "Fjoh_0979",
+      "locus_tag": "FJOH_RS26780",
+      "protein_id": "WP_012023065.1",
+      "length": 6497,
+      "start": 1095622,
+      "end": 1115116,
+      "strand": -1
+    },
+    "sprF": {
+      "old_locus_tag": "Fjoh_0978",
+      "locus_tag": "FJOH_RS05105",
+      "protein_id": "WP_044048232.1",
+      "length": 324,
+      "start": 1094604,
+      "end": 1095579,
+      "strand": -1
+    }
+  }
+}
