@@ -1,0 +1,31 @@
+[project]
+name = "sprb-scanner"
+version = "2.0.0a1"
+description = "Modular SprB-like protein discovery framework"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.10,<3", "typer>=0.15,<1", "pyyaml>=6,<7"]
+
+[project.scripts]
+sprb-scanner = "sprb_scanner.cli:app"
+
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sprb_scanner"]
+
+[dependency-groups]
+dev = ["pytest>=8,<9", "ruff>=0.11,<1", "pre-commit>=4,<5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

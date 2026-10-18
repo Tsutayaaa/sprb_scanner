@@ -1,10 +1,6 @@
-"""SprBlike-Scanner V2 entry point."""
+"""Compatibility entry point; prefer the installed sprb-scanner command."""
 
-
-def main() -> None:
-    """Display project status until the scanning workflow is implemented."""
-    print("SprBlike-Scanner V2: initialized; scanning is not implemented yet.")
-
+from sprb_scanner.cli import app
 
 if __name__ == "__main__":
-    main()
+    app()

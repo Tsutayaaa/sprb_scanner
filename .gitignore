@@ -29,3 +29,17 @@ Thumbs.db
 .env.*
 !.env.example
 *.log
+
+# Local tooling, data, models and output
+.tools/
+data/
+results/
+*.gbff
+*.gbk
+*.gff
+*.gff3
+*.fna
+*.faa
+*.hmm
+*.parquet
+!tests/fixtures/**

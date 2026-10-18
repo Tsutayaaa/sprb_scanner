@@ -1,0 +1,9 @@
+schema_version: "1.0.0"
+data_dir: ~/.local/share/sprb-scanner/data
+results_dir: ~/.local/share/sprb-scanner/results
+threads: 1
+bctd:
+  report_evalue: 10.0
+  c_terminal_distance: 100
+  min_overlap_residues: 1
+  profiles: []
