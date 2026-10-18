@@ -4,7 +4,12 @@ version = "2.0.0a1"
 description = "Modular SprB-like protein discovery framework"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["pydantic>=2.10,<3", "typer>=0.15,<1", "pyyaml>=6,<7"]
+dependencies = [
+    "pydantic>=2.12,<3",
+    "typer>=0.15,<1",
+    "pyyaml>=6,<7",
+    "biopython>=1.85,<2",
+]
 
 [project.scripts]
 sprb-scanner = "sprb_scanner.cli:app"
@@ -22,6 +27,7 @@ dev = ["pytest>=8,<9", "ruff>=0.11,<1", "pre-commit>=4,<5"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra --strict-markers"
+markers = ["external_data: requires an explicitly provided local reference assembly"]
 
 [tool.ruff]
 target-version = "py311"

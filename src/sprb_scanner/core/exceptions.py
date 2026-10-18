@@ -7,3 +7,11 @@ class ScannerError(Exception):
 
 class ConfigurationError(ScannerError):
     """Invalid or unreadable configuration."""
+
+
+class InputError(ScannerError):
+    """Input is invalid or outside the documented contract."""
+
+
+class DownloadError(ScannerError):
+    """Download or archive validation failed."""

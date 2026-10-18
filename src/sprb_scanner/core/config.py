@@ -30,11 +30,25 @@ class BCTDConfig(Record):
         return self
 
 
+class InputConfig(Record):
+    default_translation_table: Positive = 11
+    strict_quality: bool = True
+
+
+class DownloadConfig(Record):
+    timeout_seconds: Positive = 120
+    retries: int = Field(default=2, ge=0, le=5, strict=True)
+    max_download_bytes: Positive = 100_000_000
+    max_extracted_bytes: Positive = 500_000_000
+
+
 class AppConfig(Record):
     schema_version: str = Field(default="1.0.0", pattern=r"^1\.0\.0$")
     data_dir: Path = Path("~/.local/share/sprb-scanner/data")
     results_dir: Path = Path("~/.local/share/sprb-scanner/results")
     threads: Positive = 1
+    input: InputConfig = Field(default_factory=InputConfig)
+    download: DownloadConfig = Field(default_factory=DownloadConfig)
     bctd: BCTDConfig = Field(default_factory=BCTDConfig)
 
 

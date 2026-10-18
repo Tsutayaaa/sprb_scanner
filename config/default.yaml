@@ -7,3 +7,11 @@ bctd:
   c_terminal_distance: 100
   min_overlap_residues: 1
   profiles: []
+input:
+  default_translation_table: 11
+  strict_quality: true
+download:
+  timeout_seconds: 120
+  retries: 2
+  max_download_bytes: 100000000
+  max_extracted_bytes: 500000000

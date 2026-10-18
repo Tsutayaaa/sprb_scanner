@@ -42,4 +42,11 @@ results/
 *.faa
 *.hmm
 *.parquet
+*.gbff.gz
+*.gbk.gz
+*.gb.gz
+*.gff.gz
+*.gff3.gz
+*.fna.gz
+*.faa.gz
 !tests/fixtures/**

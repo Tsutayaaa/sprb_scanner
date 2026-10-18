@@ -1,0 +1,6 @@
+##gff-version 3
+##sequence-region NC_009441.1_window 1 20512
+NC_009441.1_window	RefSeq	gene	1	975	.	-	.	ID=gene-FJOH_RS05105;Dbxref=GeneID:31763853;Name=FJOH_RS05105;gbkey=Gene;gene_biotype=protein_coding;locus_tag=FJOH_RS05105;old_locus_tag=Fjoh_0978
+NC_009441.1_window	Protein Homology	CDS	1	975	.	-	0	ID=cds-WP_044048232.1;Parent=gene-FJOH_RS05105;Dbxref=GenBank:WP_044048232.1,GeneID:31763853;Name=WP_044048232.1;gbkey=CDS;inference=COORDINATES: similar to AA sequence:RefSeq:WP_011962198.1;locus_tag=FJOH_RS05105;product=PorP/SprF family type IX secretion system membrane protein;protein_id=WP_044048232.1;transl_table=11
+NC_009441.1_window	RefSeq	gene	1019	20512	.	-	.	ID=gene-FJOH_RS26780;Dbxref=GeneID:41340828;Name=FJOH_RS26780;gbkey=Gene;gene_biotype=protein_coding;locus_tag=FJOH_RS26780;old_locus_tag=Fjoh_0979
+NC_009441.1_window	Protein Homology	CDS	1019	20512	.	-	0	ID=cds-WP_012023065.1;Parent=gene-FJOH_RS26780;Dbxref=GenBank:WP_012023065.1,GeneID:41340828;Name=WP_012023065.1;Ontology_term=GO:0031240;gbkey=CDS;go_component=external side of cell outer membrane|0031240||IEA;inference=COORDINATES: protein motif:HMM:TIGR04131.1;locus_tag=FJOH_RS26780;product=T9SS type B sorting domain-containing protein;protein_id=WP_012023065.1;transl_table=11
