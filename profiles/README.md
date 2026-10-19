@@ -21,3 +21,7 @@ PorP/SprF family manifests: TIGR03519.profile.json and PF11751.profile.json. Mod
 not bundled; copy manifests next to the corresponding downloaded files or set absolute paths.
 The PF11751 download is gzip; its manifest pins the decompressed HMM bytes. See
 [sprf-search](../docs/sprf_scanner.md) for dual-model evidence and failure semantics.
+
+SprB/Pfam manifests: PF13573.profile.json (SprB repeat) and PF13585.profile.json (CHU_C).
+Both source downloads are gzip and checksums refer to decompressed HMM files. See
+[repeat and Type B CTD HMM usage](../docs/sprb_pfam_models.md). Models stay outside Git.

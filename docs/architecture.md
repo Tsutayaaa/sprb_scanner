@@ -37,3 +37,7 @@ Future modules are documented rather than represented by empty packages. BioPyth
 PorP/SprF dual-model orchestration is implemented in scanners.sprf and calls the existing HMM
 engine independently. It preserves model-specific results, partial failures and per-protein evidence;
 see sprf_scanner.md. No substrate/shuttle pairing or score fusion is performed.
+
+Shared pair orchestration now lives in scanners.pair; scanners.sprf and scanners.bctd
+select their canonical model pairs and interpretation. scanners.repeats adds per-protein PF13573
+domain counts on top of run_hmm without replacing the search algorithm or filtering raw evidence.
