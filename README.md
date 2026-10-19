@@ -6,6 +6,7 @@ sequence homology, protein domain architecture, genomic context and structural e
 当前为 **Phase 1 / 第二批 Genome Infrastructure**：支持基因组解析、数据准备、NCBI 下载与质量检查。
 已增加通用 HMM Engine 与 TIGR04131 单模型检索；双模型融合及最终 SprB-like 分类尚未实现。
 用法及实测结果见 [HMM Engine](docs/hmm_engine.md)。
+PorP/SprF-like 家族支持 TIGR03519 + PF11751 独立双模型检索，见 [sprf-search](docs/sprf_scanner.md)。
 
 **首选输入是 NCBI 注释 GBFF。** 也支持 GFF3 + FNA + FAA（同一注释发布），或仅序列的 FAA。
 完整支持范围、配套要求与异常策略见 [输入文件标准](docs/input_formats.md)。

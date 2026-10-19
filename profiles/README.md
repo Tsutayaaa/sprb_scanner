@@ -16,3 +16,8 @@ See [HMM engine usage and validation](../docs/hmm_engine.md).
 
 The older `bctd.profiles` YAML field remains a configuration interface for future orchestration;
 this single-model command uses its explicit JSON manifest, not that YAML field.
+
+PorP/SprF family manifests: TIGR03519.profile.json and PF11751.profile.json. Models are
+not bundled; copy manifests next to the corresponding downloaded files or set absolute paths.
+The PF11751 download is gzip; its manifest pins the decompressed HMM bytes. See
+[sprf-search](../docs/sprf_scanner.md) for dual-model evidence and failure semantics.

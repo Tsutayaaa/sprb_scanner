@@ -7,7 +7,7 @@ from typing import Annotated
 import typer
 
 from sprb_scanner import __version__
-from sprb_scanner.core.config import load_config
+from sprb_scanner.core.config import load_config, load_profile
 from sprb_scanner.core.exceptions import ScannerError
 from sprb_scanner.io.exporters import summary, validate_prepared
 from sprb_scanner.io.ncbi import download as download_genome
@@ -122,7 +122,6 @@ def hmm_search(
     max_sensitivity: bool = False,
 ):
     """Search one protein HMM; export all returned domains without classification."""
-    from sprb_scanner.core.config import ProfileConfig
     from sprb_scanner.core.models import GenomeDataset
     from sprb_scanner.scanners.hmm import HMMSearchConfig, run_hmm
 
@@ -131,11 +130,7 @@ def hmm_search(
         if validation["errors"]:
             raise ValueError("Prepared dataset has quality errors")
         dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
-        model = ProfileConfig.model_validate_json(profile.read_text())
-        path = model.path.expanduser()
-        if not path.is_absolute():
-            path = profile.resolve().parent / path
-        model = model.model_copy(update={"path": path})
+        model = load_profile(profile)
         settings = HMMSearchConfig(
             threads=threads,
             sequence_report_evalue=sequence_evalue,
@@ -143,5 +138,45 @@ def hmm_search(
             max_sensitivity=max_sensitivity,
         )
         emit(run_hmm(dataset.proteins, model, output, settings))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("sprf-search")
+def sprf_search(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared dataset directory")],
+    tigr_profile: Annotated[Path, typer.Option(help="TIGR03519 ProfileConfig JSON")],
+    pfam_profile: Annotated[Path, typer.Option(help="PF11751 ProfileConfig JSON")],
+    output: Annotated[Path, typer.Option(help="New PorP/SprF output directory")],
+    threads: int = 1,
+    sequence_evalue: float = 10.0,
+    domain_evalue: float = 10.0,
+    max_sensitivity: bool = False,
+):
+    """Scan PorP/SprF family with TIGR03519 and PF11751 independently."""
+    from sprb_scanner.core.models import GenomeDataset
+    from sprb_scanner.scanners.hmm import HMMSearchConfig
+    from sprb_scanner.scanners.sprf import run_sprf
+
+    try:
+        validation = validate_prepared(prepared)
+        if validation["errors"]:
+            raise ValueError("Prepared dataset has quality errors")
+        dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
+        settings = HMMSearchConfig(
+            threads=threads,
+            sequence_report_evalue=sequence_evalue,
+            domain_report_evalue=domain_evalue,
+            max_sensitivity=max_sensitivity,
+        )
+        report = run_sprf(
+            dataset.proteins,
+            (load_profile(tigr_profile), load_profile(pfam_profile)),
+            output,
+            settings,
+        )
+        emit(report)
+        if report["state"] != "succeeded":
+            raise typer.Exit(2)
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
