@@ -12,6 +12,7 @@
 - Use a separate codex/ feature branch for each independently reviewable batch; never commit to main.
 - Submit changes through PRs. Never bypass CI. Merge commits only; no squash or rebase merges.
 - PRs require explicit confirmation by Tsutayaaa. Do not merge without that confirmation.
+- Never submit an approving PR review on the owner's behalf. PR creation and passing CI do not authorize a merge.
 - Do not add a license until the owner requests one.
 - Do not commit large genome data, downloaded models or generated results; tiny fixtures are allowed.
 - Future modules stay documented interfaces until their development phase.
