@@ -132,7 +132,8 @@ class Backend:
         executable = shutil.which(config.executable)
         if executable is None:
             raise MMseqsError(f"MMseqs2 executable not found: {config.executable}")
-        self.executable = str(Path(executable).resolve())
+        # Respect executable launchers instead of replacing them with their symlink target.
+        self.executable = str(Path(executable).absolute())
         try:
             result = subprocess.run(
                 [self.executable, "version"], check=True, capture_output=True, text=True, timeout=15
@@ -142,7 +143,26 @@ class Backend:
         self.version = result.stdout.strip()
         if not self.version:
             raise MMseqsError("MMseqs2 returned an empty version")
-        metadata.update(backend_version=self.version, executable=self.executable, commands=[])
+        try:
+            help_result = subprocess.run(
+                [self.executable, "createdb", "-h"],
+                check=True,
+                capture_output=True,
+                text=True,
+                timeout=15,
+            )
+        except (OSError, subprocess.SubprocessError) as exc:
+            raise MMseqsError(f"Cannot inspect MMseqs2 createdb options: {exc}") from exc
+        self.createdb_threads = any(
+            line.lstrip().startswith("--threads ") for line in help_result.stdout.splitlines()
+        )
+        metadata.update(
+            backend_version=self.version,
+            executable=self.executable,
+            commands=[],
+            capabilities={"createdb_threads": self.createdb_threads},
+            createdb_effective_threads=config.threads if self.createdb_threads else 1,
+        )
 
     def run(self, *args):
         command = [self.executable, *map(str, args)]
@@ -181,8 +201,7 @@ class Backend:
             1,
             "--shuffle",
             0,
-            "--threads",
-            self.config.threads,
+            *(("--threads", self.config.threads) if self.createdb_threads else ()),
         )
 
 

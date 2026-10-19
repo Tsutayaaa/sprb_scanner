@@ -177,3 +177,39 @@ def test_invalid_database_metadata(tmp_path, manifest):
     (tmp_path / "run_metadata.json").write_text(json.dumps(manifest))
     with pytest.raises(InputError):
         load_database(tmp_path, "18-test")
+
+
+def test_backend_preserves_dispatcher_symlink(tmp_path):
+    dispatcher = tmp_path / "simd-dispatch"
+    dispatcher.write_text(
+        '#!/bin/sh\nif [ "$1" = "version" ]; then echo 18-test; exit 0; fi\n'
+        'if [ "$2" = "-h" ]; then echo " --threads INT"; exit 0; fi\n'
+        'case "$0" in */mmseqs) echo "correct launcher";; *) exit 23;; esac\n'
+    )
+    dispatcher.chmod(0o755)
+    launcher = tmp_path / "mmseqs"
+    launcher.symlink_to(dispatcher)
+    metadata = {}
+    log = tmp_path / "backend.log"
+    backend = Backend(MMseqsConfig(executable=str(launcher)), metadata, log)
+    backend.createdb(tmp_path / "sequences.faa", tmp_path / "target")
+    assert metadata["commands"][0][0] == str(launcher)
+    assert "correct launcher" in log.read_text()
+
+
+def test_createdb_older_single_thread_backend(tmp_path):
+    executable = tmp_path / "mmseqs15"
+    executable.write_text(
+        '#!/bin/sh\nif [ "$1" = "version" ]; then echo 15-test; exit 0; fi\n'
+        'if [ "$2" = "-h" ]; then echo " --dbtype INT"; exit 0; fi\n'
+        'case "$*" in *--threads*) exit 23;; *) echo "single-thread createdb";; esac\n'
+    )
+    executable.chmod(0o755)
+    metadata = {}
+    backend = Backend(
+        MMseqsConfig(executable=str(executable), threads=2), metadata, tmp_path / "backend.log"
+    )
+    backend.createdb(tmp_path / "sequences.faa", tmp_path / "target")
+    assert metadata["capabilities"] == {"createdb_threads": False}
+    assert metadata["createdb_effective_threads"] == 1
+    assert "--threads" not in metadata["commands"][0]

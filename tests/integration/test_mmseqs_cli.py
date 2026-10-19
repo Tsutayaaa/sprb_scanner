@@ -65,7 +65,9 @@ def test_real_cli_full_fragment_multi_alignment_and_reuse(real_data, tmp_path):
     result = runner.invoke(
         app, ["mmseqs-createdb", "--prepared", str(prepared), "--output", str(database)]
     )
-    assert result.exit_code == 0, result.output
+    assert result.exit_code == 0, result.output + (
+        (database / "backend.log").read_text() if (database / "backend.log").exists() else ""
+    )
     relocated = tmp_path / "relocated-db"
     database.rename(relocated)
     database = relocated
@@ -148,6 +150,7 @@ def test_createdb_failure_keeps_nested_diagnostics(real_data, tmp_path):
     fake = tmp_path / "mmseqs-fail"
     fake.write_text(
         '#!/bin/sh\nif [ "$1" = "version" ]; then echo 18-test; exit 0; fi\n'
+        'if [ "$2" = "-h" ]; then echo " --threads INT"; exit 0; fi\n'
         'echo "deliberate database failure" >&2\nexit 23\n'
     )
     fake.chmod(0o755)

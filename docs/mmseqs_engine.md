@@ -11,7 +11,8 @@
 Python 依赖沿用 `uv.lock`。另需 CPU 版 [MMseqs2](https://github.com/soedinglab/MMseqs2)，
 可用 `brew install mmseqs2`（macOS）或 `sudo apt-get install mmseqs2`（Ubuntu）。
 本地验证版本 `18-8cc5c`；CI 显式安装并运行真实后端测试，打印实际版本。
-通过 `--executable /path/to/mmseqs` 选择安装。搜索/构建/转换均显式使用 `--threads`。
+通过 `--executable /path/to/mmseqs` 选择安装。保留 launcher 符号链接路径，兼容 Debian/Ubuntu SIMD dispatcher。搜索/转换显式使用 `--threads`；建库先检查 `createdb -h`，支持线程参数时才传入。
+MMseqs2 15 的 createdb 为单线程且不接受该参数，有效建库线程数和后端能力记入元数据。
 不自动下载或捆绑 MMseqs2、基因组或参考蛋白。
 
 ## Input / usage
@@ -153,4 +154,4 @@ query 为全长与 C 端 218/448/1,182 aa，对应
 `~/.local/share/sprb-scanner/analyses/batch5a-mmseqs-20261019/`。
 E-value 数值为 0 时是后端输出的数值下溢，不代表额外的生物学结论。
 
-本地完整验收：256 项 pytest 全部通过（含完整 FJ 注释与12-cargo回归）；Ruff、CLI help 和打包通过。
+本地完整验收：258 项 pytest 全部通过（含完整 FJ 注释与12-cargo回归）；Ruff、CLI help 和打包通过。
