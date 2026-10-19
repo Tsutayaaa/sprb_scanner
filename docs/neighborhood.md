@@ -1,0 +1,108 @@
+# Batch 4A：Genomic Neighborhood Analyzer
+
+## 模块合同
+
+| 项目 | 约定 |
+|---|---|
+| Purpose | 任意CDS的客观基因组邻域，不推断功能、operon、cargo–shuttle配对或候选评分 |
+| Input | 已有GenomeDataset、GeneRecord、ContigRecord；CLI读取prepared目录和内部gene_id |
+| Output | NeighborhoodResult，含完整target、contig和NeighborRecord；JSON/TSV/运行元数据 |
+| Dependencies | core记录、标准库、Pydantic与公共导出工具；不导入HMM/scanners |
+| Parameters | window默认5，非负整数；窗口0返回空邻居列表但仍包含target |
+| Error Handling | 未知gene_id、负/非整数窗口、损坏输入、异常分段顺序及已有输出目录明确报错 |
+| Test Cases | tests/unit/test_neighborhood.py；tests/integration/test_neighborhood_cli.py；仓库外完整FJ验收 |
+
+入口：`sprb_scanner.neighborhood.NeighborhoodIndex(dataset)`，建立一次后重复调用
+`index.query(gene_id, window=5)`。全部CDS均进入索引，包括假基因、partial和无translation
+记录。RNA或只有gene feature而没有CDS的记录不属于本模块的CDS序列。
+
+## 顺序、方向及环状窗口
+
+按contig分组，以坐标递增方向的CDS起点排序，同起点依次按最大分段终点和gene_id
+排序。负链location_parts先按生物学提取顺序反转为坐标前进顺序。跨原点的CDS起点在
+原点前的高坐标部分，不使用简单min/max包络把它误放到整个contig开头。
+保留原始location_parts及qualifiers，不改变核心数据模式。
+
+每个contig都有独立排序数组和gene_id→(contig,position)字典。查询逐级取左右各window
+个CDS排名，输出顺序为左1、右1、左2、右2……，在边界截断或环状回绕，不跨contig。
+环状短contig每个CDS最多返回一次，永不返回目标自身；同一CDS可从两侧到达时优先较少
+CDS步数，等步数时坐标上游优先。该去重规则意味着小环上不一定两侧各返回window个。
+
+- genomic_position：在坐标递增的CDS排序中为upstream（左）或downstream（右）。
+- relative_position：相对目标CDS的转录方向；负链上下游翻转，strand=0时为null。
+- genomic_cds_offset：左负右正；transcription_cds_offset对负链翻转，未知方向为null。
+- intervening_cds：沿选定索引路径的步数减1；directly_adjacent只表示CDS排序中的相邻。
+- same_strand：两条链均已知时比较，否则null。邻居自身方向不改变目标的上下游定义。
+
+仅显式标为circular的contig回绕；topology=unknown按线性边界处理，不自行猜测环状。
+多分段按已有生物学顺序解释；未知链时使用提供的分段顺序作为坐标前进顺序。
+非环状contig中的倒序分段、相互重叠的同一CDS分段、跨原点多次或超过一圈的跨度
+明确报错，避免悄悄修复歧义位置。
+
+## 距离与重叠
+
+所有位置均0-based half-open，字段保留完整分段。geometry对各CDS分段并集做精确计算：
+
+- 不相交时distance_bp是最近的分段边缘间隔；首尾接触为0。
+- 相交时overlap_bp为实际共有的编码碱基总数，distance_bp=-overlap_bp，overlaps=true。
+- 复合CDS的内部间隙不算编码区；另一个CDS落在该间隙时不会被误报为编码区重叠。
+- 环状物理距离取两个方向中的较短分段边缘间隔，等距时优先不跨原点的路径。
+  该最短物理路径与选取邻居的CDS排名路径可以不同，两者分开标记。
+
+index_crosses_origin表示CDS索引路径回绕；distance_crosses_origin表示最短物理间隔跨原点；
+gene_crosses_origin与target_crosses_origin分别表示CDS本身跨原点。crosses_origin是这些
+标志的并集，不把线性化表示中的负间隔当作真实重叠。
+对于普通单段CDS，距离就是两段最近边缘之间的间隔；负链仍使用同一物理距离。
+
+## 复杂度与复用
+
+N为CDS数，分组/排序与ID索引构建为O(N log N)，常规单段CDS的查询为O(k)，不重新
+扫描整个基因组。复合位置还需一次预排序分段；若允许任意多分段，额外构建成本为
+Σ O(p_i log p_i)，精确查询为O(k + k*p_target + Σp_neighbor)。这是精确处理编码分段
+的成本，不是对全基因组的遍历；不能在无限分段输入上宣称严格O(k)。分段数有界的
+常见原核CDS仍为O(k)。JSON/TSV序列化同样受返回的分段和注释大小影响。
+
+CLI每次启动需要加载/校验prepared并建立索引；批量查询应复用Python API中的同一个
+NeighborhoodIndex实例。索引引用现有冻结记录；与core约定一致，不应修改共享qualifiers。
+
+## CLI及输出
+
+```bash
+.tools/bin/uv run --locked sprb-scanner neighborhood \
+  --prepared "$HOME/.local/share/sprb-scanner/results/FJ-batch2-acceptance" \
+  --gene 'GCF_000016645.1::NC_009441.1::CDS_000999' \
+  --window 5 \
+  --output "$HOME/.local/share/sprb-scanner/results/FJ-neighborhood-$(date +%Y%m%d-%H%M%S)"
+```
+
+必须使用内部gene_id；可在prepared/genes.tsv查找locus_tag或gene_name获得它。
+
+- neighborhood.json：完整target/contig与邻居GeneRecord、方向/排名/距离/原点关系。
+- neighborhood.tsv：平铺常用注释与全部关系字段，location_parts为JSON列，0邻居仍有表头。
+- run_metadata.json：参数、软件版本、prepared文件SHA-256、原始来源清单、质量问题数量、
+  距离约定和输出校验值。输出使用新目录、暂存后原子重命名，不覆盖现有结果。
+
+输入先校验prepared完整性；quality错误计入元数据，不因无效蛋白而丢弃结构有效的CDS。
+损坏的基因链接、越界等结构性错误仍被core验证拒绝。protein-only数据无法查询CDS。
+终端显示目标、contig、strand、邻居数和每条邻居的简洁关系。
+
+## FJ UW101验收
+
+本地完整GCF_000016645.1、RS_2025_12_11，索引包含全部5,166条CDS；默认窗口返回10条
+不重复邻居。已核对：
+
+| 属性 | 实测 |
+|---|---|
+| Contig | NC_009441.1 |
+| SprB旧locus | Fjoh_0979 |
+| SprF旧locus | Fjoh_0978 |
+| SprB / SprF strand | -1 / -1 |
+| SprB坐标 | [1095622,1115116) |
+| SprF坐标 | [1094604,1095579) |
+| 直接邻接 / intervening CDS | true / 0 |
+| 编码区边缘间隔 | 43 bp |
+| SprF相对SprB | 转录下游、基因组坐标上游 |
+
+真实结果在仓库外/private/tmp/sprb-neighborhood-validation/FJ，另有verify_fj.py核查
+目标/邻居身份、坐标关系、10邻居去重与输出校验值。CI使用已有小型FJ片段作离线验证。
+本批不添加HMM或MMseqs2扫描、不做功能配对；Batch 4B再使用这些客观关系关联候选。

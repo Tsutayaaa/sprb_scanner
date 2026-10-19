@@ -11,3 +11,6 @@ If a PR is authored by Tsutayaaa, GitHub cannot count Tsutayaaa's own review as 
 review. Do not configure an impossible mandatory self-review. A distinct authorized author or
 reviewer arrangement is needed before requiring Code Owner approval. Until resolved, owner
 confirmation is a procedural requirement; it is not represented as an enforced approval rule.
+
+The agent must not submit an approving review on the owner's behalf. Creating a PR or passing
+CI is not authorization to merge it; wait for explicit confirmation for that PR.

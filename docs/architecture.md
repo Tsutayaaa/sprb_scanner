@@ -28,7 +28,7 @@ from empty tables or dump arbitrary nested objects into Parquet.
   do not average or rank HMM and MMseqs2 scores together. Report status even for zero hits.
 - Exporter: dataset + hits + candidates + run metadata → separate typed tables and FASTA/JSON.
 - RN28/CBD: proteins → model-specific hits, depending only on core.
-- Locus: genes/contigs/candidates → neighborhoods respecting contig topology and strand.
+- Candidate-to-neighborhood association: candidate evidence + objective CDS neighborhoods → context evidence (future Batch 4B).
 - Motility: genome/metadata → species evidence. Classifier: all evidence → ranked candidates.
 - Structure: candidate proteins → structural evidence. Viewers: records/evidence → visual output.
 
@@ -41,3 +41,6 @@ see sprf_scanner.md. No substrate/shuttle pairing or score fusion is performed.
 Shared pair orchestration now lives in scanners.pair; scanners.sprf and scanners.bctd
 select their canonical model pairs and interpretation. scanners.repeats adds per-protein PF13573
 domain counts on top of run_hmm without replacing the search algorithm or filtering raw evidence.
+
+Batch 4A implements an independent neighborhood package over core records, without scanner imports.
+See neighborhood.md for index reuse, compound/circular geometry and CLI contracts.

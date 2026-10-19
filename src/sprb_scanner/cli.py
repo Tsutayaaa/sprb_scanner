@@ -249,3 +249,31 @@ def bctd_hmm_search(
             raise typer.Exit(2)
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("neighborhood")
+def neighborhood(
+    prepared: Annotated[Path, typer.Option(help="Prepared annotated dataset directory")],
+    gene: Annotated[str, typer.Option(help="Internal CDS gene_id")],
+    output: Annotated[Path, typer.Option(help="New neighborhood output directory")],
+    window: Annotated[int, typer.Option(min=0, help="CDS ranks on each side")] = 5,
+):
+    """Query objective CDS neighbors in coordinate and target transcription directions."""
+    from sprb_scanner.neighborhood.service import run_neighborhood
+
+    try:
+        result = run_neighborhood(prepared, gene, output, window)
+        typer.echo(
+            f"{gene} | {result.contig.source_id} | strand {result.target.strand} | "
+            f"{len(result.neighbors)} neighbors | 0-based half-open"
+        )
+        for neighbor in result.neighbors:
+            typer.echo(
+                f"{neighbor.gene.gene_id} | {neighbor.relative_position or 'unknown'} "
+                f"(genomic {neighbor.genomic_position}) | "
+                f"{neighbor.intervening_cds} intervening CDS | {neighbor.distance_bp} bp | "
+                f"adjacent={neighbor.directly_adjacent} same_strand={neighbor.same_strand}"
+            )
+        typer.echo(f"Output: {output.resolve()}")
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
