@@ -97,6 +97,18 @@ class ModelProvenance(Record):
     sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
 
 
+class HMMStatistics(Record):
+    sequence_evalue: float = Field(ge=0, allow_inf_nan=False)
+    sequence_bit_score: float = Field(allow_inf_nan=False)
+    independent_domain_evalue: float = Field(ge=0, allow_inf_nan=False)
+    conditional_domain_evalue: float = Field(ge=0, allow_inf_nan=False)
+    envelope: Interval
+    sequence_reported: bool
+    sequence_included: bool
+    domain_reported: bool
+    domain_included: bool
+
+
 class DomainHit(Interval):
     hit_id: Identifier
     protein_id: Identifier
@@ -114,6 +126,7 @@ class DomainHit(Interval):
     target_coverage: Fraction
     backend_version: str = Field(min_length=1)
     raw_artifact: str | None = None
+    hmm: HMMStatistics | None = None
 
     @model_validator(mode="after")
     def bounds(self):
@@ -121,6 +134,19 @@ class DomainHit(Interval):
             raise ValueError("Hit exceeds protein length")
         if not self.query_start < self.query_end <= self.query_length:
             raise ValueError("Invalid query coordinates")
+        if self.hmm is not None:
+            if self.method != "hmm" or self.evalue_kind != "independent_domain":
+                raise ValueError("HMM statistics require independent-domain HMM hits")
+            if self.evalue != self.hmm.independent_domain_evalue:
+                raise ValueError("Primary E-value must equal independent domain E-value")
+            if not (
+                self.hmm.envelope.start
+                <= self.start
+                < self.end
+                <= self.hmm.envelope.end
+                <= self.protein_length
+            ):
+                raise ValueError("Invalid HMM envelope")
         return self
 
     @computed_field

@@ -109,3 +109,39 @@ def download(
         )
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("hmm-search")
+def hmm_search(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared dataset directory")],
+    profile: Annotated[Path, typer.Option(help="ProfileConfig JSON with provenance and HMM path")],
+    output: Annotated[Path, typer.Option(help="New scan output directory")],
+    threads: int = 1,
+    sequence_evalue: float = 10.0,
+    domain_evalue: float = 10.0,
+    max_sensitivity: bool = False,
+):
+    """Search one protein HMM; export all returned domains without classification."""
+    from sprb_scanner.core.config import ProfileConfig
+    from sprb_scanner.core.models import GenomeDataset
+    from sprb_scanner.scanners.hmm import HMMSearchConfig, run_hmm
+
+    try:
+        validation = validate_prepared(prepared)
+        if validation["errors"]:
+            raise ValueError("Prepared dataset has quality errors")
+        dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
+        model = ProfileConfig.model_validate_json(profile.read_text())
+        path = model.path.expanduser()
+        if not path.is_absolute():
+            path = profile.resolve().parent / path
+        model = model.model_copy(update={"path": path})
+        settings = HMMSearchConfig(
+            threads=threads,
+            sequence_report_evalue=sequence_evalue,
+            domain_report_evalue=domain_evalue,
+            max_sensitivity=max_sensitivity,
+        )
+        emit(run_hmm(dataset.proteins, model, output, settings))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)

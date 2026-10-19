@@ -32,3 +32,7 @@ E-values, sequence E-values and MMseqs2 alignment E-values remain explicitly dis
 Run-level statuses are separate from candidates, so failure/unavailability never implies a negative.
 Future run metadata must record schema/software/backend versions, complete resolved configuration,
 input/model checksums, timestamps, commands and raw artifact locations.
+
+HMM Engine adds optional `DomainHit.hmm: HMMStatistics` for backward-compatible records.
+New engine hits always populate separate sequence/independent-domain/conditional-domain E-values,
+sequence score, envelope and reporting/inclusion flags. See [hmm_engine.md](hmm_engine.md).
