@@ -13,7 +13,8 @@ Python 依赖沿用 `uv.lock`。另需 CPU 版 [MMseqs2](https://github.com/soed
 本地验证版本 `18-8cc5c`；CI 显式安装并运行真实后端测试，打印实际版本。
 通过 `--executable /path/to/mmseqs` 选择安装。保留 launcher 符号链接路径，兼容 Debian/Ubuntu SIMD dispatcher。搜索/转换显式使用 `--threads`；建库先检查 `createdb -h`，支持线程参数时才传入。
 MMseqs2 15 的 createdb 为单线程且不接受该参数，有效建库线程数和后端能力记入元数据。
-不自动下载或捆绑 MMseqs2、基因组或参考蛋白。
+不自动下载 MMseqs2、基因组或外部参考蛋白。仓库内的小型用户参考集见
+[reference_data](../reference_data/README.md)，RN28 主 query 为 `reference_data/RN28.fasta`。
 
 ## Input / usage
 

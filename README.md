@@ -14,6 +14,9 @@ PorP/SprF-like 家族支持 TIGR03519 + PF11751 独立双模型检索，见 [spr
 
 新增通用 [`mmseqs-search` / `mmseqs-createdb`](docs/mmseqs_engine.md)：支持全长/片段 query、数据库复用、全部报告 alignment 和独立 query/target coverage。
 
+项目内 [reference_data](reference_data/README.md) 提供 RN28 主 query（207 aa）与其他 73 条归档参考序列；
+推荐 `--query reference_data/RN28.fasta`。
+
 新增独立的 [`neighborhood`](docs/neighborhood.md) 命令，查询任意CDS的坐标/转录上下游、间隔与重叠关系。
 
 **首选输入是 NCBI 注释 GBFF。** 也支持 GFF3 + FNA + FAA（同一注释发布），或仅序列的 FAA。
