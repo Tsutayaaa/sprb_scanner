@@ -272,6 +272,7 @@ def neighborhood(
                 f"{neighbor.gene.gene_id} | {neighbor.relative_position or 'unknown'} "
                 f"(genomic {neighbor.genomic_position}) | "
                 f"{neighbor.intervening_cds} intervening CDS | {neighbor.distance_bp} bp | "
+                f"overlap={neighbor.overlap_bp} bp signed_gap={neighbor.signed_gap_bp} bp | "
                 f"adjacent={neighbor.directly_adjacent} same_strand={neighbor.same_strand}"
             )
         typer.echo(f"Output: {output.resolve()}")

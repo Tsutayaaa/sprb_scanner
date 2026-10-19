@@ -34,7 +34,12 @@ def index_gene(gene, contig):
 
 
 def geometry(a, b, circle_length=None):
-    """Exact union-of-parts intersection and minimum edge gap; touching means zero."""
+    """Return (nonnegative gap, coding overlap bp, shortest-gap origin crossing).
+
+    Inputs must be nonempty, coordinate-sorted, internally disjoint Interval tuples.
+    Swapping a and b preserves all three values. Overlap and touching both have
+    distance zero; overlap is distinguished by its positive intersection length.
+    """
     i = j = overlap = 0
     best = None
     while i < len(a) and j < len(b):
@@ -47,7 +52,7 @@ def geometry(a, b, circle_length=None):
         else:
             j += 1
     if overlap:
-        return -overlap, overlap, False
+        return 0, overlap, False
     crossed = False
     if circle_length is not None:
         wrapped = min(
@@ -118,6 +123,7 @@ class NeighborhoodIndex:
                         transcription_cds_offset=trans_offset,
                         intervening_cds=steps - 1,
                         distance_bp=distance,
+                        signed_gap_bp=distance - overlap,
                         overlap_bp=overlap,
                         directly_adjacent=steps == 1,
                         same_strand=(

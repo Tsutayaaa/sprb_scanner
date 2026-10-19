@@ -86,7 +86,9 @@ def run_neighborhood(prepared: Path, gene_id: str, output: Path, window=5):
                     for severity in ("warning", "error")
                 },
                 "distance_rule": (
-                    "minimum part-edge gap; negative total coding overlap; shortest circle gap"
+                    "distance_bp=nonnegative minimum part-edge gap (0 for overlap); "
+                    "overlap_bp=total coding intersection; "
+                    "signed_gap_bp=distance_bp-overlap_bp; shortest circle gap"
                 ),
                 "output_sha256": {p.name: sha256(p) for p in stage.iterdir()},
             },

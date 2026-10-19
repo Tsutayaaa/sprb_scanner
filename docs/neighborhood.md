@@ -43,8 +43,15 @@ CDS步数，等步数时坐标上游优先。该去重规则意味着小环上�
 
 所有位置均0-based half-open，字段保留完整分段。geometry对各CDS分段并集做精确计算：
 
-- 不相交时distance_bp是最近的分段边缘间隔；首尾接触为0。
-- 相交时overlap_bp为实际共有的编码碱基总数，distance_bp=-overlap_bp，overlaps=true。
+- distance_bp始终非负：不相交时为最近分段边缘间隔，接触或编码区重叠时为0。
+  可直接用于后续 `distance_bp <= max_distance` 筛选；如需排除重叠，额外检查overlaps。
+- overlap_bp始终非负：两个CDS分段并集实际共有的编码碱基总数。接触不算重叠；
+  overlaps严格等于overlap_bp>0，不用包络跨度代替实际编码区交集。
+- signed_gap_bp = distance_bp - overlap_bp，独立保留带符号间隔：不相交为正间隔，
+  接触为0，重叠为负的交集长度。该符号不表示上下游或链方向，不参与默认邻域选择。
+- geometry(a,b,L)返回(distance_bp,overlap_bp,distance_crosses_origin)，三项在交换a/b后
+  均不变。输入为按坐标排序、内部不重叠、非空的Interval元组；原始生物学分段顺序由
+  索引负责转换。距离字段与同名JSON/TSV输出、元数据规则保持一致。
 - 复合CDS的内部间隙不算编码区；另一个CDS落在该间隙时不会被误报为编码区重叠。
 - 环状物理距离取两个方向中的较短分段边缘间隔，等距时优先不跨原点的路径。
   该最短物理路径与选取邻居的CDS排名路径可以不同，两者分开标记。
@@ -52,7 +59,9 @@ CDS步数，等步数时坐标上游优先。该去重规则意味着小环上�
 index_crosses_origin表示CDS索引路径回绕；distance_crosses_origin表示最短物理间隔跨原点；
 gene_crosses_origin与target_crosses_origin分别表示CDS本身跨原点。crosses_origin是这些
 标志的并集，不把线性化表示中的负间隔当作真实重叠。
-对于普通单段CDS，距离就是两段最近边缘之间的间隔；负链仍使用同一物理距离。
+对于普通单段CDS，非重叠距离就是两段最近边缘间隔；负链仍使用同一物理距离。
+对称性测试覆盖普通/接触/重叠/嵌套、compound间隙与多段交集、环状最短间隔、跨原点
+compound重叠及等距路径；同时校验非负字段和独立有符号字段之间的一致性。
 
 ## 复杂度与复用
 
