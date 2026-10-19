@@ -3,7 +3,7 @@
 ## Implemented foundation
 
 `core` contains records, coordinate conversion and configuration. It imports no scanners.
-The CLI invokes preparation/download/validation services and reports errors. Scanning is not implemented.
+The CLI invokes preparation/download/validation services and reports errors. The single-profile HMM engine is implemented; see hmm_engine.md.
 See genome_infrastructure.md for implemented parser, preparation, downloader and export contracts.
 Record validation rejects structural corruption; biological annotation problems are recorded
 as `QualityIssue` by parsers, retaining original annotations and source files.
@@ -27,9 +27,17 @@ from empty tables or dump arbitrary nested objects into Parquet.
 - Merger: hits + per-model status → CandidateRecords and overlap relationships; preserve all hits,
   do not average or rank HMM and MMseqs2 scores together. Report status even for zero hits.
 - Exporter: dataset + hits + candidates + run metadata → separate typed tables and FASTA/JSON.
-- SprF/RN28/CBD: proteins → model-specific hits, depending only on core.
+- RN28/CBD: proteins → model-specific hits, depending only on core.
 - Locus: genes/contigs/candidates → neighborhoods respecting contig topology and strand.
 - Motility: genome/metadata → species evidence. Classifier: all evidence → ranked candidates.
 - Structure: candidate proteins → structural evidence. Viewers: records/evidence → visual output.
 
-Future modules are documented rather than represented by empty packages. BioPython is used by batch 2. PyHMMER, MMseqs2 and Parquet dependencies remain for batch 3.
+Future modules are documented rather than represented by empty packages. BioPython is used by batch 2. PyHMMER powers the HMM engine. MMseqs2 and Parquet remain future work.
+
+PorP/SprF dual-model orchestration is implemented in scanners.sprf and calls the existing HMM
+engine independently. It preserves model-specific results, partial failures and per-protein evidence;
+see sprf_scanner.md. No substrate/shuttle pairing or score fusion is performed.
+
+Shared pair orchestration now lives in scanners.pair; scanners.sprf and scanners.bctd
+select their canonical model pairs and interpretation. scanners.repeats adds per-protein PF13573
+domain counts on top of run_hmm without replacing the search algorithm or filtering raw evidence.

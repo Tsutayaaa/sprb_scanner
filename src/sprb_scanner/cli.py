@@ -7,7 +7,7 @@ from typing import Annotated
 import typer
 
 from sprb_scanner import __version__
-from sprb_scanner.core.config import load_config
+from sprb_scanner.core.config import load_config, load_profile
 from sprb_scanner.core.exceptions import ScannerError
 from sprb_scanner.io.exporters import summary, validate_prepared
 from sprb_scanner.io.ncbi import download as download_genome
@@ -107,5 +107,145 @@ def download(
                 "files": len(manifest["files"]),
             }
         )
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("hmm-search")
+def hmm_search(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared dataset directory")],
+    profile: Annotated[Path, typer.Option(help="ProfileConfig JSON with provenance and HMM path")],
+    output: Annotated[Path, typer.Option(help="New scan output directory")],
+    threads: int = 1,
+    sequence_evalue: float = 10.0,
+    domain_evalue: float = 10.0,
+    max_sensitivity: bool = False,
+):
+    """Search one protein HMM; export all returned domains without classification."""
+    from sprb_scanner.core.models import GenomeDataset
+    from sprb_scanner.scanners.hmm import HMMSearchConfig, run_hmm
+
+    try:
+        validation = validate_prepared(prepared)
+        if validation["errors"]:
+            raise ValueError("Prepared dataset has quality errors")
+        dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
+        model = load_profile(profile)
+        settings = HMMSearchConfig(
+            threads=threads,
+            sequence_report_evalue=sequence_evalue,
+            domain_report_evalue=domain_evalue,
+            max_sensitivity=max_sensitivity,
+        )
+        emit(run_hmm(dataset.proteins, model, output, settings))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("sprf-search")
+def sprf_search(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared dataset directory")],
+    tigr_profile: Annotated[Path, typer.Option(help="TIGR03519 ProfileConfig JSON")],
+    pfam_profile: Annotated[Path, typer.Option(help="PF11751 ProfileConfig JSON")],
+    output: Annotated[Path, typer.Option(help="New PorP/SprF output directory")],
+    threads: int = 1,
+    sequence_evalue: float = 10.0,
+    domain_evalue: float = 10.0,
+    max_sensitivity: bool = False,
+):
+    """Scan PorP/SprF family with TIGR03519 and PF11751 independently."""
+    from sprb_scanner.core.models import GenomeDataset
+    from sprb_scanner.scanners.hmm import HMMSearchConfig
+    from sprb_scanner.scanners.sprf import run_sprf
+
+    try:
+        validation = validate_prepared(prepared)
+        if validation["errors"]:
+            raise ValueError("Prepared dataset has quality errors")
+        dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
+        settings = HMMSearchConfig(
+            threads=threads,
+            sequence_report_evalue=sequence_evalue,
+            domain_report_evalue=domain_evalue,
+            max_sensitivity=max_sensitivity,
+        )
+        report = run_sprf(
+            dataset.proteins,
+            (load_profile(tigr_profile), load_profile(pfam_profile)),
+            output,
+            settings,
+        )
+        emit(report)
+        if report["state"] != "succeeded":
+            raise typer.Exit(2)
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("sprb-repeat-search")
+def sprb_repeat_search(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared dataset directory")],
+    profile: Annotated[Path, typer.Option(help="PF13573 SprB repeat profile JSON")],
+    output: Annotated[Path, typer.Option(help="New output directory")],
+    threads: int = 1,
+    sequence_evalue: float = 10.0,
+    domain_evalue: float = 10.0,
+    max_sensitivity: bool = False,
+):
+    """Scan PF13573 and retain all internal repeat domain alignments."""
+    from sprb_scanner.core.models import GenomeDataset
+    from sprb_scanner.scanners.hmm import HMMSearchConfig
+    from sprb_scanner.scanners.repeats import run_repeats
+
+    try:
+        if validate_prepared(prepared)["errors"]:
+            raise ValueError("Prepared dataset has quality errors")
+        dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
+        settings = HMMSearchConfig(
+            threads=threads,
+            sequence_report_evalue=sequence_evalue,
+            domain_report_evalue=domain_evalue,
+            max_sensitivity=max_sensitivity,
+        )
+        emit(run_repeats(dataset.proteins, load_profile(profile), output, settings))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("bctd-hmm-search")
+def bctd_hmm_search(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared dataset directory")],
+    tigr_profile: Annotated[Path, typer.Option(help="TIGR04131 profile JSON")],
+    pfam_profile: Annotated[Path, typer.Option(help="PF13585 CHU_C profile JSON")],
+    output: Annotated[Path, typer.Option(help="New output directory")],
+    threads: int = 1,
+    sequence_evalue: float = 10.0,
+    domain_evalue: float = 10.0,
+    max_sensitivity: bool = False,
+):
+    """Scan Type B CTD with TIGR04131 and PF13585 independently."""
+    from sprb_scanner.core.models import GenomeDataset
+    from sprb_scanner.scanners.bctd import run_bctd
+    from sprb_scanner.scanners.hmm import HMMSearchConfig
+
+    try:
+        if validate_prepared(prepared)["errors"]:
+            raise ValueError("Prepared dataset has quality errors")
+        dataset = GenomeDataset.model_validate_json((prepared / "dataset.json").read_text())
+        settings = HMMSearchConfig(
+            threads=threads,
+            sequence_report_evalue=sequence_evalue,
+            domain_report_evalue=domain_evalue,
+            max_sensitivity=max_sensitivity,
+        )
+        report = run_bctd(
+            dataset.proteins,
+            (load_profile(tigr_profile), load_profile(pfam_profile)),
+            output,
+            settings,
+        )
+        emit(report)
+        if report["state"] != "succeeded":
+            raise typer.Exit(2)
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)

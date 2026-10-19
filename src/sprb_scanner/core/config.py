@@ -78,3 +78,15 @@ def load_config(path: Path | None = None) -> AppConfig:
         )
     except (OSError, ValueError, ValidationError, yaml.YAMLError) as exc:
         raise ConfigurationError(f"Cannot load configuration: {exc}") from exc
+
+
+def load_profile(path: Path) -> ProfileConfig:
+    """Read one JSON model manifest; resolve its HMM relative to the manifest."""
+    try:
+        profile = ProfileConfig.model_validate_json(path.read_text(encoding="utf-8"))
+        model_path = profile.path.expanduser()
+        if not model_path.is_absolute():
+            model_path = path.resolve().parent / model_path
+        return profile.model_copy(update={"path": model_path.resolve()})
+    except (OSError, ValueError) as exc:
+        raise ConfigurationError(f"Cannot load profile {path}: {exc}") from exc

@@ -15,3 +15,7 @@ class InputError(ScannerError):
 
 class DownloadError(ScannerError):
     """Download or archive validation failed."""
+
+
+class HMMError(ScannerError):
+    """Profile loading, provenance or HMM search failed."""
