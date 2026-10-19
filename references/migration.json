@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "source_git_commit": "83f5bdafeb1fb7318a0b28a3d5359020a9a764fe",
+  "policy": "references/ is authoritative; old paths remain frozen compatibility snapshots",
+  "files": [
+    {
+      "legacy_path": "reference_data/README.md",
+      "artifact": "sprb/README.md",
+      "sha256": "7df936eb5ccb0fce609077719539d8c33d74aad8cf7a337a18c2e2e72f825398",
+      "bytes": 3933,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/RN28.fasta",
+      "artifact": "sprb/RN28.fasta",
+      "sha256": "7e6de06c71fe50b103cd25f8b0783091964b3d909e8c41ee3fa245eb02b2b0b4",
+      "bytes": 227,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/archive/cluster_assignments.tsv",
+      "artifact": "sprb/archive/cluster_assignments.tsv",
+      "sha256": "8eb5bf0d4584c2355dfecade6378262a8f1386677089a1ed3f66c08d4467b1de",
+      "bytes": 2214,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/archive/cluster_summary.tsv",
+      "artifact": "sprb/archive/cluster_summary.tsv",
+      "sha256": "8ffd286073c6806388c828141ed702e14612b53f9907c8183141a01464dcba4a",
+      "bytes": 6788,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/archive/domain_table.tsv",
+      "artifact": "sprb/archive/domain_table.tsv",
+      "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4",
+      "bytes": 4271,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/archive/sprb_smf_panel.fasta",
+      "artifact": "sprb/archive/sprb_smf_panel.fasta",
+      "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2",
+      "bytes": 7613,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/reference_catalog.json",
+      "artifact": "sprb/reference_catalog.json",
+      "sha256": "39834fe21858b65bf2510fd1f430076dd67a3f5efa92de468d3314a6e68cd278",
+      "bytes": 99081,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/reference_catalog.tsv",
+      "artifact": "sprb/reference_catalog.tsv",
+      "sha256": "6ad5e1c036513ad46926254893a8c67650c13a1019f068701c1f7b9aa361db47",
+      "bytes": 21776,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/reference_manifest.json",
+      "artifact": "sprb/reference_manifest.json",
+      "sha256": "b8e24f531149cf904ce033e9a0b434831b3f9bdc77c41739658b97642cd74c77",
+      "bytes": 3318,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "reference_data/reference_only.fasta",
+      "artifact": "sprb/reference_only.fasta",
+      "sha256": "52bf2a1175759302085067b5d3fce54d5e8111bca90de3a601cc388f6a8698b9",
+      "bytes": 7462,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "profiles/PF11751.profile.json",
+      "artifact": "hmm/PF11751.profile.json",
+      "sha256": "fb82010cd1732f9732fc5879fbba76603a7efc6eee9fbc8853753f876a63c36c",
+      "bytes": 294,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "profiles/PF13573.profile.json",
+      "artifact": "hmm/PF13573.profile.json",
+      "sha256": "b6e2f8c4578f6bcdf3d10d2836dc90b53ed9b183a3bc283c70566cbc1d45438b",
+      "bytes": 294,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "profiles/PF13585.profile.json",
+      "artifact": "hmm/PF13585.profile.json",
+      "sha256": "301f3a8ba98c71219c88b83fa9bf490af1108c6f715849e51f7501b2712ed787",
+      "bytes": 294,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "profiles/README.md",
+      "artifact": "hmm/README.md",
+      "sha256": "4f5fe5e0b6a20b7b72c6abd2d326b2ecbbd3ffd57f466fef04d77bf8320d43a7",
+      "bytes": 1751,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "profiles/TIGR03519.profile.json",
+      "artifact": "hmm/TIGR03519.profile.json",
+      "sha256": "955257830f3aaf69ad6d9b81f80de99d0e839c394f9e7cbbffd7798f251ffed9",
+      "bytes": 301,
+      "compatibility": "frozen_byte_identical_copy"
+    },
+    {
+      "legacy_path": "profiles/TIGR04131.profile.json",
+      "artifact": "hmm/TIGR04131.profile.json",
+      "sha256": "acca484cbf05c8f67b77d2c28634590a8c6db20a7b7a2f1d5e03acd065ce2ab0",
+      "bytes": 301,
+      "compatibility": "frozen_byte_identical_copy"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "method": "hmm",
+  "path": "PF13573.hmm",
+  "provenance": {
+    "model_id": "PF13573",
+    "version": "PF13573.13",
+    "source": "https://www.ebi.ac.uk/interpro/api/entry/pfam/PF13573/?annotation=hmm",
+    "sha256": "aaaf0b2d4f6252d49bde65e0d351f45243a8c412bfbe06d1e48dcb36b404803b"
+  }
+}

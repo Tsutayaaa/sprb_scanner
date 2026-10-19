@@ -1,0 +1,677 @@
+{
+  "schema_version": "1.0.0",
+  "references": [
+    {
+      "reference_id": "SPRB_LEGACY_PANEL",
+      "version": "sprb-legacy-20261019",
+      "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2",
+      "resource_type": "sequence_set",
+      "artifact": {
+        "path": "sprb/archive/sprb_smf_panel.fasta",
+        "format": "protein_fasta",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Original complete 74-module SprB reference panel",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": [
+          "SMF_RN33__RN33",
+          "SMF_R0__R0",
+          "SMF_RN29__RN29",
+          "SMF_RC36__RC36",
+          "SMF_RN2__RN2",
+          "SMF_RN1__RN1",
+          "SMF_RN26__RN26",
+          "SMF_RN21__RN21",
+          "SMF_RN21__RN14",
+          "SMF_RN21__RN7",
+          "SMF_RC28__RC28",
+          "SMF_RN28__RN28",
+          "SMF_RC8__RC8",
+          "SMF_RC8__RC15",
+          "SMF_RC8__RC22",
+          "SMF_RN20__RN20",
+          "SMF_RN20__RN13",
+          "SMF_RN20__RN6",
+          "SMF_RN27__RN27",
+          "SMF_RC1__RC1",
+          "SMF_RN31__RN31",
+          "SMF_RC5__RC5",
+          "SMF_RC5__RC12",
+          "SMF_RC5__RC19",
+          "SMF_RC26__RC26",
+          "SMF_RC31__RC31",
+          "SMF_RC7__RC7",
+          "SMF_RC7__RC14",
+          "SMF_RC7__RC21",
+          "SMF_RC4__RC4",
+          "SMF_RC4__RC11",
+          "SMF_RC4__RC18",
+          "SMF_RC25__RC25",
+          "SMF_RN34__RN34",
+          "SMF_RC9__RC9",
+          "SMF_RC9__RC16",
+          "SMF_RC9__RC23",
+          "SMF_RN32__RN32",
+          "SMF_RC2__RC2",
+          "SMF_RC3__RC3",
+          "SMF_RC3__RC10",
+          "SMF_RC3__RC17",
+          "SMF_RC3__RC24",
+          "SMF_RN23__RN23",
+          "SMF_RN23__RN16",
+          "SMF_RN23__RN9",
+          "SMF_RC35__RC35",
+          "SMF_RN17__RN17",
+          "SMF_RN17__RN10",
+          "SMF_RN24__RN24",
+          "SMF_RN3__RN3",
+          "SMF_RN19__RN19",
+          "SMF_RN19__RN12",
+          "SMF_RN19__RN5",
+          "SMF_RC33__RC33",
+          "SMF_RC30__RC30",
+          "SMF_RC37__RC37",
+          "SMF_RC6__RC6",
+          "SMF_RC6__RC13",
+          "SMF_RC6__RC20",
+          "SMF_RN22__RN22",
+          "SMF_RN22__RN15",
+          "SMF_RN22__RN8",
+          "SMF_RN18__RN18",
+          "SMF_RN18__RN11",
+          "SMF_RN18__RN4",
+          "SMF_RN25__RN25",
+          "SMF_RC34__RC34",
+          "SMF_RN30__RN30",
+          "SMF_RC32__RC32",
+          "SMF_RC27__RC27",
+          "SMF_RC29__RC29",
+          "SMF_RN35__RN35",
+          "SMF_RC38__RC38"
+        ]
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "SPRB_DOMAIN_TABLE",
+      "version": "sprb-legacy-20261019",
+      "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "sprb/archive/domain_table.tsv",
+        "format": "tsv",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Original module boundaries; source coordinates are 1-based inclusive",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "SPRB_CLUSTER_ASSIGNMENTS",
+      "version": "sprb-legacy-20261019",
+      "sha256": "8eb5bf0d4584c2355dfecade6378262a8f1386677089a1ed3f66c08d4467b1de",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "sprb/archive/cluster_assignments.tsv",
+        "format": "tsv",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Unchanged legacy assignments for 74 SprB modules",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "SPRB_CLUSTER_SUMMARY",
+      "version": "sprb-legacy-20261019",
+      "sha256": "8ffd286073c6806388c828141ed702e14612b53f9907c8183141a01464dcba4a",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "sprb/archive/cluster_summary.tsv",
+        "format": "tsv",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Original 46 legacy clusters; historical paths are informational only",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "RN28",
+      "version": "sprb-legacy-20261019",
+      "sha256": "7e6de06c71fe50b103cd25f8b0783091964b3d909e8c41ee3fa245eb02b2b0b4",
+      "resource_type": "sequence",
+      "artifact": {
+        "path": "sprb/RN28.fasta",
+        "format": "protein_fasta",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "RN28 internal SprB reference segment, primary search query",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "protein_interval": {
+          "start": 681,
+          "end": 888
+        },
+        "sequence_ids": [
+          "SMF_RN28__RN28"
+        ],
+        "sequence_sha256": "0e92a4f69219d39a2c7a50b104c922fed707b998555378e4a95ea0be3dddb42c"
+      },
+      "derived_from": [
+        {
+          "reference_id": "SPRB_LEGACY_PANEL",
+          "version": "sprb-legacy-20261019",
+          "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2"
+        },
+        {
+          "reference_id": "SPRB_DOMAIN_TABLE",
+          "version": "sprb-legacy-20261019",
+          "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4"
+        }
+      ]
+    },
+    {
+      "reference_id": "SPRB_REFERENCE_ONLY",
+      "version": "sprb-legacy-20261019",
+      "sha256": "52bf2a1175759302085067b5d3fce54d5e8111bca90de3a601cc388f6a8698b9",
+      "resource_type": "sequence_set",
+      "artifact": {
+        "path": "sprb/reference_only.fasta",
+        "format": "protein_fasta",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Other 73 archived module references; not a default search panel",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": [
+          "SMF_RN33__RN33",
+          "SMF_R0__R0",
+          "SMF_RN29__RN29",
+          "SMF_RC36__RC36",
+          "SMF_RN2__RN2",
+          "SMF_RN1__RN1",
+          "SMF_RN26__RN26",
+          "SMF_RN21__RN21",
+          "SMF_RN21__RN14",
+          "SMF_RN21__RN7",
+          "SMF_RC28__RC28",
+          "SMF_RC8__RC8",
+          "SMF_RC8__RC15",
+          "SMF_RC8__RC22",
+          "SMF_RN20__RN20",
+          "SMF_RN20__RN13",
+          "SMF_RN20__RN6",
+          "SMF_RN27__RN27",
+          "SMF_RC1__RC1",
+          "SMF_RN31__RN31",
+          "SMF_RC5__RC5",
+          "SMF_RC5__RC12",
+          "SMF_RC5__RC19",
+          "SMF_RC26__RC26",
+          "SMF_RC31__RC31",
+          "SMF_RC7__RC7",
+          "SMF_RC7__RC14",
+          "SMF_RC7__RC21",
+          "SMF_RC4__RC4",
+          "SMF_RC4__RC11",
+          "SMF_RC4__RC18",
+          "SMF_RC25__RC25",
+          "SMF_RN34__RN34",
+          "SMF_RC9__RC9",
+          "SMF_RC9__RC16",
+          "SMF_RC9__RC23",
+          "SMF_RN32__RN32",
+          "SMF_RC2__RC2",
+          "SMF_RC3__RC3",
+          "SMF_RC3__RC10",
+          "SMF_RC3__RC17",
+          "SMF_RC3__RC24",
+          "SMF_RN23__RN23",
+          "SMF_RN23__RN16",
+          "SMF_RN23__RN9",
+          "SMF_RC35__RC35",
+          "SMF_RN17__RN17",
+          "SMF_RN17__RN10",
+          "SMF_RN24__RN24",
+          "SMF_RN3__RN3",
+          "SMF_RN19__RN19",
+          "SMF_RN19__RN12",
+          "SMF_RN19__RN5",
+          "SMF_RC33__RC33",
+          "SMF_RC30__RC30",
+          "SMF_RC37__RC37",
+          "SMF_RC6__RC6",
+          "SMF_RC6__RC13",
+          "SMF_RC6__RC20",
+          "SMF_RN22__RN22",
+          "SMF_RN22__RN15",
+          "SMF_RN22__RN8",
+          "SMF_RN18__RN18",
+          "SMF_RN18__RN11",
+          "SMF_RN18__RN4",
+          "SMF_RN25__RN25",
+          "SMF_RC34__RC34",
+          "SMF_RN30__RN30",
+          "SMF_RC32__RC32",
+          "SMF_RC27__RC27",
+          "SMF_RC29__RC29",
+          "SMF_RN35__RN35",
+          "SMF_RC38__RC38"
+        ]
+      },
+      "derived_from": [
+        {
+          "reference_id": "SPRB_LEGACY_PANEL",
+          "version": "sprb-legacy-20261019",
+          "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2"
+        },
+        {
+          "reference_id": "SPRB_DOMAIN_TABLE",
+          "version": "sprb-legacy-20261019",
+          "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4"
+        }
+      ]
+    },
+    {
+      "reference_id": "SPRB_CATALOG_JSON",
+      "version": "sprb-legacy-20261019",
+      "sha256": "39834fe21858b65bf2510fd1f430076dd67a3f5efa92de468d3314a6e68cd278",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "sprb/reference_catalog.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Original normalized module catalog with all source rows and exact parent intervals",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": []
+      },
+      "derived_from": [
+        {
+          "reference_id": "SPRB_LEGACY_PANEL",
+          "version": "sprb-legacy-20261019",
+          "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2"
+        },
+        {
+          "reference_id": "SPRB_DOMAIN_TABLE",
+          "version": "sprb-legacy-20261019",
+          "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4"
+        },
+        {
+          "reference_id": "SPRB_CLUSTER_ASSIGNMENTS",
+          "version": "sprb-legacy-20261019",
+          "sha256": "8eb5bf0d4584c2355dfecade6378262a8f1386677089a1ed3f66c08d4467b1de"
+        },
+        {
+          "reference_id": "SPRB_CLUSTER_SUMMARY",
+          "version": "sprb-legacy-20261019",
+          "sha256": "8ffd286073c6806388c828141ed702e14612b53f9907c8183141a01464dcba4a"
+        }
+      ]
+    },
+    {
+      "reference_id": "SPRB_CATALOG_TSV",
+      "version": "sprb-legacy-20261019",
+      "sha256": "6ad5e1c036513ad46926254893a8c67650c13a1019f068701c1f7b9aa361db47",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "sprb/reference_catalog.tsv",
+        "format": "tsv",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Original normalized module catalog with all source rows and exact parent intervals",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": []
+      },
+      "derived_from": [
+        {
+          "reference_id": "SPRB_LEGACY_PANEL",
+          "version": "sprb-legacy-20261019",
+          "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2"
+        },
+        {
+          "reference_id": "SPRB_DOMAIN_TABLE",
+          "version": "sprb-legacy-20261019",
+          "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4"
+        },
+        {
+          "reference_id": "SPRB_CLUSTER_ASSIGNMENTS",
+          "version": "sprb-legacy-20261019",
+          "sha256": "8eb5bf0d4584c2355dfecade6378262a8f1386677089a1ed3f66c08d4467b1de"
+        },
+        {
+          "reference_id": "SPRB_CLUSTER_SUMMARY",
+          "version": "sprb-legacy-20261019",
+          "sha256": "8ffd286073c6806388c828141ed702e14612b53f9907c8183141a01464dcba4a"
+        }
+      ]
+    },
+    {
+      "reference_id": "SPRB_LEGACY_MANIFEST",
+      "version": "sprb-legacy-20261019",
+      "sha256": "b8e24f531149cf904ce033e9a0b434831b3f9bdc77c41739658b97642cd74c77",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "sprb/reference_manifest.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Historical pre-registry import manifest; relative paths describe the old layout",
+        "organism": "Flavobacterium johnsoniae UW101",
+        "protein_accession": "WP_012023065.1",
+        "protein_length": 6497,
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "TIGR04131",
+      "version": "TIGR04131.1",
+      "sha256": "501e3ad25dace893fdd99d68c2dde1643ca9b2f40a051c6a8bbff36fbcc564fe",
+      "resource_type": "profile_hmm",
+      "artifact": {
+        "path": "hmm/TIGR04131.1.HMM",
+        "format": "hmm",
+        "storage": "external"
+      },
+      "source": {
+        "provider": "NCBI PGAP",
+        "locator": "https://ftp.ncbi.nlm.nih.gov/hmm/current/hmm_PGAP.HMM/TIGR04131.1.HMM",
+        "notes": "Expected checksum pins the original model bytes; GA is read from the unchanged HMM. No automatic download."
+      },
+      "biological_target": {
+        "description": "Type B CTD",
+        "sequence_ids": [],
+        "model_id": "TIGR04131",
+        "model_accession": "TIGR04131.1"
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "TIGR04131_PROFILE_CONFIG",
+      "version": "TIGR04131.1",
+      "sha256": "acca484cbf05c8f67b77d2c28634590a8c6db20a7b7a2f1d5e03acd065ce2ab0",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "hmm/TIGR04131.profile.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "SprB-like Scanner legacy profile configuration",
+        "locator": "legacy:profiles/TIGR04131.profile.json"
+      },
+      "biological_target": {
+        "description": "Unchanged legacy ProfileConfig for TIGR04131",
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "PF13585",
+      "version": "PF13585.13",
+      "sha256": "34dcac89a508ca64431d154a1fa5d6928a085a4b209db56b6f09a8cdf4f09a9c",
+      "resource_type": "profile_hmm",
+      "artifact": {
+        "path": "hmm/PF13585.hmm",
+        "format": "hmm",
+        "storage": "external"
+      },
+      "source": {
+        "provider": "Pfam / InterPro",
+        "locator": "https://www.ebi.ac.uk/interpro/api/entry/pfam/PF13585/?annotation=hmm",
+        "notes": "Expected checksum pins the original model bytes; GA is read from the unchanged HMM. No automatic download."
+      },
+      "biological_target": {
+        "description": "CHU_C / Type B CTD",
+        "sequence_ids": [],
+        "model_id": "PF13585",
+        "model_accession": "PF13585.13"
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "PF13585_PROFILE_CONFIG",
+      "version": "PF13585.13",
+      "sha256": "301f3a8ba98c71219c88b83fa9bf490af1108c6f715849e51f7501b2712ed787",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "hmm/PF13585.profile.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "SprB-like Scanner legacy profile configuration",
+        "locator": "legacy:profiles/PF13585.profile.json"
+      },
+      "biological_target": {
+        "description": "Unchanged legacy ProfileConfig for PF13585",
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "TIGR03519",
+      "version": "TIGR03519.1",
+      "sha256": "4e366f43c89ed45d5e4e3d43a9954ebfc9bfb6b33991aa73170117414e5b7e98",
+      "resource_type": "profile_hmm",
+      "artifact": {
+        "path": "hmm/TIGR03519.1.HMM",
+        "format": "hmm",
+        "storage": "external"
+      },
+      "source": {
+        "provider": "NCBI PGAP",
+        "locator": "https://ftp.ncbi.nlm.nih.gov/hmm/current/hmm_PGAP.HMM/TIGR03519.1.HMM",
+        "notes": "Expected checksum pins the original model bytes; GA is read from the unchanged HMM. No automatic download."
+      },
+      "biological_target": {
+        "description": "PorP/SprF-like family",
+        "sequence_ids": [],
+        "model_id": "TIGR03519",
+        "model_accession": "TIGR03519.1"
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "TIGR03519_PROFILE_CONFIG",
+      "version": "TIGR03519.1",
+      "sha256": "955257830f3aaf69ad6d9b81f80de99d0e839c394f9e7cbbffd7798f251ffed9",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "hmm/TIGR03519.profile.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "SprB-like Scanner legacy profile configuration",
+        "locator": "legacy:profiles/TIGR03519.profile.json"
+      },
+      "biological_target": {
+        "description": "Unchanged legacy ProfileConfig for TIGR03519",
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "PF11751",
+      "version": "PF11751.15",
+      "sha256": "725ae144f514ad4518b560cf64f17ea58bd1fe62c07939babcfb98e53e72a0b1",
+      "resource_type": "profile_hmm",
+      "artifact": {
+        "path": "hmm/PF11751.hmm",
+        "format": "hmm",
+        "storage": "external"
+      },
+      "source": {
+        "provider": "Pfam / InterPro",
+        "locator": "https://www.ebi.ac.uk/interpro/api/entry/pfam/PF11751/?annotation=hmm",
+        "notes": "Expected checksum pins the original model bytes; GA is read from the unchanged HMM. No automatic download."
+      },
+      "biological_target": {
+        "description": "PorP/SprF-like family",
+        "sequence_ids": [],
+        "model_id": "PF11751",
+        "model_accession": "PF11751.15"
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "PF11751_PROFILE_CONFIG",
+      "version": "PF11751.15",
+      "sha256": "fb82010cd1732f9732fc5879fbba76603a7efc6eee9fbc8853753f876a63c36c",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "hmm/PF11751.profile.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "SprB-like Scanner legacy profile configuration",
+        "locator": "legacy:profiles/PF11751.profile.json"
+      },
+      "biological_target": {
+        "description": "Unchanged legacy ProfileConfig for PF11751",
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "PF13573",
+      "version": "PF13573.13",
+      "sha256": "aaaf0b2d4f6252d49bde65e0d351f45243a8c412bfbe06d1e48dcb36b404803b",
+      "resource_type": "profile_hmm",
+      "artifact": {
+        "path": "hmm/PF13573.hmm",
+        "format": "hmm",
+        "storage": "external"
+      },
+      "source": {
+        "provider": "Pfam / InterPro",
+        "locator": "https://www.ebi.ac.uk/interpro/api/entry/pfam/PF13573/?annotation=hmm",
+        "notes": "Expected checksum pins the original model bytes; GA is read from the unchanged HMM. No automatic download."
+      },
+      "biological_target": {
+        "description": "SprB repeat",
+        "sequence_ids": [],
+        "model_id": "PF13573",
+        "model_accession": "PF13573.13"
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "PF13573_PROFILE_CONFIG",
+      "version": "PF13573.13",
+      "sha256": "b6e2f8c4578f6bcdf3d10d2836dc90b53ed9b183a3bc283c70566cbc1d45438b",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "hmm/PF13573.profile.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "SprB-like Scanner legacy profile configuration",
+        "locator": "legacy:profiles/PF13573.profile.json"
+      },
+      "biological_target": {
+        "description": "Unchanged legacy ProfileConfig for PF13573",
+        "sequence_ids": []
+      },
+      "derived_from": []
+    },
+    {
+      "reference_id": "LEGACY_RESOURCE_MIGRATION",
+      "version": "sprb-legacy-20261019",
+      "sha256": "9b765b093473e458802a23161e85f2a29e5481ee1c925e87052160dc8f82e6bd",
+      "resource_type": "annotation_catalog",
+      "artifact": {
+        "path": "migration.json",
+        "format": "json",
+        "storage": "bundled"
+      },
+      "source": {
+        "provider": "User-provided SprB legacy project",
+        "locator": "legacy:sprb_genome_scan/reference_data",
+        "notes": "Custom module labels/clusters preserved without recalculation or functional inference."
+      },
+      "biological_target": {
+        "description": "Byte-level migration map and frozen legacy path compatibility checks",
+        "sequence_ids": []
+      },
+      "derived_from": []
+    }
+  ]
+}

@@ -23,3 +23,11 @@ class HMMError(ScannerError):
 
 class MMseqsError(ScannerError):
     """MMseqs2 database construction, execution or alignment validation failed."""
+
+
+class ReferenceRegistryError(ScannerError):
+    """Invalid resource identity, dependency graph, checksum or artifact format."""
+
+
+class ReferenceUnavailableError(ReferenceRegistryError):
+    """A registered resource has no local artifact; it has not been downloaded."""

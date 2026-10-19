@@ -356,3 +356,66 @@ def mmseqs_search(
         emit(run_search(query, output, prepared, database, settings))
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("reference-list")
+def reference_list(
+    registry: Annotated[Path, typer.Option(help="Reference Registry JSON")] = Path(
+        "references/registry.json"
+    ),
+):
+    """List immutable resource identities and expected artifact locations, without downloads."""
+    from sprb_scanner.references import ReferenceRegistry
+
+    try:
+        resources = ReferenceRegistry.load(registry)
+        emit([entry.model_dump(mode="json") for entry in resources.document.references])
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("reference-validate")
+def reference_validate(
+    registry: Annotated[Path, typer.Option(help="Reference Registry JSON")] = Path(
+        "references/registry.json"
+    ),
+    require_external: bool = False,
+):
+    """Validate local artifacts, types and SHA-256; report missing external models explicitly."""
+    from sprb_scanner.references import ReferenceRegistry
+
+    try:
+        result = ReferenceRegistry.load(registry).validate(
+            allow_missing_external=not require_external
+        )
+        emit(result)
+        if result["state"] == "failed":
+            raise typer.Exit(2)
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("reference-resolve")
+def reference_resolve(
+    reference_id: Annotated[str, typer.Option(help="Registered reference ID")],
+    registry: Annotated[Path, typer.Option(help="Reference Registry JSON")] = Path(
+        "references/registry.json"
+    ),
+    version: str | None = None,
+    artifact: Annotated[Path | None, typer.Option(help="Local external-artifact override")] = None,
+    export_profile: Annotated[
+        Path | None, typer.Option(help="New legacy ProfileConfig JSON for a verified HMM")
+    ] = None,
+):
+    """Resolve and inspect a local resource; optionally export an existing-engine HMM manifest."""
+    from sprb_scanner.references import ReferenceRegistry
+
+    try:
+        resolved = ReferenceRegistry.load(registry).resolve(reference_id, version, artifact)
+        if export_profile is not None:
+            profile = resolved.as_profile()
+            with export_profile.open("x", encoding="utf-8") as handle:
+                handle.write(profile.model_dump_json(indent=2) + "\n")
+        emit(resolved.model_dump(mode="json"))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)

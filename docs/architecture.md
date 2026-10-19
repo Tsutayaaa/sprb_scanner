@@ -48,3 +48,20 @@ See neighborhood.md for index reuse, compound/circular geometry and CLI contract
 Batch 5A adds scanners.mmseqs: external CPU MMseqs2, managed database manifests, and
 SequenceAlignment as a DomainHit subclass. No shared HMM/neighborhood behavior is changed.
 See mmseqs_engine.md for the database/CLI contracts and retention limits.
+
+
+## Unified Reference Registry
+
+`sprb_scanner.references` imports core/io and reads existing artifact bytes; it imports no scanners.
+It owns typed reference identities, version/checksum-pinned derivation DAGs, offline resolution and
+format inspection (protein sequences/sets, aligned FASTA/Stockholm/A3M, HMM, JSON/TSV catalogs).
+`ResolvedReference.as_profile()` adapts verified HMMs to the unchanged core ProfileConfig;
+`sequences()` exposes existing ProteinRecord IDs without changing the search algorithms.
+Core does not depend on the Registry. The CLI adds only listing/validation/resolution/export adapters.
+
+`references/registry.json` is authoritative; `references/migration.json` records exact byte migration.
+Legacy `profiles/` and `reference_data/` are fixed compatibility snapshots, checked in CI against
+canonical resources. External model absence is explicit and never triggers download or a negative
+biological conclusion. Future MSA-to-HMM construction can publish new versioned resources with
+pinned `derived_from`; no such building workflow exists in this batch.
+See [resource contracts](../references/README.md) for schema, errors, supported formats and tests.

@@ -14,8 +14,10 @@ PorP/SprF-like 家族支持 TIGR03519 + PF11751 独立双模型检索，见 [spr
 
 新增通用 [`mmseqs-search` / `mmseqs-createdb`](docs/mmseqs_engine.md)：支持全长/片段 query、数据库复用、全部报告 alignment 和独立 query/target coverage。
 
-项目内 [reference_data](reference_data/README.md) 提供 RN28 主 query（207 aa）与其他 73 条归档参考序列；
-推荐 `--query reference_data/RN28.fasta`。
+统一 [Reference Registry](references/README.md) 管理序列、MSA、HMM 和 annotation catalog。
+RN28 主 query（207 aa）使用 `--query references/sprb/RN28.fasta`；其他73条模块作参考。
+旧 `reference_data/`、`profiles/` 路径保留固定兼容副本。
+可用 `reference-list`、`reference-validate`、`reference-resolve` 查看和校验资源。
 
 新增独立的 [`neighborhood`](docs/neighborhood.md) 命令，查询任意CDS的坐标/转录上下游、间隔与重叠关系。
 
@@ -87,7 +89,7 @@ uv run pre-commit install
 - [数据模式](docs/data_schema.md)
 - [坐标规范](docs/coordinate_conventions.md)
 - [开发路线与验收](docs/roadmap.md)
-- [模型数据约定](profiles/README.md)
+- [统一资源与模型使用约定](references/README.md)
 
 依赖和锁文件管理遵循 [uv 项目文档](https://docs.astral.sh/uv/guides/projects/)。
 模型验证使用 [Pydantic validators](https://docs.pydantic.dev/latest/concepts/validators/)。

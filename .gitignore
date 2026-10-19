@@ -41,6 +41,9 @@ results/
 *.fna
 *.faa
 *.hmm
+*.HMM
+*.hmm.gz
+*.HMM.gz
 *.parquet
 *.gbff.gz
 *.gbk.gz
