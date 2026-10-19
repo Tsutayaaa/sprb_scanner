@@ -1,0 +1,1439 @@
+{
+  "description": "48 original GenBank CDS locations from Batch 4C; translations excluded; qualifiers/parts preserved for regression.",
+  "records": [
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gene_id": "GCF_000220625.1::NC_015846.1::CDS_000079",
+      "locus_tag": "CCAN_RS11750",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 101423,
+          "end": 101751
+        },
+        {
+          "start": 101750,
+          "end": 102106
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gene_id": "GCF_000220625.1::NC_015846.1::CDS_000588",
+      "locus_tag": "CCAN_RS11795",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 670613,
+          "end": 670941
+        },
+        {
+          "start": 670258,
+          "end": 670614
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gene_id": "GCF_000220625.1::NC_015846.1::CDS_000753",
+      "locus_tag": "CCAN_RS11815",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 872296,
+          "end": 872624
+        },
+        {
+          "start": 872623,
+          "end": 872979
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gene_id": "GCF_000220625.1::NC_015846.1::CDS_001486",
+      "locus_tag": "CCAN_RS07645",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 1744514,
+          "end": 1744692
+        },
+        {
+          "start": 1744691,
+          "end": 1745215
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gene_id": "GCF_000220625.1::NC_015846.1::CDS_001487",
+      "locus_tag": "CCAN_RS11885",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 1745262,
+          "end": 1745590
+        },
+        {
+          "start": 1745589,
+          "end": 1745945
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gene_id": "GCF_000220625.1::NC_015846.1::CDS_002103",
+      "locus_tag": "CCAN_RS11960",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 2444414,
+          "end": 2444742
+        },
+        {
+          "start": 2444741,
+          "end": 2445097
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_000444",
+      "locus_tag": "CELAL_RS02200",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 522686,
+          "end": 523035
+        },
+        {
+          "start": 521806,
+          "end": 522687
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_000507",
+      "locus_tag": "CELAL_RS02530",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 602953,
+          "end": 603302
+        },
+        {
+          "start": 602073,
+          "end": 602954
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_000542",
+      "locus_tag": "CELAL_RS02710",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 645643,
+          "end": 645992
+        },
+        {
+          "start": 644763,
+          "end": 645644
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_001674",
+      "locus_tag": "CELAL_RS08390",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 1945075,
+          "end": 1945337
+        },
+        {
+          "start": 1944207,
+          "end": 1945076
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_001683",
+      "locus_tag": "CELAL_RS08450",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 1954797,
+          "end": 1955059
+        },
+        {
+          "start": 1955058,
+          "end": 1955927
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_002389",
+      "locus_tag": "CELAL_RS12020",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 2757908,
+          "end": 2758257
+        },
+        {
+          "start": 2758256,
+          "end": 2759137
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_002901",
+      "locus_tag": "CELAL_RS14650",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 3375528,
+          "end": 3375877
+        },
+        {
+          "start": 3375876,
+          "end": 3376757
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_003263",
+      "locus_tag": "CELAL_RS16480",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 3791217,
+          "end": 3791455
+        },
+        {
+          "start": 3791454,
+          "end": 3792380
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gene_id": "GCF_000186265.1::NC_014934.1::CDS_003320",
+      "locus_tag": "CELAL_RS16775",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 3842880,
+          "end": 3843229
+        },
+        {
+          "start": 3843228,
+          "end": 3844109
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_001365",
+      "locus_tag": "CPIN_RS06895",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 1656679,
+          "end": 1656932
+        },
+        {
+          "start": 1655820,
+          "end": 1656680
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_002499",
+      "locus_tag": "CPIN_RS12760",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 3126200,
+          "end": 3126471
+        },
+        {
+          "start": 3126470,
+          "end": 3127375
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_003399",
+      "locus_tag": "CPIN_RS17320",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 4355362,
+          "end": 4355615
+        },
+        {
+          "start": 4355614,
+          "end": 4356474
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_003417",
+      "locus_tag": "CPIN_RS17430",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 4378375,
+          "end": 4378628
+        },
+        {
+          "start": 4377516,
+          "end": 4378376
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_003422",
+      "locus_tag": "CPIN_RS17465",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 4383252,
+          "end": 4383505
+        },
+        {
+          "start": 4383504,
+          "end": 4384364
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_004096",
+      "locus_tag": "CPIN_RS20925",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 5261629,
+          "end": 5261882
+        },
+        {
+          "start": 5261881,
+          "end": 5262741
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_005824",
+      "locus_tag": "CPIN_RS29590",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 7585642,
+          "end": 7585895
+        },
+        {
+          "start": 7585894,
+          "end": 7586754
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gene_id": "GCF_000024005.1::NC_013132.1::CDS_006183",
+      "locus_tag": "CPIN_RS31370",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 7982038,
+          "end": 7982295
+        },
+        {
+          "start": 7981184,
+          "end": 7982040
+        }
+      ],
+      "overlap_lengths_bp": [
+        2
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Dyadobacter_fermentans_DSM_18053",
+      "assembly": "GCF_000023125.1",
+      "gene_id": "GCF_000023125.1::NC_013037.1::CDS_000526",
+      "locus_tag": "DFER_RS02610",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 589510,
+          "end": 589760
+        },
+        {
+          "start": 588651,
+          "end": 589511
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Dyadobacter_fermentans_DSM_18053",
+      "assembly": "GCF_000023125.1",
+      "gene_id": "GCF_000023125.1::NC_013037.1::CDS_000878",
+      "locus_tag": "DFER_RS04355",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 1041921,
+          "end": 1042171
+        },
+        {
+          "start": 1042170,
+          "end": 1043030
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Dyadobacter_fermentans_DSM_18053",
+      "assembly": "GCF_000023125.1",
+      "gene_id": "GCF_000023125.1::NC_013037.1::CDS_002295",
+      "locus_tag": "DFER_RS11405",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 2860592,
+          "end": 2860842
+        },
+        {
+          "start": 2860841,
+          "end": 2861701
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Dyadobacter_fermentans_DSM_18053",
+      "assembly": "GCF_000023125.1",
+      "gene_id": "GCF_000023125.1::NC_013037.1::CDS_003103",
+      "locus_tag": "DFER_RS15460",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 3811320,
+          "end": 3811570
+        },
+        {
+          "start": 3811569,
+          "end": 3812429
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Leadbetterella_byssophila_DSM_17132",
+      "assembly": "GCF_000166395.1",
+      "gene_id": "GCF_000166395.1::NC_014655.1::CDS_000798",
+      "locus_tag": "LBYS_RS19555",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 862271,
+          "end": 862533
+        },
+        {
+          "start": 862532,
+          "end": 863404
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Leadbetterella_byssophila_DSM_17132",
+      "assembly": "GCF_000166395.1",
+      "gene_id": "GCF_000166395.1::NC_014655.1::CDS_003262",
+      "locus_tag": "LBYS_RS16450",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 3695729,
+          "end": 3695982
+        },
+        {
+          "start": 3694825,
+          "end": 3695730
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_000127",
+      "locus_tag": "SLIN_RS00610",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 150499,
+          "end": 150761
+        },
+        {
+          "start": 149640,
+          "end": 150500
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_000880",
+      "locus_tag": "SLIN_RS04340",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 1061217,
+          "end": 1061609
+        },
+        {
+          "start": 1060216,
+          "end": 1061219
+        }
+      ],
+      "overlap_lengths_bp": [
+        2
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_002257",
+      "locus_tag": "SLIN_RS11185",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 2760298,
+          "end": 2760560
+        },
+        {
+          "start": 2759439,
+          "end": 2760299
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_002259",
+      "locus_tag": "SLIN_RS11205",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 2761601,
+          "end": 2761993
+        },
+        {
+          "start": 2761991,
+          "end": 2762994
+        }
+      ],
+      "overlap_lengths_bp": [
+        2
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_002262",
+      "locus_tag": "SLIN_RS11230",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 2766052,
+          "end": 2766314
+        },
+        {
+          "start": 2766313,
+          "end": 2767173
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_002637",
+      "locus_tag": "SLIN_RS13115",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 3226056,
+          "end": 3226448
+        },
+        {
+          "start": 3225055,
+          "end": 3226058
+        }
+      ],
+      "overlap_lengths_bp": [
+        2
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_003795",
+      "locus_tag": "SLIN_RS18865",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 4605888,
+          "end": 4606150
+        },
+        {
+          "start": 4606149,
+          "end": 4607009
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gene_id": "GCF_000024525.1::NC_013730.1::CDS_006096",
+      "locus_tag": "SLIN_RS30280",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 7477330,
+          "end": 7477592
+        },
+        {
+          "start": 7476471,
+          "end": 7477331
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Weeksella_virosa_DSM_16922",
+      "assembly": "GCF_900637795.1",
+      "gene_id": "GCF_900637795.1::NZ_LR134404.1::CDS_000486",
+      "locus_tag": "EL204_RS02530",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 530614,
+          "end": 530981
+        },
+        {
+          "start": 529755,
+          "end": 530615
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_001365",
+      "locus_tag": "ZPR_RS06910",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 1562867,
+          "end": 1563147
+        },
+        {
+          "start": 1561942,
+          "end": 1562868
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_001416",
+      "locus_tag": "ZPR_RS07175",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 1616588,
+          "end": 1616868
+        },
+        {
+          "start": 1615663,
+          "end": 1616589
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_001428",
+      "locus_tag": "ZPR_RS07235",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 1627894,
+          "end": 1628135
+        },
+        {
+          "start": 1626975,
+          "end": 1627895
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_002112",
+      "locus_tag": "ZPR_RS10675",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 2403100,
+          "end": 2403380
+        },
+        {
+          "start": 2402175,
+          "end": 2403101
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_002237",
+      "locus_tag": "ZPR_RS11280",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 2549477,
+          "end": 2549757
+        },
+        {
+          "start": 2548552,
+          "end": 2549478
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_002340",
+      "locus_tag": "ZPR_RS11805",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 2667822,
+          "end": 2668102
+        },
+        {
+          "start": 2668101,
+          "end": 2669027
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_003111",
+      "locus_tag": "ZPR_RS15715",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 3595696,
+          "end": 3595976
+        },
+        {
+          "start": 3594771,
+          "end": 3595697
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_003277",
+      "locus_tag": "ZPR_RS16525",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 3771735,
+          "end": 3772015
+        },
+        {
+          "start": 3770810,
+          "end": 3771736
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_003331",
+      "locus_tag": "ZPR_RS16790",
+      "strand": 1,
+      "location_parts": [
+        {
+          "start": 3831719,
+          "end": 3831960
+        },
+        {
+          "start": 3831959,
+          "end": 3832879
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gene_id": "GCF_000023465.1::NC_014041.1::CDS_003743",
+      "locus_tag": "ZPR_RS18870",
+      "strand": -1,
+      "location_parts": [
+        {
+          "start": 4286333,
+          "end": 4286613
+        },
+        {
+          "start": 4285408,
+          "end": 4286334
+        }
+      ],
+      "overlap_lengths_bp": [
+        1
+      ],
+      "category": "annotated_ribosomal_slippage",
+      "qualifiers": {
+        "ribosomal_slippage": [
+          ""
+        ],
+        "note": [
+          "programmed frameshift; Derived by automated computational analysis using gene prediction method: Protein Homology."
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "strain": "Capnocytophaga_canimorsus_Cc5",
+      "assembly": "GCF_000220625.1",
+      "gbff_sha256": "da7810207007f09bd25e93d61d7eb11e764d5a43fceef5b40c97105eb281cbfd"
+    },
+    {
+      "strain": "Cellulophaga_algicola_DSM_14237",
+      "assembly": "GCF_000186265.1",
+      "gbff_sha256": "78b625add5341eeee5154e50e560fba71ec509aafae0b72e238b26f5e19c292c"
+    },
+    {
+      "strain": "Chitinophaga_pinensis_DSM_2588",
+      "assembly": "GCF_000024005.1",
+      "gbff_sha256": "5589deef2d6ba69ab284f8d0f5258421804ef87e76d312f9281cb34d863d9a4f"
+    },
+    {
+      "strain": "Dyadobacter_fermentans_DSM_18053",
+      "assembly": "GCF_000023125.1",
+      "gbff_sha256": "8d4f01c858d187cf7fa737bfa34ab28ecbbb700fc06a937ee3f1b10dac6a63e6"
+    },
+    {
+      "strain": "Leadbetterella_byssophila_DSM_17132",
+      "assembly": "GCF_000166395.1",
+      "gbff_sha256": "d4f3ab88f941ceb3ca6d427160b358bee759e867d09b07e1244e892db8190a38"
+    },
+    {
+      "strain": "Spirosoma_linguale_DSM_74",
+      "assembly": "GCF_000024525.1",
+      "gbff_sha256": "f2f7b3c8ad202ed7814863c0420cb46b850e575a169b159e5f6915b37122abff"
+    },
+    {
+      "strain": "Weeksella_virosa_DSM_16922",
+      "assembly": "GCF_900637795.1",
+      "gbff_sha256": "915024f67db521badc54ee04b3ae5d89253503caee54f01a6121fd47207905eb"
+    },
+    {
+      "strain": "Zunongwangia_profunda_SM-A87",
+      "assembly": "GCF_000023465.1",
+      "gbff_sha256": "bcfb5093a1f65188c0fa8c6b0ba78302bc6c22ad31de58cba6adc4b29eef9fa6"
+    }
+  ]
+}

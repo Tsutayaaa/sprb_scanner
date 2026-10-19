@@ -36,8 +36,38 @@ CDS步数，等步数时坐标上游优先。该去重规则意味着小环上�
 
 仅显式标为circular的contig回绕；topology=unknown按线性边界处理，不自行猜测环状。
 多分段按已有生物学顺序解释；未知链时使用提供的分段顺序作为坐标前进顺序。
-非环状contig中的倒序分段、相互重叠的同一CDS分段、跨原点多次或超过一圈的跨度
-明确报错，避免悄悄修复歧义位置。
+非环状contig中的倒序分段、无明确slippage依据的同一CDS内部重叠、跨原点多次或超过
+一圈的跨度明确报错。带注释的slippage按下面规则建立独立几何并集，不修改原始记录。
+
+## 带ribosomal slippage注释的CDS
+
+Batch 4C的8株失败来自48个CDS，原始GBFF均有/ribosomal_slippage及programmed
+frameshift注释：44个重叠1 bp、4个重叠2 bp；正负链各24个。注释支持这种表示，
+并不代表本模块对生物学机制或组装正确性做了独立实验验证。
+
+允许内部重叠须具有明确证据：无值的ribosomal_slippage qualifier（键存在，值为空），
+或exception精确为ribosomal slippage（忽略大小写及首尾空格，对应NCBI GFF3表示）。
+仅note含frameshift、普通exception、疑似组装/测序差错本身均不够；非空flag值或冲突
+exception仍报错。本次不支持把其他translation discrepancy自动解释成slippage。
+
+验证原始生物学顺序转换后的坐标前进路径；环状最多展开一次、总跨度不超过一圈。
+重复、包含/嵌套而不继续前进的分段即使带slippage标记仍报错。不凭观察到的1/2 bp
+设硬性重叠长度阈值；其他重叠长度也需相同明确注释与前进路径。这是位置表示支持，
+不是判定任意长度的重叠在生物学上合理。
+
+每个合法CDS构建一次排序、去重的genomic interval union（接触/重叠片段合并，真实
+内部间隙保留），只缓存于IndexedCDS.parts。几何计算使用并集，重叠碱基只计算一次；
+排序anchor仍来自原始坐标前进路径，CDS排名/直接邻接按基因而不是按片段计算。
+GeneRecord.location_parts、原始分段顺序、qualifiers及蛋白翻译均原样保留，导出JSON/TSV
+中的基因坐标仍是原始分段。两个CDS各自可有slippage，交集使用它们的去重并集。
+
+geometry仍接收非空、排序且内部不重叠的区间元组；索引负责验证注释并建立该并集，
+不能把未经验证的重叠分段直接传给geometry。距离及关联元数据的geometry_policy记录
+这条规则。原有无内部重叠的线性、compound、环状行为保持不变。
+
+来源：[INSDC feature table](https://www.insdc.org/submitting-standards/feature-table/)定义
+无值flag及join表示；[NCBI GFF3文档](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/file-formats/annotation-files/about-ncbi-gff3/)
+区分slippage与组装差错造成的相似重叠，列出exception=ribosomal slippage。
 
 ## 距离与重叠
 
@@ -114,4 +144,23 @@ NeighborhoodIndex实例。索引引用现有冻结记录；与core约定一致�
 
 真实结果在仓库外/private/tmp/sprb-neighborhood-validation/FJ，另有verify_fj.py核查
 目标/邻居身份、坐标关系、10邻居去重与输出校验值。CI使用已有小型FJ片段作离线验证。
+新增tests/unit/test_slippage_neighborhood.py覆盖48条原始位置及合成边界情况；
+tests/integration/test_neighborhood_cli.py验证GBFF→prepared→CLI不改变翻译/分段。
 本批不添加HMM或MMseqs2扫描、不做功能配对；Batch 4B再使用这些客观关系关联候选。
+
+
+## Slippage修复验收（追加于PR #5）
+
+完整本地pytest 214项通过，Ruff lint/format与sdist/wheel通过。48条真实位置及合成
+1/2/5/19 bp重叠、双向union交集、compound内部间隙、正负链、环状跨原点、异常拒绝
+均有回归；GBFF→prepared→CLI验证原始分段、qualifiers与translation不变。
+
+仅用原有prepared和HMM结果重跑Batch 4C，8/8原失败株恢复，21/21成功；此前13株完整
+associations.json逐字段不变，FJ仍为9个邻接型+3个no_local_hit，43/61 bp重点位点不变。
+全部源文件/模型/扫描的SHA-256不变；没有重扫HMM或更改任何分数、阈值或cargo规则。
+
+原Batch 4C结果保持不变。修复后的21株中278个GA cargo有119个直接邻接GA SprF-like
+候选、136个在±5 CDS有GA SprF-like候选。完整结果及注释核查位于仓库外：
+`~/.local/share/sprb-scanner/analyses/batch4c-slippage-fix-20261019/`。
+其中validation_report.md、rerun_summary.tsv及cds_audit.tsv说明恢复情况；不把旧13株
+分母的比例与新21株比例混用。结果不代表功能性cargo–shuttle配对。

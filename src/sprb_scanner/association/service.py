@@ -14,6 +14,7 @@ from sprb_scanner.core.exceptions import InputError
 from sprb_scanner.core.models import GenomeDataset
 from sprb_scanner.io.common import sha256
 from sprb_scanner.io.exporters import validate_prepared, write_json
+from sprb_scanner.neighborhood.analyzer import GEOMETRY_POLICY
 
 
 def write_rows(path, rows, fields):
@@ -223,6 +224,7 @@ def run_association(prepared: Path, bctd_scan: Path, sprf_scan: Path, output: Pa
                     "classification": "none",
                 },
                 "coordinates": result.coordinates,
+                "geometry_policy": GEOMETRY_POLICY,
                 "distance_rule": (
                     "nonnegative minimum part-edge gap; overlap separate; shortest circle"
                 ),

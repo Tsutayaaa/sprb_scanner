@@ -91,3 +91,64 @@ def test_cli_invalid_target_window_input_and_no_overwrite(tmp_path):
     args[-1] = str(tmp_path / "tampered")
     assert runner.invoke(app, args).exit_code == 2
     assert not (tmp_path / "tampered").exists()
+
+
+def test_genbank_slippage_cli_keeps_extraction_parts_and_translation(tmp_path):
+    from Bio import SeqIO
+    from Bio.Seq import Seq
+    from Bio.SeqFeature import CompoundLocation, SeqFeature, SimpleLocation
+    from Bio.SeqRecord import SeqRecord
+
+    record = SeqRecord(Seq("A" * 100), id="slip", annotations={"molecule_type": "DNA"})
+    qualifiers = {
+        "locus_tag": ["SLIP"],
+        "ribosomal_slippage": [""],
+        "note": ["programmed frameshift"],
+        "protein_id": ["WP_SYNTHETIC.1"],
+        "translation": ["KKKKKKK"],
+    }
+    record.features = [
+        SeqFeature(
+            CompoundLocation([SimpleLocation(0, 11, strand=1), SimpleLocation(10, 20, strand=1)]),
+            type="CDS",
+            qualifiers=qualifiers,
+        ),
+        SeqFeature(
+            SimpleLocation(9, 12, strand=1),
+            type="CDS",
+            qualifiers={"locus_tag": ["NEIGHBOR"], "pseudo": [""]},
+        ),
+    ]
+    gbff = tmp_path / "slippage.gbff"
+    SeqIO.write(record, gbff, "genbank")
+    dataset = parse_genbank(gbff, "test")
+    gene = next(g for g in dataset.genes if g.locus_tag == "SLIP")
+    prepared = tmp_path / "prepared"
+    export_prepared(dataset, prepared, [], AppConfig())
+    original = (prepared / "dataset.json").read_bytes()
+    output = tmp_path / "slippage"
+    result = CliRunner().invoke(
+        app,
+        [
+            "neighborhood",
+            "--prepared",
+            str(prepared),
+            "--gene",
+            gene.gene_id,
+            "--output",
+            str(output),
+        ],
+    )
+    assert result.exit_code == 0, result.output
+    payload = json.loads((output / "neighborhood.json").read_text())
+    assert payload["target"]["location_parts"] == [
+        {"start": 0, "end": 11},
+        {"start": 10, "end": 20},
+    ]
+    assert payload["target"]["qualifiers"]["ribosomal_slippage"] == [""]
+    assert payload["target"]["qualifiers"]["translation"] == ["KKKKKKK"]
+    assert payload["neighbors"][0]["overlap_bp"] == 3
+    assert dataset.proteins[0].sequence == "KKKKKKK"
+    assert (prepared / "dataset.json").read_bytes() == original
+    meta = json.loads((output / "run_metadata.json").read_text())
+    assert "interval union" in meta["geometry_policy"]

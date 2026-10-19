@@ -12,7 +12,7 @@ from sprb_scanner.core.exceptions import InputError
 from sprb_scanner.core.models import GenomeDataset
 from sprb_scanner.io.common import sha256
 from sprb_scanner.io.exporters import validate_prepared, write_json
-from sprb_scanner.neighborhood.analyzer import NeighborhoodIndex
+from sprb_scanner.neighborhood.analyzer import GEOMETRY_POLICY, NeighborhoodIndex
 from sprb_scanner.neighborhood.models import NeighborRecord
 
 
@@ -85,6 +85,7 @@ def run_neighborhood(prepared: Path, gene_id: str, output: Path, window=5):
                     severity: sum(q.severity == severity for q in dataset.quality_issues)
                     for severity in ("warning", "error")
                 },
+                "geometry_policy": GEOMETRY_POLICY,
                 "distance_rule": (
                     "distance_bp=nonnegative minimum part-edge gap (0 for overlap); "
                     "overlap_bp=total coding intersection; "
