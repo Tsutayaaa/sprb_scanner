@@ -32,7 +32,7 @@ from empty tables or dump arbitrary nested objects into Parquet.
 - Motility: genome/metadata → species evidence. Classifier: all evidence → ranked candidates.
 - Structure: candidate proteins → structural evidence. Viewers: records/evidence → visual output.
 
-Future modules are documented rather than represented by empty packages. BioPython is used by batch 2. PyHMMER powers the HMM engine. MMseqs2 and Parquet remain future work.
+Future modules are documented rather than represented by empty packages. BioPython is used by batch 2. PyHMMER powers the HMM engine. MMseqs2 is implemented in scanners.mmseqs; Parquet remains future work.
 
 PorP/SprF dual-model orchestration is implemented in scanners.sprf and calls the existing HMM
 engine independently. It preserves model-specific results, partial failures and per-protein evidence;
@@ -44,3 +44,7 @@ domain counts on top of run_hmm without replacing the search algorithm or filter
 
 Batch 4A implements an independent neighborhood package over core records, without scanner imports.
 See neighborhood.md for index reuse, compound/circular geometry and CLI contracts.
+
+Batch 5A adds scanners.mmseqs: external CPU MMseqs2, managed database manifests, and
+SequenceAlignment as a DomainHit subclass. No shared HMM/neighborhood behavior is changed.
+See mmseqs_engine.md for the database/CLI contracts and retention limits.

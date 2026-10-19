@@ -19,3 +19,7 @@ class DownloadError(ScannerError):
 
 class HMMError(ScannerError):
     """Profile loading, provenance or HMM search failed."""
+
+
+class MMseqsError(ScannerError):
+    """MMseqs2 database construction, execution or alignment validation failed."""

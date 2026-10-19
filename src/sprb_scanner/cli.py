@@ -295,3 +295,64 @@ def typeb_sprf_associate(
         emit(run_association(prepared, bctd_scan, sprf_scan, output, window))
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("mmseqs-createdb")
+def mmseqs_createdb(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared proteome")],
+    output: Annotated[Path, typer.Option(help="New managed MMseqs2 database directory")],
+    executable: str = "mmseqs",
+    threads: int = 1,
+    timeout_seconds: int = 3600,
+):
+    """Create a reusable protein database with ID mappings and SHA-256 manifests."""
+    from sprb_scanner.scanners.mmseqs import MMseqsConfig, create_database
+
+    try:
+        emit(
+            create_database(
+                prepared,
+                output,
+                MMseqsConfig(
+                    executable=executable,
+                    threads=threads,
+                    timeout_seconds=timeout_seconds,
+                ),
+            )
+        )
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
+
+
+@app.command("mmseqs-search")
+def mmseqs_search(
+    query: Annotated[Path, typer.Option(help="Protein FASTA with unique query IDs")],
+    output: Annotated[Path, typer.Option(help="New alignment output directory")],
+    prepared: Annotated[Path | None, typer.Option(help="Validated prepared proteome")] = None,
+    database: Annotated[Path | None, typer.Option(help="Managed mmseqs-createdb directory")] = None,
+    sensitivity: float = 5.7,
+    evalue: float = 0.001,
+    threads: int = 1,
+    executable: str = "mmseqs",
+    max_seqs: int | None = None,
+    alternative_alignments: int | None = None,
+    split_memory_limit: str = "2G",
+    timeout_seconds: int = 3600,
+):
+    """Search full proteins/fragments; retain all reported alignments and separate coverages."""
+    from sprb_scanner.scanners.mmseqs import MMseqsConfig, run_search
+
+    try:
+        settings = MMseqsConfig(
+            sensitivity=sensitivity,
+            evalue=evalue,
+            threads=threads,
+            executable=executable,
+            max_seqs=max_seqs,
+            alternative_alignments=alternative_alignments,
+            split_memory_limit=split_memory_limit,
+            timeout_seconds=timeout_seconds,
+        )
+        emit(run_search(query, output, prepared, database, settings))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
