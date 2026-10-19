@@ -1,0 +1,101 @@
+{
+  "description": "2019 Table S2 cargo list; 2025 orphan groups; adjacent family loci verified against current GBFF. No functional pairing inference.",
+  "sources": [
+    "https://journals.asm.org/doi/suppl/10.1128/jb.00218-19/suppl_file/jb.00218-19-s0001.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12618676/"
+  ],
+  "gbff_sha256": "8b4ee0e1736eaa7686af2adeac7b75eb6fd2f6b824695ef94a5fe3d9b7ae296b",
+  "reference_cargos": [
+    {
+      "old_locus_tag": "Fjoh_0979",
+      "source_protein_id": "WP_012023065.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_0978",
+        "Fjoh_0980"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_1123",
+      "source_protein_id": "WP_012023208.1",
+      "group": "orphan",
+      "adjacent_loci": []
+    },
+    {
+      "old_locus_tag": "Fjoh_1645",
+      "source_protein_id": "WP_012023721.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_1646"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_1720",
+      "source_protein_id": "WP_012023796.1",
+      "group": "orphan",
+      "adjacent_loci": []
+    },
+    {
+      "old_locus_tag": "Fjoh_1985",
+      "source_protein_id": "WP_012024057.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_1986"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_2273",
+      "source_protein_id": "WP_012024339.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_2274"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_3478",
+      "source_protein_id": "WP_148207217.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_3477"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_3952",
+      "source_protein_id": "WP_012025928.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_3951"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_3971",
+      "source_protein_id": "WP_012025947.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_3972"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_4538",
+      "source_protein_id": "WP_012026503.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_4539"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_4750",
+      "source_protein_id": "WP_012026715.1",
+      "group": "adjacent",
+      "adjacent_loci": [
+        "Fjoh_4749"
+      ]
+    },
+    {
+      "old_locus_tag": "Fjoh_4934",
+      "source_protein_id": "WP_235023034.1",
+      "group": "orphan",
+      "adjacent_loci": []
+    }
+  ]
+}
