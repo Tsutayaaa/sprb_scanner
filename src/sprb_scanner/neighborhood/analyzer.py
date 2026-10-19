@@ -3,8 +3,13 @@
 from dataclasses import dataclass
 
 from sprb_scanner.core.exceptions import InputError
-from sprb_scanner.core.models import GeneRecord, GenomeDataset
+from sprb_scanner.core.models import GeneRecord, GenomeDataset, Interval
 from sprb_scanner.neighborhood.models import NeighborhoodResult, NeighborRecord
+
+GEOMETRY_POLICY = (
+    "cached genomic interval union for supported ribosomal-slippage CDS; "
+    "original biological location_parts and qualifiers preserved"
+)
 
 
 @dataclass(frozen=True)
@@ -15,28 +20,64 @@ class IndexedCDS:
     crosses_origin: bool
 
 
+def genomic_union(parts):
+    """Return disjoint genomic intervals; never change biological extraction parts."""
+    merged = []
+    for part in sorted(parts, key=lambda p: (p.start, p.end)):
+        if merged and part.start <= merged[-1].end:
+            previous = merged.pop()
+            merged.append(Interval(start=previous.start, end=max(previous.end, part.end)))
+        else:
+            merged.append(part)
+    return tuple(merged)
+
+
 def index_gene(gene, contig):
-    # location_parts are in biological extraction order, including on the negative strand.
+    # Keep biological order for provenance; reverse only the coordinate-forward view.
     forward = gene.location_parts if gene.strand != -1 else tuple(reversed(gene.location_parts))
-    parts = tuple(sorted(gene.location_parts, key=lambda p: (p.start, p.end)))
-    if any(a.end > b.start for a, b in zip(parts, parts[1:], strict=False)):
-        raise InputError(f"Overlapping location parts within CDS: {gene.gene_id}")
+    ordered = tuple(sorted(gene.location_parts, key=lambda p: (p.start, p.end)))
+    overlapping = any(a.end > b.start for a, b in zip(ordered, ordered[1:], strict=False))
+    if overlapping:
+        # INSDC flag or the exact NCBI GFF3 exception, never free-text notes.
+        flag = "ribosomal_slippage" in gene.qualifiers
+        flag_valid = flag and all(not v.strip() for v in gene.qualifiers["ribosomal_slippage"])
+        exceptions = tuple(v.strip().casefold() for v in gene.qualifiers.get("exception", ()))
+        if flag and not flag_valid:
+            raise InputError(f"Invalid value for /ribosomal_slippage: {gene.gene_id}")
+        if not (flag_valid or "ribosomal slippage" in exceptions):
+            raise InputError(
+                f"Overlapping location parts require ribosomal slippage annotation: {gene.gene_id}"
+            )
+        if any(value and value != "ribosomal slippage" for value in exceptions):
+            raise InputError(f"Unexplained exception on overlapping CDS: {gene.gene_id}")
     drops = sum(b.start < a.start for a, b in zip(forward, forward[1:], strict=False))
     circular = contig.topology == "circular"
     if drops and not circular:
         raise InputError(f"Origin-spanning or unordered CDS on non-circular contig: {gene.gene_id}")
     if drops > 1:
         raise InputError(f"CDS makes multiple origin traversals: {gene.gene_id}")
+    # Unroll the original forward path, including any circular-origin transition.
+    # A slippage join must still advance both start and end: annotation cannot
+    # authorize duplicated/contained segments, a reversed path or a second turn.
+    offset, previous_start, previous_end = 0, forward[0].start, forward[0].end
+    for previous, part in zip(forward, forward[1:], strict=False):
+        if part.start < previous.start:
+            offset += contig.length
+        start, end = part.start + offset, part.end + offset
+        if start <= previous_start or end <= previous_end:
+            raise InputError(f"Non-progressive/duplicated CDS location parts: {gene.gene_id}")
+        previous_start, previous_end = start, end
     crosses = bool(drops)
-    if crosses and forward[-1].end > forward[0].start:
+    if crosses and previous_end - forward[0].start > contig.length:
         raise InputError(f"CDS span exceeds one circle: {gene.gene_id}")
-    return IndexedCDS(gene, parts, forward[0].start, crosses)
+    return IndexedCDS(gene, genomic_union(ordered), forward[0].start, crosses)
 
 
 def geometry(a, b, circle_length=None):
     """Return (nonnegative gap, coding overlap bp, shortest-gap origin crossing).
 
-    Inputs must be nonempty, coordinate-sorted, internally disjoint Interval tuples.
+    Inputs must be nonempty, coordinate-sorted, internally disjoint Interval tuples
+    (NeighborhoodIndex caches each validated CDS genomic union at construction).
     Swapping a and b preserves all three values. Overlap and touching both have
     distance zero; overlap is distinguished by its positive intersection length.
     """

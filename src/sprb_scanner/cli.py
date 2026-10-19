@@ -278,3 +278,20 @@ def neighborhood(
         typer.echo(f"Output: {output.resolve()}")
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("typeb-sprf-associate")
+def typeb_sprf_associate(
+    prepared: Annotated[Path, typer.Option(help="Prepared annotated genome")],
+    bctd_scan: Annotated[Path, typer.Option(help="Complete bctd-hmm-search output")],
+    sprf_scan: Annotated[Path, typer.Option(help="Complete sprf-search output")],
+    output: Annotated[Path, typer.Option(help="New association output directory")],
+    window: Annotated[int, typer.Option(min=0, help="CDS ranks on each side")] = 5,
+):
+    """Associate existing Type B / PorP-SprF HMM domains by local genomic context."""
+    from sprb_scanner.association.service import run_association
+
+    try:
+        emit(run_association(prepared, bctd_scan, sprf_scan, output, window))
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
