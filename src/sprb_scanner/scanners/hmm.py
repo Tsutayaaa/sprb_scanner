@@ -1,5 +1,6 @@
 """Generic single-profile protein HMM engine with lossless domain evidence."""
 
+import csv
 import hashlib
 import io
 import json
@@ -15,6 +16,7 @@ from sprb_scanner.core.config import ProfileConfig
 from sprb_scanner.core.exceptions import HMMError
 from sprb_scanner.core.models import (
     DomainHit,
+    GatheringEvidence,
     HMMStatistics,
     Interval,
     Positive,
@@ -32,6 +34,114 @@ class HMMSearchConfig(Record):
     threads: Positive = 1
     seed: int = Field(default=42, ge=1, le=2147483647, strict=True)
     max_sensitivity: bool = False
+
+
+def gathering_evidence(sequence_score, domain_score, cutoffs):
+    """Use the loaded model's GA; absent cutoffs are not inferred."""
+    if cutoffs is None:
+        return GatheringEvidence(status="unavailable")
+    sequence_cutoff, domain_cutoff = cutoffs
+    sequence_passed = sequence_score >= sequence_cutoff
+    domain_passed = domain_score >= domain_cutoff
+    return GatheringEvidence(
+        status="passed_ga" if sequence_passed and domain_passed else "below_ga",
+        sequence_cutoff=sequence_cutoff,
+        domain_cutoff=domain_cutoff,
+        sequence_margin=sequence_score - sequence_cutoff,
+        domain_margin=domain_score - domain_cutoff,
+        sequence_passed=sequence_passed,
+        domain_passed=domain_passed,
+    )
+
+
+def evidence_summary(hits, ga_available):
+    """Disjoint protein groups: any passed domain takes precedence over below-GA."""
+    states = ("passed_ga", "below_ga", "unavailable")
+    domains = {state: 0 for state in states}
+    proteins = {}
+    for hit in hits:
+        state = hit.hmm.ga.status
+        domains[state] += 1
+        proteins.setdefault(hit.protein_id, set()).add(state)
+    counts = {state: 0 for state in states}
+    for values in proteins.values():
+        state = next(state for state in states if state in values)
+        counts[state] += 1
+    return {
+        "ga_available": ga_available,
+        "domain_counts": domains,
+        "protein_counts": counts,
+        "total_domains": len(hits),
+        "total_hit_proteins": len(proteins),
+        "protein_policy": "any passed_ga domain wins; otherwise below_ga or unavailable",
+        "scope": "all backend-returned domains, including unreported; not a final classification",
+    }
+
+
+def write_evidence_table(path, hits):
+    fields = [
+        "hit_id",
+        "protein_id",
+        "model_id",
+        "model_version",
+        "model_sha256",
+        "ga_status",
+        "sequence_ga",
+        "domain_ga",
+        "sequence_margin",
+        "domain_margin",
+        "sequence_passed_ga",
+        "domain_passed_ga",
+        "sequence_bit_score",
+        "domain_bit_score",
+        "sequence_evalue",
+        "independent_domain_evalue",
+        "conditional_domain_evalue",
+        "start",
+        "end",
+        "query_start",
+        "query_end",
+        "ctd_distance",
+        "query_coverage",
+        "target_coverage",
+        "sequence_reported",
+        "domain_reported",
+    ]
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, delimiter="\t")
+        writer.writeheader()
+        for hit in hits:
+            stats, ga = hit.hmm, hit.hmm.ga
+            writer.writerow(
+                dict(
+                    hit_id=hit.hit_id,
+                    protein_id=hit.protein_id,
+                    model_id=hit.model.model_id,
+                    model_version=hit.model.version,
+                    model_sha256=hit.model.sha256,
+                    ga_status=ga.status,
+                    sequence_ga=ga.sequence_cutoff,
+                    domain_ga=ga.domain_cutoff,
+                    sequence_margin=ga.sequence_margin,
+                    domain_margin=ga.domain_margin,
+                    sequence_passed_ga=ga.sequence_passed,
+                    domain_passed_ga=ga.domain_passed,
+                    sequence_bit_score=stats.sequence_bit_score,
+                    domain_bit_score=hit.bit_score,
+                    sequence_evalue=stats.sequence_evalue,
+                    independent_domain_evalue=stats.independent_domain_evalue,
+                    conditional_domain_evalue=stats.conditional_domain_evalue,
+                    start=hit.start,
+                    end=hit.end,
+                    query_start=hit.query_start,
+                    query_end=hit.query_end,
+                    ctd_distance=hit.ctd_distance,
+                    query_coverage=hit.query_coverage,
+                    target_coverage=hit.target_coverage,
+                    sequence_reported=stats.sequence_reported,
+                    domain_reported=stats.domain_reported,
+                )
+            )
 
 
 def text(value):
@@ -144,8 +254,13 @@ def scan(proteins, profile: ProfileConfig, config: HMMSearchConfig):
                 )
                 raw.append(record)
                 stats = HMMStatistics(
-                    **{k: record[k] for k in HMMStatistics.model_fields if k != "envelope"},
+                    **{
+                        k: record[k]
+                        for k in HMMStatistics.model_fields
+                        if k not in {"envelope", "ga"}
+                    },
                     envelope=Interval(start=domain.env_from - 1, end=domain.env_to),
+                    ga=gathering_evidence(target.score, domain.score, hmm.cutoffs.gathering),
                 )
                 hits.append(
                     DomainHit(
@@ -190,6 +305,9 @@ def run_hmm(proteins, profile: ProfileConfig, output: Path, config=None):
             write_json(stage / "hits.json", [h.model_dump(mode="json") for h in hits])
             write_tsv(stage / "hits.tsv", hits, list(DomainHit.model_fields))
             write_json(stage / "raw_domains.json", raw)
+            evidence = evidence_summary(hits, metadata["gathering_cutoffs"] is not None)
+            write_json(stage / "evidence_summary.json", evidence)
+            write_evidence_table(stage / "hit_evidence.tsv", hits)
             for name, data in native.items():
                 (stage / name).write_bytes(data)
             metadata["domain_count"] = len(hits)
@@ -221,4 +339,11 @@ def run_hmm(proteins, profile: ProfileConfig, output: Path, config=None):
             shutil.rmtree(stage)
     if failure:
         raise failure
-    return {"state": status.state, "domain_count": len(hits), "output": str(output)}
+    return {
+        "state": status.state,
+        "domain_count": len(hits),
+        "output": str(output),
+        "ga_available": evidence["ga_available"],
+        "ga_domain_counts": evidence["domain_counts"],
+        "ga_protein_counts": evidence["protein_counts"],
+    }

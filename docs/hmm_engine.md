@@ -78,3 +78,29 @@ TIGR04131.1，NCBI PGAP HMM release 20.0，长度 85，描述 T9SS type B sortin
 依据：[PyHMMER 统计量](https://pyhmmer.readthedocs.io/en/latest/guide/significance.html)、
 [结果字段](https://pyhmmer.readthedocs.io/en/stable/api/plan7/results.html)、
 [NCBI 模型目录](https://ftp.ncbi.nlm.nih.gov/hmm/current/)。
+
+
+## GA 证据分层
+
+每条新命中在 `hmm.ga` 保存 `status`、模型的 sequence/domain GA cutoff、各自的
+score-cutoff 差值及通过标志。阈值从校验后的模型读取，不固定为35，也不替代原始分数。
+
+- `passed_ga`：sequence score 和该 domain score 均 ≥对应 GA（包含等于边界）。
+- `below_ga`：已有后端 domain 命中，但至少一项低于 GA。弱命中和未报告命中同样保留；
+  此状态仅表示比较结果，不自动确认为 Type B CTD，也不证明有分泌功能。
+- `unavailable`：模型没有 GA，cutoff/差值/通过标志为 null，不推导为失败或通过。
+
+旧记录的 `hmm.ga` 可以缺省（null），表示尚未计算；这与新记录的 unavailable 不同。
+原始 raw_domains.json、分数、三种 E-value、坐标、reported/included 标志均不改变。
+
+新增 `hit_evidence.tsv` 将 GA 字段、原始分数、E-value、坐标、末端距离、覆盖率和模型
+来源标识平铺成列；`hits.json` 与 `hits.tsv` 也包含完整嵌套 GA 证据。
+新增 `evidence_summary.json` 给出 domain 和蛋白两个层面的三类计数。蛋白类别互斥：
+任何 domain 通过 GA 即计入 passed_ga，否则计入 below_ga；无 GA 则为 unavailable。
+零命中时各类计数均为0，ga_available 仍准确反映模型是否有阈值。失败不输出成功汇总。
+
+这些字段用于后续组合文献证据、末端距离、覆盖率和邻域关系；不在当前引擎引入新的
+独立 E-value、蛋白长度或末端位置过滤，也不自动降低 GA 阈值。
+
+测试新增双阈值边界、单项不通过、无GA、旧记录读取、低于GA命中保留、互斥蛋白汇总、
+阈值来源和错误差值校验。临时 FJ 实测用于核对新输出，不新增生物学回归测试。

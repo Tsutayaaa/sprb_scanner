@@ -183,3 +183,89 @@ def test_export_and_statistics_validation(profile, tmp_path):
     meta = json.loads((out / "run_metadata.json").read_text())
     for name, checksum in meta["output_sha256"].items():
         assert hashlib.sha256((out / name).read_bytes()).hexdigest() == checksum
+
+
+@pytest.mark.parametrize(
+    "sequence_score,domain_score,expected",
+    [
+        (35, 35, "passed_ga"),
+        (34.9, 35, "below_ga"),
+        (35, 34.9, "below_ga"),
+        (29.2, 27.9, "below_ga"),
+    ],
+)
+def test_ga_requires_both_scores(sequence_score, domain_score, expected):
+    from sprb_scanner.scanners.hmm import gathering_evidence
+
+    ga = gathering_evidence(sequence_score, domain_score, (35, 35))
+    assert ga.status == expected
+    assert ga.sequence_margin == sequence_score - 35
+    assert ga.domain_margin == domain_score - 35
+
+
+def test_ga_unavailable_and_legacy_statistics(profile):
+    from sprb_scanner.core.models import HMMStatistics
+    from sprb_scanner.scanners.hmm import gathering_evidence
+
+    ga = gathering_evidence(100, 100, None)
+    assert ga.status == "unavailable"
+    assert ga.sequence_cutoff is None and ga.sequence_passed is None
+    hits, _, _, _ = scan(proteins(), profile, HMMSearchConfig())
+    assert hits and all(h.hmm.ga.status == "unavailable" for h in hits)
+    legacy = hits[0].hmm.model_dump()
+    legacy.pop("ga")
+    assert HMMStatistics.model_validate(legacy).ga is None
+
+
+def test_ga_provenance_and_summary_preserve_domains(profile, tmp_path):
+    from sprb_scanner.scanners.hmm import evidence_summary, gathering_evidence
+
+    hmm = load_hmm(profile)
+    # Very high model cutoffs: genuine strong matches remain below GA and must not be dropped.
+    hmm.cutoffs.gathering = (10000, 10001)
+    with profile.path.open("wb") as handle:
+        hmm.write(handle)
+    provenance = profile.provenance.model_copy(
+        update={"sha256": hashlib.sha256(profile.path.read_bytes()).hexdigest()}
+    )
+    profile = profile.model_copy(update={"provenance": provenance})
+    hits, raw, _, _ = scan(proteins(), profile, HMMSearchConfig())
+    assert len(hits) >= 2 and len(hits) == len(raw)
+    for hit in hits:
+        assert hit.hmm.ga.status == "below_ga"
+        assert hit.hmm.ga.sequence_cutoff == 10000
+        assert hit.hmm.ga.domain_cutoff == 10001
+        assert hit.model == provenance
+    # One passed domain plus below-GA domains on the same protein counts as one passed protein.
+    first = hits[0]
+    changed = first.model_copy(
+        update={
+            "hmm": first.hmm.model_copy(
+                update={
+                    "ga": gathering_evidence(
+                        first.hmm.sequence_bit_score, first.bit_score, (-100, -100)
+                    )
+                }
+            )
+        }
+    )
+    summary = evidence_summary([changed, *hits], True)
+    assert summary["domain_counts"]["passed_ga"] == 1
+    assert summary["domain_counts"]["below_ga"] == len(hits)
+    assert summary["protein_counts"]["passed_ga"] == 1
+    assert sum(summary["protein_counts"].values()) == summary["total_hit_proteins"]
+    out = tmp_path / "ga_output"
+    result = run_hmm(proteins(), profile, out)
+    assert result["ga_domain_counts"]["below_ga"] == len(hits)
+    assert json.loads((out / "evidence_summary.json").read_text())["ga_available"]
+    import csv
+
+    with (out / "hit_evidence.tsv").open() as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    assert len(rows) == len(hits)
+    assert all(row["ga_status"] == "below_ga" for row in rows)
+    # Public validation rejects inconsistent margins instead of silently trusting an evidence flag.
+    payload = first.model_dump(exclude_computed_fields=True)
+    payload["hmm"]["ga"]["sequence_cutoff"] = 9999
+    with pytest.raises(ValidationError, match="GA margins"):
+        DomainHit.model_validate(payload)

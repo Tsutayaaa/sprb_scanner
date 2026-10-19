@@ -97,6 +97,43 @@ class ModelProvenance(Record):
     sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
 
 
+class GatheringEvidence(Record):
+    """Model GA comparison only; this is not a biological classification."""
+
+    status: Literal["passed_ga", "below_ga", "unavailable"]
+    sequence_cutoff: float | None = Field(default=None, allow_inf_nan=False)
+    domain_cutoff: float | None = Field(default=None, allow_inf_nan=False)
+    sequence_margin: float | None = Field(default=None, allow_inf_nan=False)
+    domain_margin: float | None = Field(default=None, allow_inf_nan=False)
+    sequence_passed: bool | None = None
+    domain_passed: bool | None = None
+
+    @model_validator(mode="after")
+    def consistent(self):
+        values = (
+            self.sequence_cutoff,
+            self.domain_cutoff,
+            self.sequence_margin,
+            self.domain_margin,
+            self.sequence_passed,
+            self.domain_passed,
+        )
+        if self.status == "unavailable":
+            if any(value is not None for value in values):
+                raise ValueError("Unavailable GA cannot have thresholds or comparisons")
+        else:
+            if any(value is None for value in values):
+                raise ValueError("GA comparison requires both cutoffs, margins and pass flags")
+            if self.sequence_passed != (self.sequence_margin >= 0):
+                raise ValueError("Sequence GA flag disagrees with margin")
+            if self.domain_passed != (self.domain_margin >= 0):
+                raise ValueError("Domain GA flag disagrees with margin")
+            expected = "passed_ga" if self.sequence_passed and self.domain_passed else "below_ga"
+            if self.status != expected:
+                raise ValueError("GA status disagrees with component flags")
+        return self
+
+
 class HMMStatistics(Record):
     sequence_evalue: float = Field(ge=0, allow_inf_nan=False)
     sequence_bit_score: float = Field(allow_inf_nan=False)
@@ -107,6 +144,7 @@ class HMMStatistics(Record):
     sequence_included: bool
     domain_reported: bool
     domain_included: bool
+    ga: GatheringEvidence | None = None
 
 
 class DomainHit(Interval):
@@ -139,6 +177,13 @@ class DomainHit(Interval):
                 raise ValueError("HMM statistics require independent-domain HMM hits")
             if self.evalue != self.hmm.independent_domain_evalue:
                 raise ValueError("Primary E-value must equal independent domain E-value")
+            ga = self.hmm.ga
+            if ga is not None and ga.status != "unavailable":
+                if (
+                    ga.sequence_margin != self.hmm.sequence_bit_score - ga.sequence_cutoff
+                    or ga.domain_margin != self.bit_score - ga.domain_cutoff
+                ):
+                    raise ValueError("GA margins disagree with hit scores and model cutoffs")
             if not (
                 self.hmm.envelope.start
                 <= self.start
