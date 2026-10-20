@@ -349,15 +349,25 @@ def test_interrupted_attempt_is_preserved_and_retried(small_pipeline, tmp_path, 
 def test_successful_zero_hits_distinct_from_disabled_sources(small_pipeline, tmp_path):
     data = small_pipeline
     ds = data["dataset"]
+    # MMseqs2 15 can reject an entirely masked target database rather than
+    # report an empty search. Use searchable unrelated sequences for the
+    # successful-zero-hit case; backend failures must remain failures.
+    rng = random.Random(999)
+    unrelated = "".join(rng.choices("ACDEFGHIKLMNPQRSTVWY", k=150))
     negative = ds.model_copy(
         update={
-            "proteins": tuple(p.model_copy(update={"sequence": "P" * 120}) for p in ds.proteins)
+            "proteins": tuple(p.model_copy(update={"sequence": unrelated}) for p in ds.proteins)
         }
     )
     prep = tmp_path / "negative"
     export_prepared(negative, prep, [], AppConfig())
     report = run_pipeline(prep, data["config"], tmp_path / "run")
-    assert report["state"] == "succeeded"
+    logs = (
+        ""
+        if report["state"] == "succeeded"
+        else "\n".join(p.read_text() for p in (tmp_path / "run").rglob("backend.log"))
+    )
+    assert report["state"] == "succeeded", {"report": report, "backend_logs": logs}
     merged = evidence(report)
     assert not merged["profiles"]
     assert all(
