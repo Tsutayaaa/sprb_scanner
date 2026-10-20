@@ -1,0 +1,238 @@
+{
+  "$defs": {
+    "EnabledStages": {
+      "additionalProperties": false,
+      "properties": {
+        "typeb_ctd": {
+          "default": true,
+          "title": "Typeb Ctd",
+          "type": "boolean"
+        },
+        "porp_sprf": {
+          "default": true,
+          "title": "Porp Sprf",
+          "type": "boolean"
+        },
+        "sprb_repeat": {
+          "default": true,
+          "title": "Sprb Repeat",
+          "type": "boolean"
+        },
+        "rn28": {
+          "default": true,
+          "title": "Rn28",
+          "type": "boolean"
+        }
+      },
+      "title": "EnabledStages",
+      "type": "object"
+    },
+    "NeighborhoodConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "window": {
+          "default": 5,
+          "minimum": 0,
+          "title": "Window",
+          "type": "integer"
+        }
+      },
+      "title": "NeighborhoodConfig",
+      "type": "object"
+    },
+    "ReferenceBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        },
+        "artifact": {
+          "anyOf": [
+            {
+              "format": "path",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Artifact"
+        }
+      },
+      "title": "ReferenceBinding",
+      "type": "object"
+    },
+    "StrictHMMConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "sequence_report_evalue": {
+          "default": 10,
+          "exclusiveMinimum": 0,
+          "title": "Sequence Report Evalue",
+          "type": "number"
+        },
+        "domain_report_evalue": {
+          "default": 10,
+          "exclusiveMinimum": 0,
+          "title": "Domain Report Evalue",
+          "type": "number"
+        },
+        "threads": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Threads",
+          "type": "integer"
+        },
+        "seed": {
+          "default": 42,
+          "maximum": 2147483647,
+          "minimum": 1,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "max_sensitivity": {
+          "default": false,
+          "title": "Max Sensitivity",
+          "type": "boolean"
+        }
+      },
+      "title": "StrictHMMConfig",
+      "type": "object"
+    },
+    "StrictMMseqsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "sensitivity": {
+          "default": 5.7,
+          "maximum": 7.5,
+          "minimum": 1,
+          "title": "Sensitivity",
+          "type": "number"
+        },
+        "evalue": {
+          "default": 0.001,
+          "exclusiveMinimum": 0,
+          "title": "Evalue",
+          "type": "number"
+        },
+        "threads": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Threads",
+          "type": "integer"
+        },
+        "max_seqs": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 2147483647,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Seqs"
+        },
+        "alternative_alignments": {
+          "anyOf": [
+            {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alternative Alignments"
+        },
+        "split_memory_limit": {
+          "default": "2G",
+          "pattern": "^[1-9][0-9]*[KMGT]$",
+          "title": "Split Memory Limit",
+          "type": "string"
+        },
+        "timeout_seconds": {
+          "default": 3600,
+          "exclusiveMinimum": 0,
+          "title": "Timeout Seconds",
+          "type": "integer"
+        },
+        "executable": {
+          "default": "mmseqs",
+          "minLength": 1,
+          "title": "Executable",
+          "type": "string"
+        }
+      },
+      "title": "StrictMMseqsConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "registry": {
+      "format": "path",
+      "title": "Registry",
+      "type": "string"
+    },
+    "mode": {
+      "default": "strict",
+      "enum": [
+        "strict",
+        "partial"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "stages": {
+      "$ref": "#/$defs/EnabledStages"
+    },
+    "references": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ReferenceBinding"
+      },
+      "title": "References",
+      "type": "object"
+    },
+    "hmm": {
+      "$ref": "#/$defs/StrictHMMConfig"
+    },
+    "mmseqs": {
+      "$ref": "#/$defs/StrictMMseqsConfig"
+    },
+    "neighborhood": {
+      "$ref": "#/$defs/NeighborhoodConfig"
+    }
+  },
+  "required": [
+    "schema_version",
+    "registry"
+  ],
+  "title": "PipelineConfig",
+  "type": "object"
+}

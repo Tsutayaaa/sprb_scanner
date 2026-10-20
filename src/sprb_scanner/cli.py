@@ -456,3 +456,24 @@ def merge_evidence(
         )
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("run")
+def run_genome(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared genome")],
+    config: Annotated[Path, typer.Option(help="Strict versioned pipeline YAML")],
+    output: Annotated[Path, typer.Option(help="Pipeline workspace directory")],
+    resume: Annotated[
+        bool, typer.Option(help="Verify/reuse completed stages; retry other stages")
+    ] = False,
+):
+    """Run one genome locally with verified resume and separate immutable attempts."""
+    from sprb_scanner.pipeline import run_pipeline
+
+    try:
+        result = run_pipeline(prepared, config, output, resume=resume)
+        emit(result)
+        if result["state"] != "succeeded":
+            raise typer.Exit(3 if result["state"] == "partial" else 2)
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)

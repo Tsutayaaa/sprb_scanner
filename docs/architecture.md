@@ -77,3 +77,19 @@ No executable search, threshold change, score fusion, coverage aggregation or fu
 Core, scanners and neighborhood remain unchanged; CLI adds a thin `merge-evidence` adapter.
 See [evidence merger contracts](evidence_merger.md) for Purpose, Input, Output, Dependencies,
 Parameters, Error Handling, Test Cases and real-data acceptance.
+
+
+## Single-genome orchestration (Batch 6B)
+
+`pipeline.config` owns the strict versioned YAML contract. `pipeline.identity` builds per-stage
+content/reference/parameter/backend identities. `pipeline.storage` provides canonical hashes,
+atomic checkpoints, immutable attempt directories and an exclusive workspace lock.
+`pipeline.runner` invokes the existing four scanner service APIs and Batch 6A Merger, verifies
+native outputs on both execution and reuse, and records dependency bindings and run history.
+Pipeline policy belongs here; core/scanner algorithms and neighborhood logic remain unchanged.
+
+The Merger gains backward-compatible API arguments for explicit failed/not-run source states
+when a pipeline stage fails before producing native output, plus RN28 resource version/external
+artifact selection. These adapters preserve the existing typed evidence/status semantics;
+they cannot inject success or override a supplied successful scanner directory.
+See [pipeline runner contracts](pipeline_runner.md) for configuration, storage, resume and validation.

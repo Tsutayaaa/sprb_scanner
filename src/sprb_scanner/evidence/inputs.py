@@ -138,7 +138,7 @@ def load_pair(root, models, dataset, fingerprints):
     return runs, tuple(hits)
 
 
-def load_rn28(root, dataset, registry_path, fingerprints):
+def load_rn28(root, dataset, registry_path, fingerprints, version=None, artifact=None):
     root = Path(root)
     meta = read_manifest(root, fingerprints)
     require_manifest(meta, ["status.json"])
@@ -172,9 +172,9 @@ def load_rn28(root, dataset, registry_path, fingerprints):
         raise InputError("MMseqs2 query fingerprint mismatch")
     registry = ReferenceRegistry.load(registry_path)
     fingerprints[str(registry.path)] = registry.registry_sha256
-    resolved = registry.resolve("RN28")
+    resolved = registry.resolve("RN28", version, artifact)
     fingerprints[str(resolved.artifact_path)] = sha256(resolved.artifact_path)
-    reference = registry.sequences("RN28")[0]
+    reference = registry.sequences("RN28", version, artifact)[0]
     query_by_id = {q.protein_id: q for q in queries.values()}
     if len(query_by_id) != len(queries) or not queries:
         raise InputError("MMseqs2 queries have duplicate IDs or are empty")
