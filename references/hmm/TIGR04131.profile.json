@@ -1,0 +1,10 @@
+{
+  "method": "hmm",
+  "path": "TIGR04131.1.HMM",
+  "provenance": {
+    "model_id": "TIGR04131",
+    "version": "TIGR04131.1",
+    "source": "https://ftp.ncbi.nlm.nih.gov/hmm/current/hmm_PGAP.HMM/TIGR04131.1.HMM",
+    "sha256": "501e3ad25dace893fdd99d68c2dde1643ca9b2f40a051c6a8bbff36fbcc564fe"
+  }
+}

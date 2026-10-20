@@ -104,3 +104,7 @@ score-cutoff 差值及通过标志。阈值从校验后的模型读取，不固�
 
 测试新增双阈值边界、单项不通过、无GA、旧记录读取、低于GA命中保留、互斥蛋白汇总、
 阈值来源和错误差值校验。临时 FJ 实测用于核对新输出，不新增生物学回归测试。
+
+统一资源身份与迁移后的 canonical manifest 见 [Reference Registry](../references/README.md)。
+新目录为 `references/hmm/`，旧 `profiles/` 保留相同版本的字节兼容副本；
+既有独立 ProfileConfig、模型目录及 CLI 参数继续支持。

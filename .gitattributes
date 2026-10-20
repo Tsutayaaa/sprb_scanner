@@ -1,0 +1,5 @@
+# Preserve reference-manifest checksums and the byte-identical legacy archive.
+reference_data/** -text
+references/** -text
+# The reference manifest also pins this existing parent-protein fixture.
+tests/fixtures/fj_window.faa -text

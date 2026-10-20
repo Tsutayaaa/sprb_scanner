@@ -12,7 +12,9 @@ Each batch is independently reviewed and accepted by Tsutayaaa before merging.
    circular handling, prepared-data CLI and FJ SprB–SprF validation.
 5. **Batch 4B (next):** associate Type B CTD and PorP/SprF evidence with objective neighborhoods.
 
-MMseqs2/custom HMM orchestration, evidence classification and Parquet remain future work.
+6. **Batch 5A:** generic MMseqs2 protein/fragment alignments, reusable databases and provenance.
+
+Custom reference scoring, evidence classification and Parquet remain future work.
 
 Batch 1 acceptance: uv sync, pytest, Ruff, CLI help and package build. GitHub CI must pass too.
 Batch 2 adds offline FJ sprB/sprF parsing regression plus opt-in full assembly validation.

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "sprb-legacy-20261019",
+  "created_at": "2026-10-19T15:50:35.906581+00:00",
+  "software_version": "2.0.0a1",
+  "query_normalization_issues": [],
+  "primary_query": {
+    "path": "RN28.fasta",
+    "query_id": "SMF_RN28__RN28",
+    "length": 207,
+    "parent_interval": {
+      "start": 681,
+      "end": 888
+    },
+    "sequence_sha256": "0e92a4f69219d39a2c7a50b104c922fed707b998555378e4a95ea0be3dddb42c"
+  },
+  "reference_only": {
+    "path": "reference_only.fasta",
+    "count": 73
+  },
+  "archive_panel_count": 74,
+  "legacy_cluster_count": 46,
+  "coordinates": "0-based half-open; source_module_row retains 1-based inclusive",
+  "validation": {
+    "table_interval_exact_matches": 74,
+    "sequence_mismatches": 0,
+    "primary_exact_parent_matches": 1
+  },
+  "interpretation": "legacy custom segment labels and clustering; not functional classification",
+  "source": {
+    "project": "sprb_genome_scan",
+    "directory": "reference_data",
+    "imported_package_manifest_sha256": "b1ddd07b00025679feae61b7472d70d8707ff333fdcc96aaa276323a3008ae7f"
+  },
+  "source_files": [
+    {
+      "file": "sprb_smf_panel.fasta",
+      "path": "archive/sprb_smf_panel.fasta",
+      "sha256": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2",
+      "bytes": 7613
+    },
+    {
+      "file": "domain_table.tsv",
+      "path": "archive/domain_table.tsv",
+      "sha256": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4",
+      "bytes": 4271
+    },
+    {
+      "file": "cluster_assignments.tsv",
+      "path": "archive/cluster_assignments.tsv",
+      "sha256": "8eb5bf0d4584c2355dfecade6378262a8f1386677089a1ed3f66c08d4467b1de",
+      "bytes": 2214
+    },
+    {
+      "file": "cluster_summary.tsv",
+      "path": "archive/cluster_summary.tsv",
+      "sha256": "8ffd286073c6806388c828141ed702e14612b53f9907c8183141a01464dcba4a",
+      "bytes": 6788
+    }
+  ],
+  "parent": {
+    "dataset_sha256": "ee9ed7bb59c8a60a0bd43cf1bf16e7ccd2c850e05502e57548bc1e266aba0c5f",
+    "source_protein_id": "WP_012023065.1",
+    "protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "length": 6497,
+    "sequence_sha256": "2af552703ea77b38254afebf7b02feaf5a740f68ae518c4cc2b8080aaeebaefe",
+    "validation_fixture": "../tests/fixtures/fj_window.faa",
+    "validation_fixture_sha256": "1d835e7f0282de5d3c07b1a503d0edb8829b564782cd0bf81d36a8f34563cced"
+  },
+  "output_sha256": {
+    "README.md": "7df936eb5ccb0fce609077719539d8c33d74aad8cf7a337a18c2e2e72f825398",
+    "RN28.fasta": "7e6de06c71fe50b103cd25f8b0783091964b3d909e8c41ee3fa245eb02b2b0b4",
+    "archive/cluster_assignments.tsv": "8eb5bf0d4584c2355dfecade6378262a8f1386677089a1ed3f66c08d4467b1de",
+    "archive/cluster_summary.tsv": "8ffd286073c6806388c828141ed702e14612b53f9907c8183141a01464dcba4a",
+    "archive/domain_table.tsv": "aa21a4febb8b033a910f879af4a02d3c967b09c827323b84fcc915ecf0aa92d4",
+    "archive/sprb_smf_panel.fasta": "9cae9486f6914f5f62231cca38cdde5eecdd8512e6ad039e0d2e0a7daabe97c2",
+    "reference_catalog.json": "39834fe21858b65bf2510fd1f430076dd67a3f5efa92de468d3314a6e68cd278",
+    "reference_catalog.tsv": "6ad5e1c036513ad46926254893a8c67650c13a1019f068701c1f7b9aa361db47",
+    "reference_only.fasta": "52bf2a1175759302085067b5d3fce54d5e8111bca90de3a601cc388f6a8698b9"
+  }
+}

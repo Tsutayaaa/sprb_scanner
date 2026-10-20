@@ -41,3 +41,10 @@ Optional `HMMStatistics.ga: GatheringEvidence` records passed_ga/below_ga/unavai
 model sequence/domain GA cutoffs, score margins and per-component pass flags. Legacy absence
 means not evaluated; it must not be interpreted as unavailable or a negative. GA is independent
 of backend reporting/inclusion flags and future biological classification.
+
+Batch 5A `scanners.mmseqs.SequenceAlignment` subclasses DomainHit with alignment length,
+identical-residue count, sequence identity and query/target source IDs plus target gene ID.
+Its method is mmseqs2, E-value kind is alignment, and `hmm` is null. Query provenance refers
+to a normalized sequence SHA-256 rather than an HMM. Target coordinates remain `start/end`
+and target length remains `protein_length`; query/target coverage are independent.
+See [mmseqs_engine.md](mmseqs_engine.md) for the complete output and managed-database contract.

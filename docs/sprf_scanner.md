@@ -77,3 +77,7 @@ PorP/SprF-like 是家族归属证据；不是特定 Type B CTD 底物的配对�
 
 核查了蛋白ID、区间、独立domain E-value、原始文件引用与全套输出SHA-256。
 结果在仓库外 `/private/tmp/sprb-sprf-validation/FJ`。此为实测记录，不作为跨物种准确率证明。
+
+统一资源身份与迁移后的 canonical manifest 见 [Reference Registry](../references/README.md)。
+新目录为 `references/hmm/`，旧 `profiles/` 保留相同版本的字节兼容副本；
+既有独立 ProfileConfig、模型目录及 CLI 参数继续支持。

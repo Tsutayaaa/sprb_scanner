@@ -1,0 +1,10 @@
+{
+  "method": "hmm",
+  "path": "PF11751.hmm",
+  "provenance": {
+    "model_id": "PF11751",
+    "version": "PF11751.15",
+    "source": "https://www.ebi.ac.uk/interpro/api/entry/pfam/PF11751/?annotation=hmm",
+    "sha256": "725ae144f514ad4518b560cf64f17ea58bd1fe62c07939babcfb98e53e72a0b1"
+  }
+}

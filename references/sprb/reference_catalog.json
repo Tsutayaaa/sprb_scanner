@@ -1,0 +1,3326 @@
+[
+  {
+    "query_id": "SMF_RN33__RN33",
+    "member_label": "domain_RN33",
+    "legacy_group": "SMF_RN33",
+    "legacy_cluster_id": "1",
+    "role": "reference_only",
+    "sequence": "NLTISTTINHPKCNGDKGSITVKTSDLGLRYDYTLFRGTTQVGNIQGVAAPEWTFTGLDPATNYRAVVTVSNACVSNSISNRTVNNA",
+    "length": 87,
+    "sequence_sha256": "e3f1858d0ab66ffd742013b9ce12dd8ec3e762dcda5dc28c306abeb734b6c1f9",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 274,
+    "parent_end": 361,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 274,
+        "end": 361
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "003",
+      "start": "275",
+      "end": "361",
+      "length": "87",
+      "output_label": "domain_RN33",
+      "original_label": "domain_RN33",
+      "note": "",
+      "expanded_start": "271",
+      "expanded_end": "365",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "2",
+      "sequence_id_full": "domain_RN33",
+      "sequence_id_short": "domain_RN33",
+      "cluster": "1"
+    }
+  },
+  {
+    "query_id": "SMF_R0__R0",
+    "member_label": "domain_R0",
+    "legacy_group": "SMF_R0",
+    "legacy_cluster_id": "2",
+    "role": "reference_only",
+    "sequence": "PEDMIIDVTQGTPSCTSATIVVSVTPPIPGGPYHFALYPVDPANPNNYDYATYSASYQDADAVSPPASPGDPDLLKSTFTGLNPGVLYSFIVYDESTNCYFFKQADTKTPTL",
+    "length": 112,
+    "sequence_sha256": "bdf09229d7267432501e7e917a4bb79edcf82e161bbb3a69e97dc3804f442fd0",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3146,
+    "parent_end": 3258,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3146,
+        "end": 3258
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "036",
+      "start": "3147",
+      "end": "3258",
+      "length": "112",
+      "output_label": "domain_R0",
+      "original_label": "domain_R0",
+      "note": "",
+      "expanded_start": "3143",
+      "expanded_end": "3262",
+      "expanded_length": "120",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "35",
+      "sequence_id_full": "domain_R0",
+      "sequence_id_short": "domain_R0",
+      "cluster": "2"
+    }
+  },
+  {
+    "query_id": "SMF_RN29__RN29",
+    "member_label": "domain_RN29",
+    "legacy_group": "SMF_RN29",
+    "legacy_cluster_id": "3",
+    "role": "reference_only",
+    "sequence": "PTPPRITYEGPTYDCNGIASMKAIVTSPVGSNYTYTYLLDDVENTNVPANEFINIGAGDHNIKVVYKLANV",
+    "length": 71,
+    "sequence_sha256": "23b30830c65e7550298291e3762bf4d900c5041208e1f5c6cfad842ea86bf0c6",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 610,
+    "parent_end": 681,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 610,
+        "end": 681
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "007",
+      "start": "611",
+      "end": "681",
+      "length": "71",
+      "output_label": "domain_RN29",
+      "original_label": "domain_RN29",
+      "note": "",
+      "expanded_start": "607",
+      "expanded_end": "685",
+      "expanded_length": "79",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "6",
+      "sequence_id_full": "domain_RN29",
+      "sequence_id_short": "domain_RN29",
+      "cluster": "3"
+    }
+  },
+  {
+    "query_id": "SMF_RC36__RC36",
+    "member_label": "domain_RC36",
+    "legacy_group": "SMF_RC36",
+    "legacy_cluster_id": "4",
+    "role": "reference_only",
+    "sequence": "VLDPKYTVSYDCVNNAQSNMVVITIDPSNNPADIDYSLDGGTIQPGNIFTNIPAGDHTIRVRHTNGCTADVDFNIIGYA",
+    "length": 79,
+    "sequence_sha256": "0c585bd13449cb7f63ddd641bb0fbd8258d80956679c30bedd7e9567c8c3b38d",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 6259,
+    "parent_end": 6338,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 6259,
+        "end": 6338
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "072",
+      "start": "6260",
+      "end": "6338",
+      "length": "79",
+      "output_label": "domain_RC36",
+      "original_label": "domain_RC36",
+      "note": "",
+      "expanded_start": "6256",
+      "expanded_end": "6342",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "71",
+      "sequence_id_full": "domain_RC36",
+      "sequence_id_short": "domain_RC36",
+      "cluster": "4"
+    }
+  },
+  {
+    "query_id": "SMF_RN2__RN2",
+    "member_label": "domain_RN2",
+    "legacy_group": "SMF_RN2",
+    "legacy_cluster_id": "5",
+    "role": "reference_only",
+    "sequence": "KTNPDFTAVQGNLIYCSGQETGSINVNIDTTVGVGPYVINVVKDNTALGTPNVNYGTQTTGLPGGDYIVTVTDANGCSLNRNVSIAQP",
+    "length": 88,
+    "sequence_sha256": "1fc3ed6b8bb2ad4320422f4bddeeded78fececbbca32a6f3d3fd48b15d4f2e87",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2958,
+    "parent_end": 3046,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 2958,
+        "end": 3046
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "034",
+      "start": "2959",
+      "end": "3046",
+      "length": "88",
+      "output_label": "domain_RN2",
+      "original_label": "domain_RN2",
+      "note": "Kevin",
+      "expanded_start": "2955",
+      "expanded_end": "3050",
+      "expanded_length": "96",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "33",
+      "sequence_id_full": "domain_RN2",
+      "sequence_id_short": "domain_RN2",
+      "cluster": "5"
+    }
+  },
+  {
+    "query_id": "SMF_RN1__RN1",
+    "member_label": "domain_RN1",
+    "legacy_group": "SMF_RN1",
+    "legacy_cluster_id": "6",
+    "role": "reference_only",
+    "sequence": "DPIVFTEDIQQIKCIGGGAGTALGSIGVTALAGGTTSGLALPAKSGFIYTLTSNTSPTQTFTPDGRENHSFQILNFGIYELTVTDFNGCSVTKTINIASP",
+    "length": 100,
+    "sequence_sha256": "4d92c4a8c091abaedac969bda36b37515aee88c9421aa48e13365ca07f424bb0",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3046,
+    "parent_end": 3146,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3046,
+        "end": 3146
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "035",
+      "start": "3047",
+      "end": "3146",
+      "length": "100",
+      "output_label": "domain_RN1",
+      "original_label": "domain_RN1",
+      "note": "Kevin",
+      "expanded_start": "3043",
+      "expanded_end": "3150",
+      "expanded_length": "108",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "34",
+      "sequence_id_full": "domain_RN1",
+      "sequence_id_short": "domain_RN1",
+      "cluster": "6"
+    }
+  },
+  {
+    "query_id": "SMF_RN26__RN26",
+    "member_label": "domain_RN26",
+    "legacy_group": "SMF_RN26",
+    "legacy_cluster_id": "7",
+    "role": "reference_only",
+    "sequence": "PTKFVIAATGKDALCSTGGLGSVDASATSGGTQPYNLVLTNNADNTQITFPPSLVLSGVVRPGTYTISGTDGGGCPATGSTSLVING",
+    "length": 87,
+    "sequence_sha256": "8f75face4e378f1b8d257979dfa3d1e57d1afdbcd5503481bbb42e41b70a8837",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 991,
+    "parent_end": 1078,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 991,
+        "end": 1078
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "010",
+      "start": "992",
+      "end": "1078",
+      "length": "87",
+      "output_label": "domain_RN26",
+      "original_label": "domain_RN26",
+      "note": "",
+      "expanded_start": "988",
+      "expanded_end": "1082",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "9",
+      "sequence_id_full": "domain_RN26",
+      "sequence_id_short": "domain_RN26",
+      "cluster": "7"
+    }
+  },
+  {
+    "query_id": "SMF_RN21__RN21",
+    "member_label": "domain_RN21",
+    "legacy_group": "SMF_RN21",
+    "legacy_cluster_id": "8",
+    "role": "reference_only",
+    "sequence": "TPPTALSFSNTALSCPTNKVSITVTTTGGSGALSYRIVEPASASGNTSGLTTGTFTNLDPGTYKFEVTDAKGCKYEDSYTVAPL",
+    "length": 84,
+    "sequence_sha256": "a64cb3dba4728d7161c49cec28d15a38188b297e3c0ef16603c539a97eb04ba4",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1410,
+    "parent_end": 1494,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1410,
+        "end": 1494
+      },
+      {
+        "start": 1977,
+        "end": 2061
+      },
+      {
+        "start": 2544,
+        "end": 2628
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "015",
+      "start": "1411",
+      "end": "1494",
+      "length": "84",
+      "output_label": "domain_RN21",
+      "original_label": "domain_RN21",
+      "note": "",
+      "expanded_start": "1407",
+      "expanded_end": "1498",
+      "expanded_length": "92",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "14",
+      "sequence_id_full": "domain_RN21",
+      "sequence_id_short": "domain_RN21",
+      "cluster": "8"
+    }
+  },
+  {
+    "query_id": "SMF_RN21__RN14",
+    "member_label": "domain_RN14",
+    "legacy_group": "SMF_RN21",
+    "legacy_cluster_id": "8",
+    "role": "reference_only",
+    "sequence": "PLTPPTALSFSNTALSCPTNKVSITVTTTGGSGALSYRIVEPASASGNTSGLTTGTFTNLDPGTYKFEVTDAKGCKYEDSYTVAP",
+    "length": 85,
+    "sequence_sha256": "403f51479f84e0c0642cced4e063039b4fdd085dfb57f5c20cda116d2cfe143a",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1975,
+    "parent_end": 2060,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1408,
+        "end": 1493
+      },
+      {
+        "start": 1975,
+        "end": 2060
+      },
+      {
+        "start": 2542,
+        "end": 2627
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "022",
+      "start": "1976",
+      "end": "2060",
+      "length": "85",
+      "output_label": "domain_RN14",
+      "original_label": "domain_RN14",
+      "note": "",
+      "expanded_start": "1972",
+      "expanded_end": "2064",
+      "expanded_length": "93",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "21",
+      "sequence_id_full": "domain_RN14",
+      "sequence_id_short": "domain_RN14",
+      "cluster": "8"
+    }
+  },
+  {
+    "query_id": "SMF_RN21__RN7",
+    "member_label": "domain_RN7",
+    "legacy_group": "SMF_RN21",
+    "legacy_cluster_id": "8",
+    "role": "reference_only",
+    "sequence": "PTALSFSNTALSCPTNKVSITVTTTGGSGALSYRIVEPASASGNTSGLTTGTFTNLDPGTYKFEVTDAKGCKYEDSYTVAPL",
+    "length": 82,
+    "sequence_sha256": "d2cea7ea310f00deed85a665b03b13a2ba857553b04f0a56946cd8ba4c44d7d6",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2546,
+    "parent_end": 2628,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1412,
+        "end": 1494
+      },
+      {
+        "start": 1979,
+        "end": 2061
+      },
+      {
+        "start": 2546,
+        "end": 2628
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "029",
+      "start": "2547",
+      "end": "2628",
+      "length": "82",
+      "output_label": "domain_RN7",
+      "original_label": "domain_RN7",
+      "note": "",
+      "expanded_start": "2543",
+      "expanded_end": "2632",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "28",
+      "sequence_id_full": "domain_RN7",
+      "sequence_id_short": "domain_RN7",
+      "cluster": "8"
+    }
+  },
+  {
+    "query_id": "SMF_RC28__RC28",
+    "member_label": "domain_RC28",
+    "legacy_group": "SMF_RC28",
+    "legacy_cluster_id": "9",
+    "role": "reference_only",
+    "sequence": "ISLDNMAIAVTPITCVADESIQVTVTTTGGTPPTLYYTVTGNGYNQTNTTGTFTDLGIGSYFITVENRVTNCMLRQFHNVIN",
+    "length": 82,
+    "sequence_sha256": "5e49f112bc0883cb7bc379efe5b2c1898f26e34043bbed866766568bdd2779c1",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5573,
+    "parent_end": 5655,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5573,
+        "end": 5655
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "064",
+      "start": "5574",
+      "end": "5655",
+      "length": "82",
+      "output_label": "domain_RC28",
+      "original_label": "domain_RC28",
+      "note": "",
+      "expanded_start": "5570",
+      "expanded_end": "5659",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "63",
+      "sequence_id_full": "domain_RC28",
+      "sequence_id_short": "domain_RC28",
+      "cluster": "9"
+    }
+  },
+  {
+    "query_id": "SMF_RN28__RN28",
+    "member_label": "domain_RN28",
+    "legacy_group": "SMF_RN28",
+    "legacy_cluster_id": "10",
+    "role": "primary_search_query",
+    "sequence": "STYSNLLKEDFGRGNPTTSPGINPAYCFENQSGVHPPGYACNLDNEINDGEYAVTNRINPRFGSWLDMRDHTSGGSDTQGRFLAINIGGVAGIGGIIYRKPIYDVIPNQDVKISFWVANLINNLPQNAGNDDPNITIQLIADYGLATQTLVASQETGVVPKSNKWENYNMSLNPGSYSTLDFVIRSYSAVDFGNDLTLDDITVYQVP",
+    "length": 207,
+    "sequence_sha256": "0e92a4f69219d39a2c7a50b104c922fed707b998555378e4a95ea0be3dddb42c",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 681,
+    "parent_end": 888,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 681,
+        "end": 888
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "008",
+      "start": "682",
+      "end": "888",
+      "length": "207",
+      "output_label": "domain_RN28",
+      "original_label": "domain_RN28",
+      "note": "",
+      "expanded_start": "678",
+      "expanded_end": "892",
+      "expanded_length": "215",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "7",
+      "sequence_id_full": "domain_RN28",
+      "sequence_id_short": "domain_RN28",
+      "cluster": "10"
+    }
+  },
+  {
+    "query_id": "SMF_RC8__RC8",
+    "member_label": "domain_RC8",
+    "legacy_group": "SMF_RC8",
+    "legacy_cluster_id": "11",
+    "role": "reference_only",
+    "sequence": "PYNTIKAVATATTPVNCFGDANGALAINVTGYTGAYTYEVFNSAGTSVMGPIGSDTTVNPRSISGLSAGNYTVVVTETASPYCSVTTNAVTIGS",
+    "length": 94,
+    "sequence_sha256": "1d24c34a6bfbe9501b91fb56b621ebc4e41b38515d1a0e587221b28450ab5d42",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3862,
+    "parent_end": 3956,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3862,
+        "end": 3956
+      },
+      {
+        "start": 4456,
+        "end": 4550
+      },
+      {
+        "start": 5050,
+        "end": 5144
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "044",
+      "start": "3863",
+      "end": "3956",
+      "length": "94",
+      "output_label": "domain_RC8",
+      "original_label": "domain_RC8",
+      "note": "",
+      "expanded_start": "3859",
+      "expanded_end": "3960",
+      "expanded_length": "102",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "43",
+      "sequence_id_full": "domain_RC8",
+      "sequence_id_short": "domain_RC8",
+      "cluster": "11"
+    }
+  },
+  {
+    "query_id": "SMF_RC8__RC15",
+    "member_label": "domain_RC15",
+    "legacy_group": "SMF_RC8",
+    "legacy_cluster_id": "11",
+    "role": "reference_only",
+    "sequence": "NTIKAVATATTPVNCFGDANGALAINVTGYTGAYTYEVFNSAGTSVMGPIGSDTTVNPRSISGLSAGNYTVVVTETASPYCSVTTNAVTIGSPS",
+    "length": 94,
+    "sequence_sha256": "dd236ebfe861dc0a06cf40f0b73b29fa6beb9228c29cc436342da1e761f00699",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4458,
+    "parent_end": 4552,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3864,
+        "end": 3958
+      },
+      {
+        "start": 4458,
+        "end": 4552
+      },
+      {
+        "start": 5052,
+        "end": 5146
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "051",
+      "start": "4459",
+      "end": "4552",
+      "length": "94",
+      "output_label": "domain_RC15",
+      "original_label": "domain_RC15",
+      "note": "",
+      "expanded_start": "4455",
+      "expanded_end": "4556",
+      "expanded_length": "102",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "50",
+      "sequence_id_full": "domain_RC15",
+      "sequence_id_short": "domain_RC15",
+      "cluster": "11"
+    }
+  },
+  {
+    "query_id": "SMF_RC8__RC22",
+    "member_label": "domain_RC22",
+    "legacy_group": "SMF_RC8",
+    "legacy_cluster_id": "11",
+    "role": "reference_only",
+    "sequence": "PYNTIKAVATATTPVNCFGDANGALAINVTGYTGAYTYEVFNSAGTSVMGPIGSDTTVNPRSISGLSAGNYTVVVTETASPYCSVTTNAVTIGSP",
+    "length": 95,
+    "sequence_sha256": "f1f62947551dd720e0e48f8d6d53515ba80d8b0cf049f096c5446657d4219758",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5050,
+    "parent_end": 5145,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3862,
+        "end": 3957
+      },
+      {
+        "start": 4456,
+        "end": 4551
+      },
+      {
+        "start": 5050,
+        "end": 5145
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "058",
+      "start": "5051",
+      "end": "5145",
+      "length": "95",
+      "output_label": "domain_RC22",
+      "original_label": "domain_RC22",
+      "note": "",
+      "expanded_start": "5047",
+      "expanded_end": "5149",
+      "expanded_length": "103",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "57",
+      "sequence_id_full": "domain_RC22",
+      "sequence_id_short": "domain_RC22",
+      "cluster": "11"
+    }
+  },
+  {
+    "query_id": "SMF_RN20__RN20",
+    "member_label": "domain_RN20",
+    "legacy_group": "SMF_RN20",
+    "legacy_cluster_id": "12",
+    "role": "reference_only",
+    "sequence": "PALTVVGTHTNVQCFGSSTGTAQFTVSGSTGFTYTLNTVSQGAGTSPISLTGLAAGTYTVEITNTATNCKALASVTITA",
+    "length": 79,
+    "sequence_sha256": "61bba2a11a0405b4a45d17f3b5276bc21ebd1a2f30c39d16394c75b51cf1be0b",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1494,
+    "parent_end": 1573,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1494,
+        "end": 1573
+      },
+      {
+        "start": 2061,
+        "end": 2140
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "016",
+      "start": "1495",
+      "end": "1573",
+      "length": "79",
+      "output_label": "domain_RN20",
+      "original_label": "domain_RN20",
+      "note": "",
+      "expanded_start": "1491",
+      "expanded_end": "1577",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "15",
+      "sequence_id_full": "domain_RN20",
+      "sequence_id_short": "domain_RN20",
+      "cluster": "12"
+    }
+  },
+  {
+    "query_id": "SMF_RN20__RN13",
+    "member_label": "domain_RN13",
+    "legacy_group": "SMF_RN20",
+    "legacy_cluster_id": "12",
+    "role": "reference_only",
+    "sequence": "LPALTVVGTHTNVQCFGSSTGTAQFTVSGSTGFTYTLNTVSQGAGTSPISLTGLAAGTYTVEITNTATNCKALASVTITA",
+    "length": 80,
+    "sequence_sha256": "d76c3be6f62d19dc7aaf7374387bbfe388b0dc9ba5b87d389fd853d7389b6c04",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2060,
+    "parent_end": 2140,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1493,
+        "end": 1573
+      },
+      {
+        "start": 2060,
+        "end": 2140
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "023",
+      "start": "2061",
+      "end": "2140",
+      "length": "80",
+      "output_label": "domain_RN13",
+      "original_label": "domain_RN13",
+      "note": "",
+      "expanded_start": "2057",
+      "expanded_end": "2144",
+      "expanded_length": "88",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "22",
+      "sequence_id_full": "domain_RN13",
+      "sequence_id_short": "domain_RN13",
+      "cluster": "12"
+    }
+  },
+  {
+    "query_id": "SMF_RN20__RN6",
+    "member_label": "domain_RN6",
+    "legacy_group": "SMF_RN20",
+    "legacy_cluster_id": "12",
+    "role": "reference_only",
+    "sequence": "PALTVVGTHTNVQCFGSSTGTAQFTVSGSTGFTYTLNTVSQGAGTSPISLTGLAAGTYTVEITNTATNCKASASVTITA",
+    "length": 79,
+    "sequence_sha256": "73ed37cd42ca8d4007bf8084556589fef8c0ae6b0e4845b2ca58d556241bd584",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2628,
+    "parent_end": 2707,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 2628,
+        "end": 2707
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "030",
+      "start": "2629",
+      "end": "2707",
+      "length": "79",
+      "output_label": "domain_RN6",
+      "original_label": "domain_RN6",
+      "note": "",
+      "expanded_start": "2625",
+      "expanded_end": "2711",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "29",
+      "sequence_id_full": "domain_RN6",
+      "sequence_id_short": "domain_RN6",
+      "cluster": "12"
+    }
+  },
+  {
+    "query_id": "SMF_RN27__RN27",
+    "member_label": "domain_RN27",
+    "legacy_group": "SMF_RN27",
+    "legacy_cluster_id": "13",
+    "role": "reference_only",
+    "sequence": "AFKAEIVPVSNVTCNGANNGSFKIIATNFGTSFEYSLNGSAGPWIPSTTSEVTVTGLQPKTYDVRVRRTGTNVAGCELTLNPVITS",
+    "length": 86,
+    "sequence_sha256": "a3f049658ddc4d4f32708c2584de7c52eec579b758f7e601ccd4c3300e75a7aa",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 905,
+    "parent_end": 991,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 905,
+        "end": 991
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "009",
+      "start": "906",
+      "end": "991",
+      "length": "86",
+      "output_label": "domain_RN27",
+      "original_label": "domain_RN27",
+      "note": "",
+      "expanded_start": "902",
+      "expanded_end": "995",
+      "expanded_length": "94",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "8",
+      "sequence_id_full": "domain_RN27",
+      "sequence_id_short": "domain_RN27",
+      "cluster": "13"
+    }
+  },
+  {
+    "query_id": "SMF_RC1__RC1",
+    "member_label": "domain_RC1",
+    "legacy_group": "SMF_RC1",
+    "legacy_cluster_id": "14",
+    "role": "reference_only",
+    "sequence": "STLTSDLTESNVTCMNAGDGSVSFTFTKNYTTTTTVNYQVYNSQTNQPVVPAITGSVTGLNGNVTSPVQTAGPLVPGTYYILFTEVGGSTPGCTNSSRTFTITQS",
+    "length": 105,
+    "sequence_sha256": "d43b8df255da5581effd0ee1c1757f50a0d890fb1b386d6a8fa6f37e69064b4f",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3258,
+    "parent_end": 3363,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3258,
+        "end": 3363
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "037",
+      "start": "3259",
+      "end": "3363",
+      "length": "105",
+      "output_label": "domain_RC1",
+      "original_label": "domain_RC1",
+      "note": "",
+      "expanded_start": "3255",
+      "expanded_end": "3367",
+      "expanded_length": "113",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "36",
+      "sequence_id_full": "domain_RC1",
+      "sequence_id_short": "domain_RC1",
+      "cluster": "14"
+    }
+  },
+  {
+    "query_id": "SMF_RN31__RN31",
+    "member_label": "domain_RN31",
+    "legacy_group": "SMF_RN31",
+    "legacy_cluster_id": "15",
+    "role": "reference_only",
+    "sequence": "TKPNYNFTTTSPNCSVTTGSITVNLINANSYTIQYRINNGSWGSTKAWSNLGPGNYTVEVRYRLNNNNSWCTDTNVVTILDAPN",
+    "length": 84,
+    "sequence_sha256": "b058df99bac1e360df39ca7995a4fba63762ff99e52f534be5dbad327e3ae61c",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 443,
+    "parent_end": 527,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 443,
+        "end": 527
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "005",
+      "start": "444",
+      "end": "527",
+      "length": "84",
+      "output_label": "domain_RN31",
+      "original_label": "domain_RN31",
+      "note": "",
+      "expanded_start": "440",
+      "expanded_end": "531",
+      "expanded_length": "92",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "4",
+      "sequence_id_full": "domain_RN31",
+      "sequence_id_short": "domain_RN31",
+      "cluster": "15"
+    }
+  },
+  {
+    "query_id": "SMF_RC5__RC5",
+    "member_label": "domain_RC5",
+    "legacy_group": "SMF_RC5",
+    "legacy_cluster_id": "16",
+    "role": "reference_only",
+    "sequence": "PAPVNFTASPTDVSCNGGSNGTIKVTLGAGNTDPVYTYTLTALSGPALVVGPQTSNLFTGLSARDYSISVASGRLGCSTPQTITVGQP",
+    "length": 88,
+    "sequence_sha256": "92f3ab0998ded66108015d2dfdc00f1702adffddfb56f7552a9db8314608ced8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3612,
+    "parent_end": 3700,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3612,
+        "end": 3700
+      },
+      {
+        "start": 4206,
+        "end": 4294
+      },
+      {
+        "start": 4800,
+        "end": 4888
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "041",
+      "start": "3613",
+      "end": "3700",
+      "length": "88",
+      "output_label": "domain_RC5",
+      "original_label": "domain_RC5",
+      "note": "",
+      "expanded_start": "3609",
+      "expanded_end": "3704",
+      "expanded_length": "96",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "40",
+      "sequence_id_full": "domain_RC5",
+      "sequence_id_short": "domain_RC5",
+      "cluster": "16"
+    }
+  },
+  {
+    "query_id": "SMF_RC5__RC12",
+    "member_label": "domain_RC12",
+    "legacy_group": "SMF_RC5",
+    "legacy_cluster_id": "16",
+    "role": "reference_only",
+    "sequence": "PAPVNFTASPTDVSCNGGSNGTIKVTLGAGNTDPVYTYTLTALSGPALVVGPQTSNLFTGLSARDYSISVASGRLGCSTPQTITVGQP",
+    "length": 88,
+    "sequence_sha256": "92f3ab0998ded66108015d2dfdc00f1702adffddfb56f7552a9db8314608ced8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4206,
+    "parent_end": 4294,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3612,
+        "end": 3700
+      },
+      {
+        "start": 4206,
+        "end": 4294
+      },
+      {
+        "start": 4800,
+        "end": 4888
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "048",
+      "start": "4207",
+      "end": "4294",
+      "length": "88",
+      "output_label": "domain_RC12",
+      "original_label": "domain_RC12",
+      "note": "",
+      "expanded_start": "4203",
+      "expanded_end": "4298",
+      "expanded_length": "96",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "47",
+      "sequence_id_full": "domain_RC12",
+      "sequence_id_short": "domain_RC12",
+      "cluster": "16"
+    }
+  },
+  {
+    "query_id": "SMF_RC5__RC19",
+    "member_label": "domain_RC19",
+    "legacy_group": "SMF_RC5",
+    "legacy_cluster_id": "16",
+    "role": "reference_only",
+    "sequence": "PAPVNFTASPTDVSCNGGSNGTIKVTLGAGNTDPVYTYTLTALSGPALVVGPQTSNLFTGLSARDYSISVASGRLGCSTPQTITVGQ",
+    "length": 87,
+    "sequence_sha256": "27651cd73aa917a6c7c612b4212e27f04b54f731715a9696a99aa22ae097ba50",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4800,
+    "parent_end": 4887,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3612,
+        "end": 3699
+      },
+      {
+        "start": 4206,
+        "end": 4293
+      },
+      {
+        "start": 4800,
+        "end": 4887
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "055",
+      "start": "4801",
+      "end": "4887",
+      "length": "87",
+      "output_label": "domain_RC19",
+      "original_label": "domain_RC19",
+      "note": "",
+      "expanded_start": "4797",
+      "expanded_end": "4891",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "54",
+      "sequence_id_full": "domain_RC19",
+      "sequence_id_short": "domain_RC19",
+      "cluster": "16"
+    }
+  },
+  {
+    "query_id": "SMF_RC26__RC26",
+    "member_label": "domain_RC26",
+    "legacy_group": "SMF_RC26",
+    "legacy_cluster_id": "17",
+    "role": "reference_only",
+    "sequence": "ATVVTGITLKPTAVSCNGGSDGTISVELDASNNNPIYRYTLTATIAGVPLTVGPQDSTLFSGLSAGTYTVSVTSGRGCPGTATITVDE",
+    "length": 88,
+    "sequence_sha256": "1f899dbc87bdd02cdfd3784a2569589c67c4e9e498a5ecad0e9b76f9684ea4eb",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5392,
+    "parent_end": 5480,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5392,
+        "end": 5480
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "062",
+      "start": "5393",
+      "end": "5480",
+      "length": "88",
+      "output_label": "domain_RC26",
+      "original_label": "domain_RC26",
+      "note": "",
+      "expanded_start": "5389",
+      "expanded_end": "5484",
+      "expanded_length": "96",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "61",
+      "sequence_id_full": "domain_RC26",
+      "sequence_id_short": "domain_RC26",
+      "cluster": "17"
+    }
+  },
+  {
+    "query_id": "SMF_RC31__RC31",
+    "member_label": "domain_RC31",
+    "legacy_group": "SMF_RC31",
+    "legacy_cluster_id": "18",
+    "role": "reference_only",
+    "sequence": "PDPITFTAAADVTVLSCFGGQDATITVSAPTGGQGSNYTYTLNYTVDGEAVFVGPQSSNVFTNLGAGDYTVTVKDGFTCEATSAVISIAN",
+    "length": 90,
+    "sequence_sha256": "ca2fd445df2eb800b83a4bd46477bb8a040859f8168fcdfab04abef3f29c1aad",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5834,
+    "parent_end": 5924,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5834,
+        "end": 5924
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "067",
+      "start": "5835",
+      "end": "5924",
+      "length": "90",
+      "output_label": "domain_RC31",
+      "original_label": "domain_RC31",
+      "note": "",
+      "expanded_start": "5831",
+      "expanded_end": "5928",
+      "expanded_length": "98",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "66",
+      "sequence_id_full": "domain_RC31",
+      "sequence_id_short": "domain_RC31",
+      "cluster": "18"
+    }
+  },
+  {
+    "query_id": "SMF_RC7__RC7",
+    "member_label": "domain_RC7",
+    "legacy_group": "SMF_RC7",
+    "legacy_cluster_id": "19",
+    "role": "reference_only",
+    "sequence": "TRITTVTVAGTAIDCLNNGRADITVLGGSGNFSYQLLPSGAPQVDNFFGITAPGDYYFRVIDNDTDCYFDAPVFRVA",
+    "length": 77,
+    "sequence_sha256": "ecec428465d2d33742d2df3a745079d9bd8fed5926e5cf22db064f3e646753c4",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3785,
+    "parent_end": 3862,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3785,
+        "end": 3862
+      },
+      {
+        "start": 4379,
+        "end": 4456
+      },
+      {
+        "start": 4973,
+        "end": 5050
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "043",
+      "start": "3786",
+      "end": "3862",
+      "length": "77",
+      "output_label": "domain_RC7",
+      "original_label": "domain_RC7",
+      "note": "",
+      "expanded_start": "3782",
+      "expanded_end": "3866",
+      "expanded_length": "85",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "42",
+      "sequence_id_full": "domain_RC7",
+      "sequence_id_short": "domain_RC7",
+      "cluster": "19"
+    }
+  },
+  {
+    "query_id": "SMF_RC7__RC14",
+    "member_label": "domain_RC14",
+    "legacy_group": "SMF_RC7",
+    "legacy_cluster_id": "19",
+    "role": "reference_only",
+    "sequence": "TRITTVTVAGTAIDCLNNGRADITVLGGSGNFSYQLLPSGAPQVDNFFGITAPGDYYFRVIDNDTDCYFDAPVFRVAPY",
+    "length": 79,
+    "sequence_sha256": "3400112774d8c0c4cd431d88c45c64fcc97e05a006f29618c7b66fe13f16ae7b",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4379,
+    "parent_end": 4458,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3785,
+        "end": 3864
+      },
+      {
+        "start": 4379,
+        "end": 4458
+      },
+      {
+        "start": 4973,
+        "end": 5052
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "050",
+      "start": "4380",
+      "end": "4458",
+      "length": "79",
+      "output_label": "domain_RC14",
+      "original_label": "domain_RC14",
+      "note": "",
+      "expanded_start": "4376",
+      "expanded_end": "4462",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "49",
+      "sequence_id_full": "domain_RC14",
+      "sequence_id_short": "domain_RC14",
+      "cluster": "19"
+    }
+  },
+  {
+    "query_id": "SMF_RC7__RC21",
+    "member_label": "domain_RC21",
+    "legacy_group": "SMF_RC7",
+    "legacy_cluster_id": "19",
+    "role": "reference_only",
+    "sequence": "TRITTVTVAGTAIDCLNNGRADITVLGGSGNFSYQLLPSGAPQVDNFFGITAPGDYYFRVIDNDTDCYFDAPVFRVA",
+    "length": 77,
+    "sequence_sha256": "ecec428465d2d33742d2df3a745079d9bd8fed5926e5cf22db064f3e646753c4",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4973,
+    "parent_end": 5050,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3785,
+        "end": 3862
+      },
+      {
+        "start": 4379,
+        "end": 4456
+      },
+      {
+        "start": 4973,
+        "end": 5050
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "057",
+      "start": "4974",
+      "end": "5050",
+      "length": "77",
+      "output_label": "domain_RC21",
+      "original_label": "domain_RC21",
+      "note": "",
+      "expanded_start": "4970",
+      "expanded_end": "5054",
+      "expanded_length": "85",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "56",
+      "sequence_id_full": "domain_RC21",
+      "sequence_id_short": "domain_RC21",
+      "cluster": "19"
+    }
+  },
+  {
+    "query_id": "SMF_RC4__RC4",
+    "member_label": "domain_RC4",
+    "legacy_group": "SMF_RC4",
+    "legacy_cluster_id": "20",
+    "role": "reference_only",
+    "sequence": "KPLGFTPEVTALPTCPNNDGQITVTAAGGSSTYSYELLDASASTVLAGPQASNVFNAVAAGSYQVRVTDVTTTCALVKPILLTS",
+    "length": 84,
+    "sequence_sha256": "8cc2c69f2e23dc392dd486ebc8eb0d7bbf473ad168e839ec4fc926cfe06dfbf4",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3528,
+    "parent_end": 3612,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3528,
+        "end": 3612
+      },
+      {
+        "start": 4122,
+        "end": 4206
+      },
+      {
+        "start": 4716,
+        "end": 4800
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "040",
+      "start": "3529",
+      "end": "3612",
+      "length": "84",
+      "output_label": "domain_RC4",
+      "original_label": "domain_RC4",
+      "note": "",
+      "expanded_start": "3525",
+      "expanded_end": "3616",
+      "expanded_length": "92",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "39",
+      "sequence_id_full": "domain_RC4",
+      "sequence_id_short": "domain_RC4",
+      "cluster": "20"
+    }
+  },
+  {
+    "query_id": "SMF_RC4__RC11",
+    "member_label": "domain_RC11",
+    "legacy_group": "SMF_RC4",
+    "legacy_cluster_id": "20",
+    "role": "reference_only",
+    "sequence": "PLGFTPEVTALPTCPNNDGQITVTAAGGSSTYSYELLDASASTVLAGPQASNVFNAVAAGSYQVRVTDVTTTCALVKPILLTS",
+    "length": 83,
+    "sequence_sha256": "60af9e168bc19ef4c7ee2c688eb0e1b4ec6c758fd62d7fbb43ab596ce804cb88",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4123,
+    "parent_end": 4206,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3529,
+        "end": 3612
+      },
+      {
+        "start": 4123,
+        "end": 4206
+      },
+      {
+        "start": 4717,
+        "end": 4800
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "047",
+      "start": "4124",
+      "end": "4206",
+      "length": "83",
+      "output_label": "domain_RC11",
+      "original_label": "domain_RC11",
+      "note": "",
+      "expanded_start": "4120",
+      "expanded_end": "4210",
+      "expanded_length": "91",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "46",
+      "sequence_id_full": "domain_RC11",
+      "sequence_id_short": "domain_RC11",
+      "cluster": "20"
+    }
+  },
+  {
+    "query_id": "SMF_RC4__RC18",
+    "member_label": "domain_RC18",
+    "legacy_group": "SMF_RC4",
+    "legacy_cluster_id": "20",
+    "role": "reference_only",
+    "sequence": "PLGFTPEVTALPTCPNNDGQITVTAAGGSSTYSYELLDASASTVLAGPQASNVFNAVAAGSYQVRVTDVTTTCALVKPILLTS",
+    "length": 83,
+    "sequence_sha256": "60af9e168bc19ef4c7ee2c688eb0e1b4ec6c758fd62d7fbb43ab596ce804cb88",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4717,
+    "parent_end": 4800,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3529,
+        "end": 3612
+      },
+      {
+        "start": 4123,
+        "end": 4206
+      },
+      {
+        "start": 4717,
+        "end": 4800
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "054",
+      "start": "4718",
+      "end": "4800",
+      "length": "83",
+      "output_label": "domain_RC18",
+      "original_label": "domain_RC18",
+      "note": "",
+      "expanded_start": "4714",
+      "expanded_end": "4804",
+      "expanded_length": "91",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "53",
+      "sequence_id_full": "domain_RC18",
+      "sequence_id_short": "domain_RC18",
+      "cluster": "20"
+    }
+  },
+  {
+    "query_id": "SMF_RC25__RC25",
+    "member_label": "domain_RC25",
+    "legacy_group": "SMF_RC25",
+    "legacy_cluster_id": "21",
+    "role": "reference_only",
+    "sequence": "PLELRSEITLTPVCNNPSGDITLFASGGTVSTPSSYVYTMNNWATSQSSPVFGGLAPGSYTFRVRDIVTNCEKEVTQIIEN",
+    "length": 81,
+    "sequence_sha256": "2028565813a1c000f755e6f15313152868563bbc76796a1a0bad644d17f92f2e",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5311,
+    "parent_end": 5392,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5311,
+        "end": 5392
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "061",
+      "start": "5312",
+      "end": "5392",
+      "length": "81",
+      "output_label": "domain_RC25",
+      "original_label": "domain_RC25",
+      "note": "",
+      "expanded_start": "5308",
+      "expanded_end": "5396",
+      "expanded_length": "89",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "60",
+      "sequence_id_full": "domain_RC25",
+      "sequence_id_short": "domain_RC25",
+      "cluster": "21"
+    }
+  },
+  {
+    "query_id": "SMF_RN34__RN34",
+    "member_label": "domain_RN34",
+    "legacy_group": "SMF_RN34",
+    "legacy_cluster_id": "22",
+    "role": "reference_only",
+    "sequence": "DPTNISKSNILNGSGCSIPGRITVGGFGSKYEYAISTGTTTPTSGWQDSNIFANITTAATYNVFVRLKNVTGTCVFRVRNIAITAA",
+    "length": 86,
+    "sequence_sha256": "33a2141f286681272001667dc36e9b05a26fe0595c962cabbf192e97555001a1",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 188,
+    "parent_end": 274,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 188,
+        "end": 274
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "002",
+      "start": "189",
+      "end": "274",
+      "length": "86",
+      "output_label": "domain_RN34",
+      "original_label": "domain_RN34",
+      "note": "",
+      "expanded_start": "185",
+      "expanded_end": "278",
+      "expanded_length": "94",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "1",
+      "sequence_id_full": "domain_RN34",
+      "sequence_id_short": "domain_RN34",
+      "cluster": "22"
+    }
+  },
+  {
+    "query_id": "SMF_RC9__RC9",
+    "member_label": "domain_RC9",
+    "legacy_group": "SMF_RC9",
+    "legacy_cluster_id": "23",
+    "role": "reference_only",
+    "sequence": "PSEAVSVTASTVNDNCGTNAGQIIAEGHGGTAPYYYQILPQGSPAPLVTDAGWSTVTTLNAESGNYTVYVKDSRDCPSSVNVILGLD",
+    "length": 87,
+    "sequence_sha256": "5f37354743ca27b6315a16a4798e1e9081ed0c4a11175cb98994c53cad8c8d8a",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3956,
+    "parent_end": 4043,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3956,
+        "end": 4043
+      },
+      {
+        "start": 4550,
+        "end": 4637
+      },
+      {
+        "start": 5144,
+        "end": 5231
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "045",
+      "start": "3957",
+      "end": "4043",
+      "length": "87",
+      "output_label": "domain_RC9",
+      "original_label": "domain_RC9",
+      "note": "",
+      "expanded_start": "3953",
+      "expanded_end": "4047",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "44",
+      "sequence_id_full": "domain_RC9",
+      "sequence_id_short": "domain_RC9",
+      "cluster": "23"
+    }
+  },
+  {
+    "query_id": "SMF_RC9__RC16",
+    "member_label": "domain_RC16",
+    "legacy_group": "SMF_RC9",
+    "legacy_cluster_id": "23",
+    "role": "reference_only",
+    "sequence": "EAVSVTASTVNDNCGTNAGQIIAEGHGGTAPYYYQILPQGSPAPLVTDAGWSTVTTLNAESGNYTVYVKDSRDCPSSVNVILGLD",
+    "length": 85,
+    "sequence_sha256": "343ec9acef6f6c8b6c59ffe46684e7c54150eb8718d4e9be7bc5848e3460690c",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4552,
+    "parent_end": 4637,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3958,
+        "end": 4043
+      },
+      {
+        "start": 4552,
+        "end": 4637
+      },
+      {
+        "start": 5146,
+        "end": 5231
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "052",
+      "start": "4553",
+      "end": "4637",
+      "length": "85",
+      "output_label": "domain_RC16",
+      "original_label": "domain_RC16",
+      "note": "",
+      "expanded_start": "4549",
+      "expanded_end": "4641",
+      "expanded_length": "93",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "51",
+      "sequence_id_full": "domain_RC16",
+      "sequence_id_short": "domain_RC16",
+      "cluster": "23"
+    }
+  },
+  {
+    "query_id": "SMF_RC9__RC23",
+    "member_label": "domain_RC23",
+    "legacy_group": "SMF_RC9",
+    "legacy_cluster_id": "23",
+    "role": "reference_only",
+    "sequence": "SEAVSVTASTVNDNCGTNAGQIIAEGHGGTAPYYYQILPQGSPAPLVTDAGWSTVTTLNAESGNYTVYVKDSRDCPSSVNVILGLD",
+    "length": 86,
+    "sequence_sha256": "d33d0b480981d90bfe90e937380f7dcbff01cfc2763a1431cf0add3537989110",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5145,
+    "parent_end": 5231,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3957,
+        "end": 4043
+      },
+      {
+        "start": 4551,
+        "end": 4637
+      },
+      {
+        "start": 5145,
+        "end": 5231
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "059",
+      "start": "5146",
+      "end": "5231",
+      "length": "86",
+      "output_label": "domain_RC23",
+      "original_label": "domain_RC23",
+      "note": "",
+      "expanded_start": "5142",
+      "expanded_end": "5235",
+      "expanded_length": "94",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "58",
+      "sequence_id_full": "domain_RC23",
+      "sequence_id_short": "domain_RC23",
+      "cluster": "23"
+    }
+  },
+  {
+    "query_id": "SMF_RN32__RN32",
+    "member_label": "domain_RN32",
+    "legacy_group": "SMF_RN32",
+    "legacy_cluster_id": "24",
+    "role": "reference_only",
+    "sequence": "PNLLTLSISNQSANSGCSTGNLQANPSGGTSPYKYFVNVNNAGFVPNTSGNTIVVTTPGTYQVRVEDINGCTATASYTVNTV",
+    "length": 82,
+    "sequence_sha256": "7feab935cc78041212ee737d5f1d9acb44ad558a78c16ef276f4beb626818fa7",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 361,
+    "parent_end": 443,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 361,
+        "end": 443
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "004",
+      "start": "362",
+      "end": "443",
+      "length": "82",
+      "output_label": "domain_RN32",
+      "original_label": "domain_RN32",
+      "note": "",
+      "expanded_start": "358",
+      "expanded_end": "447",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "3",
+      "sequence_id_full": "domain_RN32",
+      "sequence_id_short": "domain_RN32",
+      "cluster": "24"
+    }
+  },
+  {
+    "query_id": "SMF_RC2__RC2",
+    "member_label": "domain_RC2",
+    "legacy_group": "SMF_RC2",
+    "legacy_cluster_id": "25",
+    "role": "reference_only",
+    "sequence": "VVPVLVNATVNKNQNCNELGNISVSAQGGTAPYKYLVLSDTAPAPTAGDAWVDGSSFNLAAGNYIAYAKDANGCIQPAAVKVIPLD",
+    "length": 86,
+    "sequence_sha256": "733dfe6095d862bc8fbeab1b57384c4ca9845f0218d79aa58ef4b588ff23e1b7",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3363,
+    "parent_end": 3449,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3363,
+        "end": 3449
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "038",
+      "start": "3364",
+      "end": "3449",
+      "length": "86",
+      "output_label": "domain_RC2",
+      "original_label": "domain_RC2",
+      "note": "",
+      "expanded_start": "3360",
+      "expanded_end": "3453",
+      "expanded_length": "94",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "37",
+      "sequence_id_full": "domain_RC2",
+      "sequence_id_short": "domain_RC2",
+      "cluster": "25"
+    }
+  },
+  {
+    "query_id": "SMF_RC3__RC3",
+    "member_label": "domain_RC3",
+    "legacy_group": "SMF_RC3",
+    "legacy_cluster_id": "26",
+    "role": "reference_only",
+    "sequence": "PTPVVAAVLAAQCNVTEGSFVINVTVPTAGVSPYTFSVDGGAFQSRTAPFSITGLSSGSHTIEIKDKNGCGNTVTVPIL",
+    "length": 79,
+    "sequence_sha256": "0854e4d169c2e0aae6d161dd8bcbf664eb87b8cd5aa69861af16fb450ba405a1",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3449,
+    "parent_end": 3528,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3449,
+        "end": 3528
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "039",
+      "start": "3450",
+      "end": "3528",
+      "length": "79",
+      "output_label": "domain_RC3",
+      "original_label": "domain_RC3",
+      "note": "",
+      "expanded_start": "3446",
+      "expanded_end": "3532",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "38",
+      "sequence_id_full": "domain_RC3",
+      "sequence_id_short": "domain_RC3",
+      "cluster": "26"
+    }
+  },
+  {
+    "query_id": "SMF_RC3__RC10",
+    "member_label": "domain_RC10",
+    "legacy_group": "SMF_RC3",
+    "legacy_cluster_id": "26",
+    "role": "reference_only",
+    "sequence": "PSPVVAAVLAAQCNVAEGSFVINVTVPTAGVSPYTFSVDGGAFQSRTAPFSITGLSSGSHTIEIKDKNGCGNTVTVPILK",
+    "length": 80,
+    "sequence_sha256": "14c6ef7c6a8a7c0b5ef274d046b7ae4c14f9b3103a441b56e7cdeec6d699312c",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4043,
+    "parent_end": 4123,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 4043,
+        "end": 4123
+      },
+      {
+        "start": 4637,
+        "end": 4717
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "046",
+      "start": "4044",
+      "end": "4123",
+      "length": "80",
+      "output_label": "domain_RC10",
+      "original_label": "domain_RC10",
+      "note": "",
+      "expanded_start": "4040",
+      "expanded_end": "4127",
+      "expanded_length": "88",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "45",
+      "sequence_id_full": "domain_RC10",
+      "sequence_id_short": "domain_RC10",
+      "cluster": "26"
+    }
+  },
+  {
+    "query_id": "SMF_RC3__RC17",
+    "member_label": "domain_RC17",
+    "legacy_group": "SMF_RC3",
+    "legacy_cluster_id": "26",
+    "role": "reference_only",
+    "sequence": "PSPVVAAVLAAQCNVAEGSFVINVTVPTAGVSPYTFSVDGGAFQSRTAPFSITGLSSGSHTIEIKDKNGCGNTVTVPILK",
+    "length": 80,
+    "sequence_sha256": "14c6ef7c6a8a7c0b5ef274d046b7ae4c14f9b3103a441b56e7cdeec6d699312c",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4637,
+    "parent_end": 4717,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 4043,
+        "end": 4123
+      },
+      {
+        "start": 4637,
+        "end": 4717
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "053",
+      "start": "4638",
+      "end": "4717",
+      "length": "80",
+      "output_label": "domain_RC17",
+      "original_label": "domain_RC17",
+      "note": "",
+      "expanded_start": "4634",
+      "expanded_end": "4721",
+      "expanded_length": "88",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "52",
+      "sequence_id_full": "domain_RC17",
+      "sequence_id_short": "domain_RC17",
+      "cluster": "26"
+    }
+  },
+  {
+    "query_id": "SMF_RC3__RC24",
+    "member_label": "domain_RC24",
+    "legacy_group": "SMF_RC3",
+    "legacy_cluster_id": "26",
+    "role": "reference_only",
+    "sequence": "PSPVVAAVLAAQCNVTEGNFVINVTVPTAGVSPYTFSVDGGAFQSRTAPFSITGLSSGSHTIEIKDKNGCGNTVTVPILA",
+    "length": 80,
+    "sequence_sha256": "a2ba67337cfeafe73c0d881d2456b164ac20a104a5b12f8e0d00d218b3b4a80c",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5231,
+    "parent_end": 5311,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5231,
+        "end": 5311
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "060",
+      "start": "5232",
+      "end": "5311",
+      "length": "80",
+      "output_label": "domain_RC24",
+      "original_label": "domain_RC24",
+      "note": "",
+      "expanded_start": "5228",
+      "expanded_end": "5315",
+      "expanded_length": "88",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "59",
+      "sequence_id_full": "domain_RC24",
+      "sequence_id_short": "domain_RC24",
+      "cluster": "26"
+    }
+  },
+  {
+    "query_id": "SMF_RN23__RN23",
+    "member_label": "domain_RN23",
+    "legacy_group": "SMF_RN23",
+    "legacy_cluster_id": "27",
+    "role": "reference_only",
+    "sequence": "VPVIASAAPVNPTCNGGTNGSVQLSGSGGVGPYMFSFNGGAFSNQSLYTGLSAGVSYSYQVRDFNQCLSAAGTITLSQ",
+    "length": 78,
+    "sequence_sha256": "c8fb098332d4c0c59b8c2fb6b9cabc92e08fc6b77bfa6719fe81a6478435aeb6",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1254,
+    "parent_end": 1332,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1254,
+        "end": 1332
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "013",
+      "start": "1255",
+      "end": "1332",
+      "length": "78",
+      "output_label": "domain_RN23",
+      "original_label": "domain_RN23",
+      "note": "",
+      "expanded_start": "1251",
+      "expanded_end": "1336",
+      "expanded_length": "86",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "12",
+      "sequence_id_full": "domain_RN23",
+      "sequence_id_short": "domain_RN23",
+      "cluster": "27"
+    }
+  },
+  {
+    "query_id": "SMF_RN23__RN16",
+    "member_label": "domain_RN16",
+    "legacy_group": "SMF_RN23",
+    "legacy_cluster_id": "27",
+    "role": "reference_only",
+    "sequence": "VPVIASAAPVDPTCNGGTNGSVQLSGSGGVGPYMFSFNGGAFSNQSFYTGLSAGVSYSYQVRDFNQCLSAPGTITLSQ",
+    "length": 78,
+    "sequence_sha256": "ac6fa31017b27fecf886bd0a198d33ab7a56db81de8b26a8d46560ba8aa1f5d8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1821,
+    "parent_end": 1899,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1821,
+        "end": 1899
+      },
+      {
+        "start": 2388,
+        "end": 2466
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "020",
+      "start": "1822",
+      "end": "1899",
+      "length": "78",
+      "output_label": "domain_RN16",
+      "original_label": "domain_RN16",
+      "note": "",
+      "expanded_start": "1818",
+      "expanded_end": "1903",
+      "expanded_length": "86",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "19",
+      "sequence_id_full": "domain_RN16",
+      "sequence_id_short": "domain_RN16",
+      "cluster": "27"
+    }
+  },
+  {
+    "query_id": "SMF_RN23__RN9",
+    "member_label": "domain_RN9",
+    "legacy_group": "SMF_RN23",
+    "legacy_cluster_id": "27",
+    "role": "reference_only",
+    "sequence": "VPVIASAAPVDPTCNGGTNGSVQLSGSGGVGPYMFSFNGGAFSNQSFYTGLSAGVSYSYQVRDFNQCLSAPGTITLSQ",
+    "length": 78,
+    "sequence_sha256": "ac6fa31017b27fecf886bd0a198d33ab7a56db81de8b26a8d46560ba8aa1f5d8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2388,
+    "parent_end": 2466,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1821,
+        "end": 1899
+      },
+      {
+        "start": 2388,
+        "end": 2466
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "027",
+      "start": "2389",
+      "end": "2466",
+      "length": "78",
+      "output_label": "domain_RN9",
+      "original_label": "domain_RN9",
+      "note": "",
+      "expanded_start": "2385",
+      "expanded_end": "2470",
+      "expanded_length": "86",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "26",
+      "sequence_id_full": "domain_RN9",
+      "sequence_id_short": "domain_RN9",
+      "cluster": "27"
+    }
+  },
+  {
+    "query_id": "SMF_RC35__RC35",
+    "member_label": "domain_RC35",
+    "legacy_group": "SMF_RC35",
+    "legacy_cluster_id": "28",
+    "role": "reference_only",
+    "sequence": "NILTAYEVPGSMIPEICKGDKDGAFTIEIQGGTAPYFESLDKDNGPFNPVLATTVDYTGLSGGRHTVFIKDSNGCIYPVEVNMPESV",
+    "length": 87,
+    "sequence_sha256": "4543ae8cbfdbd1c116212816cc23dc9f52e9d9384ef1eca90467099a4cf34681",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 6172,
+    "parent_end": 6259,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 6172,
+        "end": 6259
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "071",
+      "start": "6173",
+      "end": "6259",
+      "length": "87",
+      "output_label": "domain_RC35",
+      "original_label": "domain_RC35",
+      "note": "",
+      "expanded_start": "6169",
+      "expanded_end": "6263",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "70",
+      "sequence_id_full": "domain_RC35",
+      "sequence_id_short": "domain_RC35",
+      "cluster": "28"
+    }
+  },
+  {
+    "query_id": "SMF_RN17__RN17",
+    "member_label": "domain_RN17",
+    "legacy_group": "SMF_RN17",
+    "legacy_cluster_id": "29",
+    "role": "reference_only",
+    "sequence": "QVDAVLTKTLDCKTPPAARITGTISGGTAPYTYSVSVNGGAYTSLGAVTGTTFTYDTTTAGEYQFQVNDVNNCPAVSTSVKIDAL",
+    "length": 85,
+    "sequence_sha256": "d38e388eaeb8bfcb0e4b5029c3cebed83f27314e6413e1ee0d9f0d23e9a74539",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1736,
+    "parent_end": 1821,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1736,
+        "end": 1821
+      },
+      {
+        "start": 2303,
+        "end": 2388
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "019",
+      "start": "1737",
+      "end": "1821",
+      "length": "85",
+      "output_label": "domain_RN17",
+      "original_label": "domain_RN17",
+      "note": "",
+      "expanded_start": "1733",
+      "expanded_end": "1825",
+      "expanded_length": "93",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "18",
+      "sequence_id_full": "domain_RN17",
+      "sequence_id_short": "domain_RN17",
+      "cluster": "29"
+    }
+  },
+  {
+    "query_id": "SMF_RN17__RN10",
+    "member_label": "domain_RN10",
+    "legacy_group": "SMF_RN17",
+    "legacy_cluster_id": "29",
+    "role": "reference_only",
+    "sequence": "QLQVDAVLTKTLDCKTPPAARITGTISGGTAPYTYSVSVNGGAYTSLGAVTGTTFTYDTTTAGEYQFQVNDVNNCPAVSTSVKIDAL",
+    "length": 87,
+    "sequence_sha256": "d4eef5d6b50f210010d6dc128dcaaa6321f23c83906736771fa5eee8648ded5f",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2301,
+    "parent_end": 2388,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1734,
+        "end": 1821
+      },
+      {
+        "start": 2301,
+        "end": 2388
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "026",
+      "start": "2302",
+      "end": "2388",
+      "length": "87",
+      "output_label": "domain_RN10",
+      "original_label": "domain_RN10",
+      "note": "",
+      "expanded_start": "2298",
+      "expanded_end": "2392",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "25",
+      "sequence_id_full": "domain_RN10",
+      "sequence_id_short": "domain_RN10",
+      "cluster": "29"
+    }
+  },
+  {
+    "query_id": "SMF_RN24__RN24",
+    "member_label": "domain_RN24",
+    "legacy_group": "SMF_RN24",
+    "legacy_cluster_id": "30",
+    "role": "reference_only",
+    "sequence": "KITATTAIRNSLTCDPANPDATIEVTISGGTAPYTYTVKNKTTGALLYTSSSITGPTFTYSTANPGTYTFDVKDDNGCIATIDGVVNSL",
+    "length": 89,
+    "sequence_sha256": "78e5cc4cc5a29b59c21370c0a31c0288665de8ab06ae5732d8e16552bb6ed127",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1165,
+    "parent_end": 1254,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1165,
+        "end": 1254
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "012",
+      "start": "1166",
+      "end": "1254",
+      "length": "89",
+      "output_label": "domain_RN24",
+      "original_label": "domain_RN24",
+      "note": "",
+      "expanded_start": "1162",
+      "expanded_end": "1258",
+      "expanded_length": "97",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "11",
+      "sequence_id_full": "domain_RN24",
+      "sequence_id_short": "domain_RN24",
+      "cluster": "30"
+    }
+  },
+  {
+    "query_id": "SMF_RN3__RN3",
+    "member_label": "domain_RN3",
+    "legacy_group": "SMF_RN3",
+    "legacy_cluster_id": "31",
+    "role": "reference_only",
+    "sequence": "EFTVATVLTDGPKCTSPNITIDGTINGGTANYNYTVTINGTLDPTVHTVAGTTFTYTDATAVTATTTTTYLFTFTDNSGCNATSTVVVQP",
+    "length": 90,
+    "sequence_sha256": "fd4004b0cd9ddc3e3efa2e6879d6dfd56bfaff7424e7c732b945e63cec9025e8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2868,
+    "parent_end": 2958,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 2868,
+        "end": 2958
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "033",
+      "start": "2869",
+      "end": "2958",
+      "length": "90",
+      "output_label": "domain_RN3",
+      "original_label": "domain_RN3",
+      "note": "",
+      "expanded_start": "2865",
+      "expanded_end": "2962",
+      "expanded_length": "98",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "32",
+      "sequence_id_full": "domain_RN3",
+      "sequence_id_short": "domain_RN3",
+      "cluster": "31"
+    }
+  },
+  {
+    "query_id": "SMF_RN19__RN19",
+    "member_label": "domain_RN19",
+    "legacy_group": "SMF_RN19",
+    "legacy_cluster_id": "32",
+    "role": "reference_only",
+    "sequence": "PAAALTLNNTPSAITCDAPGSVVLTAAGGWGGNTYSLTQPDGTVLGPQNTGTFANLTQTGSYTANVTDANNCIASSTFTLST",
+    "length": 82,
+    "sequence_sha256": "6a8bb56e1db3676f666e7098354d440b4a2f849b586b83604dbf8a2ab9f43906",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1573,
+    "parent_end": 1655,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1573,
+        "end": 1655
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "017",
+      "start": "1574",
+      "end": "1655",
+      "length": "82",
+      "output_label": "domain_RN19",
+      "original_label": "domain_RN19",
+      "note": "",
+      "expanded_start": "1570",
+      "expanded_end": "1659",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "16",
+      "sequence_id_full": "domain_RN19",
+      "sequence_id_short": "domain_RN19",
+      "cluster": "32"
+    }
+  },
+  {
+    "query_id": "SMF_RN19__RN12",
+    "member_label": "domain_RN12",
+    "legacy_group": "SMF_RN19",
+    "legacy_cluster_id": "32",
+    "role": "reference_only",
+    "sequence": "PAAALTLNNTPSAITCDAPGSVVLTAAGGWGGNTYSLTQPDGTVLGPQNTGTFANLTQTGNYTANVTDANNCIASSTFTLST",
+    "length": 82,
+    "sequence_sha256": "5eaeff5464f6c1a6b6f76ea68bc1da254516f742cab8ebedd4e833f72729b329",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2140,
+    "parent_end": 2222,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 2140,
+        "end": 2222
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "024",
+      "start": "2141",
+      "end": "2222",
+      "length": "82",
+      "output_label": "domain_RN12",
+      "original_label": "domain_RN12",
+      "note": "",
+      "expanded_start": "2137",
+      "expanded_end": "2226",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "23",
+      "sequence_id_full": "domain_RN12",
+      "sequence_id_short": "domain_RN12",
+      "cluster": "32"
+    }
+  },
+  {
+    "query_id": "SMF_RN19__RN5",
+    "member_label": "domain_RN5",
+    "legacy_group": "SMF_RN19",
+    "legacy_cluster_id": "32",
+    "role": "reference_only",
+    "sequence": "PAAALTLNNTPSAITCDAPGSVVLTASGGWGGNTYSLTQPDGTVLGPQNTGTFANLTQTGSYTANVTDANNCIASSTFTLST",
+    "length": 82,
+    "sequence_sha256": "a8b56d68181c1cca7899a16fb48dcad3d99f816d6576f9ebb23fc2e6c2a16dd7",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2707,
+    "parent_end": 2789,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 2707,
+        "end": 2789
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "031",
+      "start": "2708",
+      "end": "2789",
+      "length": "82",
+      "output_label": "domain_RN5",
+      "original_label": "domain_RN5",
+      "note": "",
+      "expanded_start": "2704",
+      "expanded_end": "2793",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "30",
+      "sequence_id_full": "domain_RN5",
+      "sequence_id_short": "domain_RN5",
+      "cluster": "32"
+    }
+  },
+  {
+    "query_id": "SMF_RC33__RC33",
+    "member_label": "domain_RC33",
+    "legacy_group": "SMF_RC33",
+    "legacy_cluster_id": "33",
+    "role": "reference_only",
+    "sequence": "VTPLTVELNTDNAKVNCKDESTALIVAEAVGGLGNYEYSLLDGAGTEIRPAQPDGVFADLPAGTYTVHVKSVDCEANSTTIVVSQP",
+    "length": 86,
+    "sequence_sha256": "9efbd74ecc3c634807ec0b9600a8d97bac6e8a3f6c5854bf062f391d2262b161",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 6006,
+    "parent_end": 6092,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 6006,
+        "end": 6092
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "069",
+      "start": "6007",
+      "end": "6092",
+      "length": "86",
+      "output_label": "domain_RC33",
+      "original_label": "domain_RC33",
+      "note": "",
+      "expanded_start": "6003",
+      "expanded_end": "6096",
+      "expanded_length": "94",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "68",
+      "sequence_id_full": "domain_RC33",
+      "sequence_id_short": "domain_RC33",
+      "cluster": "33"
+    }
+  },
+  {
+    "query_id": "SMF_RC30__RC30",
+    "member_label": "domain_RC30",
+    "legacy_group": "SMF_RC30",
+    "legacy_cluster_id": "34",
+    "role": "reference_only",
+    "sequence": "PLEPLALSLEQTRITCVSGNDDGTITATATGGWEGDYQFELVGPYGTINYSDQYKFENLREGTYTITVKDSKGCMDIQTITLTK",
+    "length": 84,
+    "sequence_sha256": "71c692dad570f6e6d422ec1053329798a3fc0b0b2779ce83764802967ab72adc",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5750,
+    "parent_end": 5834,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5750,
+        "end": 5834
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "066",
+      "start": "5751",
+      "end": "5834",
+      "length": "84",
+      "output_label": "domain_RC30",
+      "original_label": "domain_RC30",
+      "note": "",
+      "expanded_start": "5747",
+      "expanded_end": "5838",
+      "expanded_length": "92",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "65",
+      "sequence_id_full": "domain_RC30",
+      "sequence_id_short": "domain_RC30",
+      "cluster": "34"
+    }
+  },
+  {
+    "query_id": "SMF_RC37__RC37",
+    "member_label": "domain_RC37",
+    "legacy_group": "SMF_RC37",
+    "legacy_cluster_id": "35",
+    "role": "reference_only",
+    "sequence": "PLQLTLTEEKGVWNVITASAVGGGGEYVYSIDGVNFSSETKFKIYKTGTYTITVRDKNGCTDTKDYYIEYV",
+    "length": 71,
+    "sequence_sha256": "479a978b7bbfa855c68f7fd4da35aa811eadc959b646df2b954526ed6fff0c09",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 6338,
+    "parent_end": 6409,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 6338,
+        "end": 6409
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "073",
+      "start": "6339",
+      "end": "6409",
+      "length": "71",
+      "output_label": "domain_RC37",
+      "original_label": "domain_RC37",
+      "note": "",
+      "expanded_start": "6335",
+      "expanded_end": "6413",
+      "expanded_length": "79",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "72",
+      "sequence_id_full": "domain_RC37",
+      "sequence_id_short": "domain_RC37",
+      "cluster": "35"
+    }
+  },
+  {
+    "query_id": "SMF_RC6__RC6",
+    "member_label": "domain_RC6",
+    "legacy_group": "SMF_RC6",
+    "legacy_cluster_id": "36",
+    "role": "reference_only",
+    "sequence": "PVLSVDASSAAAPFKCAPDNSTNTTIVTINGSGGFGDYTYSINNVDFYPTNTFTVADNGTTYNLPVYVKDANGCSAIGSVLITRL",
+    "length": 85,
+    "sequence_sha256": "77b9a56dea7dbe5b6a03f521b2dea5b42d06ecfef7dad7585949d5335fc4e4a8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 3700,
+    "parent_end": 3785,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3700,
+        "end": 3785
+      },
+      {
+        "start": 4294,
+        "end": 4379
+      },
+      {
+        "start": 4888,
+        "end": 4973
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "042",
+      "start": "3701",
+      "end": "3785",
+      "length": "85",
+      "output_label": "domain_RC6",
+      "original_label": "domain_RC6",
+      "note": "",
+      "expanded_start": "3697",
+      "expanded_end": "3789",
+      "expanded_length": "93",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "41",
+      "sequence_id_full": "domain_RC6",
+      "sequence_id_short": "domain_RC6",
+      "cluster": "36"
+    }
+  },
+  {
+    "query_id": "SMF_RC6__RC13",
+    "member_label": "domain_RC13",
+    "legacy_group": "SMF_RC6",
+    "legacy_cluster_id": "36",
+    "role": "reference_only",
+    "sequence": "PVLSVDASSAAAPFKCAPDNSTNTTIVTINGSGGFGDYTYSINNVDFYPTNTFTVADNGTTYNLPVYVKDANGCSAIGSVLITRL",
+    "length": 85,
+    "sequence_sha256": "77b9a56dea7dbe5b6a03f521b2dea5b42d06ecfef7dad7585949d5335fc4e4a8",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4294,
+    "parent_end": 4379,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3700,
+        "end": 3785
+      },
+      {
+        "start": 4294,
+        "end": 4379
+      },
+      {
+        "start": 4888,
+        "end": 4973
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "049",
+      "start": "4295",
+      "end": "4379",
+      "length": "85",
+      "output_label": "domain_RC13",
+      "original_label": "domain_RC13",
+      "note": "",
+      "expanded_start": "4291",
+      "expanded_end": "4383",
+      "expanded_length": "93",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "48",
+      "sequence_id_full": "domain_RC13",
+      "sequence_id_short": "domain_RC13",
+      "cluster": "36"
+    }
+  },
+  {
+    "query_id": "SMF_RC6__RC20",
+    "member_label": "domain_RC20",
+    "legacy_group": "SMF_RC6",
+    "legacy_cluster_id": "36",
+    "role": "reference_only",
+    "sequence": "PPVLSVDASSAAAPFKCAPDNSTNTTIVTINGSGGFGDYTYSINNVDFYPTNTFTVADNGTTYNLPVYVKDANGCSAIGSVLITRL",
+    "length": 86,
+    "sequence_sha256": "6f0494bac17912c932cd01b8073e402f12c14912f3ddc50bcfcffa911b358114",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 4887,
+    "parent_end": 4973,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 3699,
+        "end": 3785
+      },
+      {
+        "start": 4293,
+        "end": 4379
+      },
+      {
+        "start": 4887,
+        "end": 4973
+      }
+    ],
+    "exact_parent_match_count": 3,
+    "source_module_row": {
+      "index": "056",
+      "start": "4888",
+      "end": "4973",
+      "length": "86",
+      "output_label": "domain_RC20",
+      "original_label": "domain_RC20",
+      "note": "",
+      "expanded_start": "4884",
+      "expanded_end": "4977",
+      "expanded_length": "94",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "55",
+      "sequence_id_full": "domain_RC20",
+      "sequence_id_short": "domain_RC20",
+      "cluster": "36"
+    }
+  },
+  {
+    "query_id": "SMF_RN22__RN22",
+    "member_label": "domain_RN22",
+    "legacy_group": "SMF_RN22",
+    "legacy_cluster_id": "37",
+    "role": "reference_only",
+    "sequence": "PDPITGTTSFTPYTCLQTGSITVTSISGGTGTYQYSINGTTFQAGTTFTGLTNGTYTITVRDANNCTNTLAPVTLDPL",
+    "length": 78,
+    "sequence_sha256": "534f142c6b01c0b45b42d1bc46c315bf2baed39523607be53b8afd61eefc4357",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1332,
+    "parent_end": 1410,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1332,
+        "end": 1410
+      },
+      {
+        "start": 2466,
+        "end": 2544
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "014",
+      "start": "1333",
+      "end": "1410",
+      "length": "78",
+      "output_label": "domain_RN22",
+      "original_label": "domain_RN22",
+      "note": "",
+      "expanded_start": "1329",
+      "expanded_end": "1414",
+      "expanded_length": "86",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "13",
+      "sequence_id_full": "domain_RN22",
+      "sequence_id_short": "domain_RN22",
+      "cluster": "37"
+    }
+  },
+  {
+    "query_id": "SMF_RN22__RN15",
+    "member_label": "domain_RN15",
+    "legacy_group": "SMF_RN22",
+    "legacy_cluster_id": "37",
+    "role": "reference_only",
+    "sequence": "PDPITGTTSFTPYTCLQTGSITVTSTSGGTGTYQYSINGTTFQAGTTFTGLTNGTYTITVRDANNCTNTLAPVTLD",
+    "length": 76,
+    "sequence_sha256": "153fa29e8830d61ee7443fa82271f705512bbe684a4fb1b8d28cd62043830b91",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1899,
+    "parent_end": 1975,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1899,
+        "end": 1975
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "021",
+      "start": "1900",
+      "end": "1975",
+      "length": "76",
+      "output_label": "domain_RN15",
+      "original_label": "domain_RN15",
+      "note": "",
+      "expanded_start": "1896",
+      "expanded_end": "1979",
+      "expanded_length": "84",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "20",
+      "sequence_id_full": "domain_RN15",
+      "sequence_id_short": "domain_RN15",
+      "cluster": "37"
+    }
+  },
+  {
+    "query_id": "SMF_RN22__RN8",
+    "member_label": "domain_RN8",
+    "legacy_group": "SMF_RN22",
+    "legacy_cluster_id": "37",
+    "role": "reference_only",
+    "sequence": "PDPITGTTSFTPYTCLQTGSITVTSISGGTGTYQYSINGTTFQAGTTFTGLTNGTYTITVRDANNCTNTLAPVTLDPLTP",
+    "length": 80,
+    "sequence_sha256": "1ac91f475b3fbf233d8efa6d110bce41ed486a1534dc724a2cf947f98ef06968",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2466,
+    "parent_end": 2546,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1332,
+        "end": 1412
+      },
+      {
+        "start": 2466,
+        "end": 2546
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "028",
+      "start": "2467",
+      "end": "2546",
+      "length": "80",
+      "output_label": "domain_RN8",
+      "original_label": "domain_RN8",
+      "note": "",
+      "expanded_start": "2463",
+      "expanded_end": "2550",
+      "expanded_length": "88",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "27",
+      "sequence_id_full": "domain_RN8",
+      "sequence_id_short": "domain_RN8",
+      "cluster": "37"
+    }
+  },
+  {
+    "query_id": "SMF_RN18__RN18",
+    "member_label": "domain_RN18",
+    "legacy_group": "SMF_RN18",
+    "legacy_cluster_id": "38",
+    "role": "reference_only",
+    "sequence": "PSAPSASIAGSDICYDANNQATITVTASGGVGPYQYSINNGTSYQSGNTFANLLPGSYTVLVKDAFGCTSTAIAQVIANQL",
+    "length": 81,
+    "sequence_sha256": "5b4dd71c6b2c842dba41c2b2ba21ad1932acb78777821730e1643819378139bc",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1655,
+    "parent_end": 1736,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1655,
+        "end": 1736
+      },
+      {
+        "start": 2222,
+        "end": 2303
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "018",
+      "start": "1656",
+      "end": "1736",
+      "length": "81",
+      "output_label": "domain_RN18",
+      "original_label": "domain_RN18",
+      "note": "",
+      "expanded_start": "1652",
+      "expanded_end": "1740",
+      "expanded_length": "89",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "17",
+      "sequence_id_full": "domain_RN18",
+      "sequence_id_short": "domain_RN18",
+      "cluster": "38"
+    }
+  },
+  {
+    "query_id": "SMF_RN18__RN11",
+    "member_label": "domain_RN11",
+    "legacy_group": "SMF_RN18",
+    "legacy_cluster_id": "38",
+    "role": "reference_only",
+    "sequence": "PSAPSASIAGSDICYDANNQATITVTASGGVGPYQYSINNGTSYQSGNTFANLLPGSYTVLVKDAFGCTSTAIAQVIAN",
+    "length": 79,
+    "sequence_sha256": "72a2deac0588ac2863f455953804f70b2298dae7e5bf7844efc85c665683270e",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2222,
+    "parent_end": 2301,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1655,
+        "end": 1734
+      },
+      {
+        "start": 2222,
+        "end": 2301
+      }
+    ],
+    "exact_parent_match_count": 2,
+    "source_module_row": {
+      "index": "025",
+      "start": "2223",
+      "end": "2301",
+      "length": "79",
+      "output_label": "domain_RN11",
+      "original_label": "domain_RN11",
+      "note": "",
+      "expanded_start": "2219",
+      "expanded_end": "2305",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "24",
+      "sequence_id_full": "domain_RN11",
+      "sequence_id_short": "domain_RN11",
+      "cluster": "38"
+    }
+  },
+  {
+    "query_id": "SMF_RN18__RN4",
+    "member_label": "domain_RN4",
+    "legacy_group": "SMF_RN18",
+    "legacy_cluster_id": "38",
+    "role": "reference_only",
+    "sequence": "PSAPSASIAGSDICYDANNQATITVTASGGVGPYQYSINNGTSYQSSGTFANLLPGSYTVLVKDAFGCTSTAIAQTIAN",
+    "length": 79,
+    "sequence_sha256": "63cc96699283801cc8ad4f0fbe67238471962d14ff6f1a2891c0b8c927934aeb",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 2789,
+    "parent_end": 2868,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 2789,
+        "end": 2868
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "032",
+      "start": "2790",
+      "end": "2868",
+      "length": "79",
+      "output_label": "domain_RN4",
+      "original_label": "domain_RN4",
+      "note": "",
+      "expanded_start": "2786",
+      "expanded_end": "2872",
+      "expanded_length": "87",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "31",
+      "sequence_id_full": "domain_RN4",
+      "sequence_id_short": "domain_RN4",
+      "cluster": "38"
+    }
+  },
+  {
+    "query_id": "SMF_RN25__RN25",
+    "member_label": "domain_RN25",
+    "legacy_group": "SMF_RN25",
+    "legacy_cluster_id": "39",
+    "role": "reference_only",
+    "sequence": "TIPPKADITKNTGLCFGTNATITVTIRDGAAPYSYSVSYNGGAYSAPSTPSNATSFNYTAAAPGTYSFLITDHNGCNAIAVSQRIDP",
+    "length": 87,
+    "sequence_sha256": "a0500da69f4816b2ba0a9c38cc20656d237624ecf8de79a7b350cf7979276f93",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 1078,
+    "parent_end": 1165,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 1078,
+        "end": 1165
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "011",
+      "start": "1079",
+      "end": "1165",
+      "length": "87",
+      "output_label": "domain_RN25",
+      "original_label": "domain_RN25",
+      "note": "",
+      "expanded_start": "1075",
+      "expanded_end": "1169",
+      "expanded_length": "95",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "10",
+      "sequence_id_full": "domain_RN25",
+      "sequence_id_short": "domain_RN25",
+      "cluster": "39"
+    }
+  },
+  {
+    "query_id": "SMF_RC34__RC34",
+    "member_label": "domain_RC34",
+    "legacy_group": "SMF_RC34",
+    "legacy_cluster_id": "40",
+    "role": "reference_only",
+    "sequence": "ENALTGDYTVVPVKCFGDNNGKIVVTASGGTGTIKYAIEPNLDQFFESGTFERLTAGTYTVIVQDLAGCNIIYEIDVVQP",
+    "length": 80,
+    "sequence_sha256": "330171f8fa19e646c1227de2e271b75c98ef2e796d775ec5b36f1a35e2fc0f55",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 6092,
+    "parent_end": 6172,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 6092,
+        "end": 6172
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "070",
+      "start": "6093",
+      "end": "6172",
+      "length": "80",
+      "output_label": "domain_RC34",
+      "original_label": "domain_RC34",
+      "note": "",
+      "expanded_start": "6089",
+      "expanded_end": "6176",
+      "expanded_length": "88",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "69",
+      "sequence_id_full": "domain_RC34",
+      "sequence_id_short": "domain_RC34",
+      "cluster": "40"
+    }
+  },
+  {
+    "query_id": "SMF_RN30__RN30",
+    "member_label": "domain_RN30",
+    "legacy_group": "SMF_RN30",
+    "legacy_cluster_id": "41",
+    "role": "reference_only",
+    "sequence": "GLTASAGVAALAGCGPNGTGIVRITNPSGGVPPYQYSFNGTTWGASNEANMAPNNAPGYTVYIRDSSPTPCVYAMTGIIIDPV",
+    "length": 83,
+    "sequence_sha256": "619348d5a67cf441d164e65099cac24a6f1e7ce7ebed911c187c22993e6db761",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 527,
+    "parent_end": 610,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 527,
+        "end": 610
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "006",
+      "start": "528",
+      "end": "610",
+      "length": "83",
+      "output_label": "domain_RN30",
+      "original_label": "domain_RN30",
+      "note": "",
+      "expanded_start": "524",
+      "expanded_end": "614",
+      "expanded_length": "91",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "5",
+      "sequence_id_full": "domain_RN30",
+      "sequence_id_short": "domain_RN30",
+      "cluster": "41"
+    }
+  },
+  {
+    "query_id": "SMF_RC32__RC32",
+    "member_label": "domain_RC32",
+    "legacy_group": "SMF_RC32",
+    "legacy_cluster_id": "42",
+    "role": "reference_only",
+    "sequence": "PTIIEPTLSLDKAITCLTNARLTLSVTGGTGPYTYSEDGTNYSVTSFNSSVTFEVTPGLHRYFVKDNVGCISYVSNDFEVIP",
+    "length": 82,
+    "sequence_sha256": "84dfd04f0d2b8f43fdd42eafbbe9d2168887a7e32cff224c099a6fcb824046d2",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5924,
+    "parent_end": 6006,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5924,
+        "end": 6006
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "068",
+      "start": "5925",
+      "end": "6006",
+      "length": "82",
+      "output_label": "domain_RC32",
+      "original_label": "domain_RC32",
+      "note": "",
+      "expanded_start": "5921",
+      "expanded_end": "6010",
+      "expanded_length": "90",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "67",
+      "sequence_id_full": "domain_RC32",
+      "sequence_id_short": "domain_RC32",
+      "cluster": "42"
+    }
+  },
+  {
+    "query_id": "SMF_RC27__RC27",
+    "member_label": "domain_RC27",
+    "legacy_group": "SMF_RC27",
+    "legacy_cluster_id": "43",
+    "role": "reference_only",
+    "sequence": "PAPIVVDAPLVTQYVCAAGTNTSSRATITVNSVNGGSNNYVIYEFTRGTTVVQRGLSNSYTETDYAGGSYSVKVLDSKGCSGVTTAPITIDPF",
+    "length": 93,
+    "sequence_sha256": "635799315cab41dfddca927e4647572fb6c6889a52fceff8bb25b26de4a9bb67",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5480,
+    "parent_end": 5573,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5480,
+        "end": 5573
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "063",
+      "start": "5481",
+      "end": "5573",
+      "length": "93",
+      "output_label": "domain_RC27",
+      "original_label": "domain_RC27",
+      "note": "",
+      "expanded_start": "5477",
+      "expanded_end": "5577",
+      "expanded_length": "101",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "62",
+      "sequence_id_full": "domain_RC27",
+      "sequence_id_short": "domain_RC27",
+      "cluster": "43"
+    }
+  },
+  {
+    "query_id": "SMF_RC29__RC29",
+    "member_label": "domain_RC29",
+    "legacy_group": "SMF_RC29",
+    "legacy_cluster_id": "44",
+    "role": "reference_only",
+    "sequence": "PNTFNIVAAAVNAEICYGATNGSVDLTFIDNLPNPTDKAGPFDYTISGPMPDITESTTNAGPVRISNLIAGDYKVVAKLRGTPECTVETVFSILQ",
+    "length": 95,
+    "sequence_sha256": "7355bad085952becc0aeba7e948069cc4d47d3c07f2f21d2ef4be66c6d802428",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 5655,
+    "parent_end": 5750,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 5655,
+        "end": 5750
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "065",
+      "start": "5656",
+      "end": "5750",
+      "length": "95",
+      "output_label": "domain_RC29",
+      "original_label": "domain_RC29",
+      "note": "",
+      "expanded_start": "5652",
+      "expanded_end": "5754",
+      "expanded_length": "103",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "64",
+      "sequence_id_full": "domain_RC29",
+      "sequence_id_short": "domain_RC29",
+      "cluster": "44"
+    }
+  },
+  {
+    "query_id": "SMF_RN35__RN35",
+    "member_label": "domain_RN35",
+    "legacy_group": "SMF_RN35",
+    "legacy_cluster_id": "45",
+    "role": "reference_only",
+    "sequence": "LKYAQGEYAGIISICPNDGKELPKLFLCGSNDARLIETGITNASSFNWARLTGGCTAFANVNCANEATNCTWTTVGTGANYSANAAGEYRLRITYSDGTVFIFYFNVYTNDL",
+    "length": 112,
+    "sequence_sha256": "de3585e25017a94c6d8451bc3e6a3ee66c9e596e900cc4bd65d1ad9321b18373",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 76,
+    "parent_end": 188,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 76,
+        "end": 188
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "001",
+      "start": "77",
+      "end": "188",
+      "length": "112",
+      "output_label": "domain_RN35",
+      "original_label": "domain_RN35",
+      "note": "",
+      "expanded_start": "73",
+      "expanded_end": "192",
+      "expanded_length": "120",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "0",
+      "sequence_id_full": "domain_RN35",
+      "sequence_id_short": "domain_RN35",
+      "cluster": "45"
+    }
+  },
+  {
+    "query_id": "SMF_RC38__RC38",
+    "member_label": "domain_RC38",
+    "legacy_group": "SMF_RC38",
+    "legacy_cluster_id": "46",
+    "role": "reference_only",
+    "sequence": "DVCLDNYFTPNGDGVNDTWGPGCTNIYNHLKFSIFDRYGRVIAKYTYGQKWDGRYNGEELPSGDYWYVLKLNDENDGREFVGHFTLYR",
+    "length": 88,
+    "sequence_sha256": "8defa2d4d3827d72fc4006c84e0a6d8c59fa7dd04e2d27e6bf273b9203735536",
+    "parent_genome_id": "GCF_000016645.1",
+    "parent_protein_id": "GCF_000016645.1::NC_009441.1::CDS_000999::P1",
+    "parent_source_protein_id": "WP_012023065.1",
+    "parent_start": 6409,
+    "parent_end": 6497,
+    "parent_coordinate_validation": "exact_sequence_match",
+    "all_exact_parent_intervals": [
+      {
+        "start": 6409,
+        "end": 6497
+      }
+    ],
+    "exact_parent_match_count": 1,
+    "source_module_row": {
+      "index": "074",
+      "start": "6410",
+      "end": "6497",
+      "length": "88",
+      "output_label": "domain_RC38",
+      "original_label": "domain_RC38",
+      "note": "",
+      "expanded_start": "6406",
+      "expanded_end": "6497",
+      "expanded_length": "92",
+      "flank_n": "4"
+    },
+    "source_assignment_row": {
+      "order_index": "73",
+      "sequence_id_full": "domain_RC38",
+      "sequence_id_short": "domain_RC38",
+      "cluster": "46"
+    }
+  }
+]

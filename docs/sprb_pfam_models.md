@@ -85,3 +85,7 @@ all_repeat_domains不代表已确认的物理重复单元数；passed_ga_domains
 命中坐标、E-value、重复计数与文献12个映射集合。不新增生物学回归测试。
 文献映射来源：[2019 Table S2](https://journals.asm.org/doi/suppl/10.1128/jb.00218-19/suppl_file/jb.00218-19-s0001.pdf)。
 此验收不代表跨菌株检出率/假阳性率已确立。
+
+统一资源身份与迁移后的 canonical manifest 见 [Reference Registry](../references/README.md)。
+新目录为 `references/hmm/`，旧 `profiles/` 保留相同版本的字节兼容副本；
+既有独立 ProfileConfig、模型目录及 CLI 参数继续支持。
