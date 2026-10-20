@@ -3,8 +3,8 @@
 A modular and scalable bioinformatics framework for identifying SprB-like proteins using
 sequence homology, protein domain architecture, genomic context and structural evidence.
 
-当前包含基因组解析、数据准备、NCBI下载、HMM证据及 **Batch 4A 基因组邻域查询与 Batch 4B HMM 邻域关联**。
-已增加通用 HMM Engine 与 TIGR04131 单模型检索；双模型融合及最终 SprB-like 分类尚未实现。
+当前包含基因组解析、数据准备、NCBI下载、HMM/MMseqs2 证据、基因组邻域查询与 **Batch 6A 统一证据整合**。
+已增加通用 HMM Engine 与 TIGR04131 单模型检索；独立双模型证据整合已实现，最终 SprB-like 功能分类尚未实现。
 用法及实测结果见 [HMM Engine](docs/hmm_engine.md)。
 PorP/SprF-like 家族支持 TIGR03519 + PF11751 独立双模型检索，见 [sprf-search](docs/sprf_scanner.md)。
 新增 [SprB repeat 与 Type B CTD 双模型](docs/sprb_pfam_models.md)：`sprb-repeat-search`（PF13573）及
@@ -18,6 +18,10 @@ PorP/SprF-like 家族支持 TIGR03519 + PF11751 独立双模型检索，见 [spr
 RN28 主 query（207 aa）使用 `--query references/sprb/RN28.fasta`；其他73条模块作参考。
 旧 `reference_data/`、`profiles/` 路径保留固定兼容副本。
 可用 `reference-list`、`reference-validate`、`reference-resolve` 查看和校验资源。
+
+新增 [`merge-evidence`](docs/evidence_merger.md)：只读已有 HMM/RN28 结果，以保留命中的并集建立
+Evidence Profile；分别标记未运行、失败、成功无命中和成功有命中，复用 ±5 CDS 邻域，导出完整 JSON/TSV。
+不重新搜索、不融合分数、不按 GA 或 coverage 过滤候选。
 
 新增独立的 [`neighborhood`](docs/neighborhood.md) 命令，查询任意CDS的坐标/转录上下游、间隔与重叠关系。
 

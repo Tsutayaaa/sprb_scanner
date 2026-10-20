@@ -24,8 +24,7 @@ from empty tables or dump arbitrary nested objects into Parquet.
 ## Planned interfaces (not implemented)
 
 - Scanner: protein records + validated model/config → raw DomainHits + ScanStatus + artifacts.
-- Merger: hits + per-model status → CandidateRecords and overlap relationships; preserve all hits,
-  do not average or rank HMM and MMseqs2 scores together. Report status even for zero hits.
+- Future classifier: Evidence Profiles → separately defined biological classifications; no such scoring exists yet.
 - Exporter: dataset + hits + candidates + run metadata → separate typed tables and FASTA/JSON.
 - RN28/CBD: proteins → model-specific hits, depending only on core.
 - Candidate-to-neighborhood association: candidate evidence + objective CDS neighborhoods → context evidence (future Batch 4B).
@@ -65,3 +64,16 @@ canonical resources. External model absence is explicit and never triggers downl
 biological conclusion. Future MSA-to-HMM construction can publish new versioned resources with
 pinned `derived_from`; no such building workflow exists in this batch.
 See [resource contracts](../references/README.md) for schema, errors, supported formats and tests.
+
+
+## Unified evidence integration (Batch 6A)
+
+`evidence.inputs` verifies existing paired/native HMM and MMseqs2 exports against prepared protein
+identities, sequence fingerprints and manifests. Failed sources are explicit data states;
+corrupt/incompatible exports are errors. `evidence.merger` unions all retained hits into typed
+Evidence Profiles, reuses per-domain architecture evidence and queries NeighborhoodIndex for the union.
+`evidence.service` orchestrates offline loading and atomic JSON/TSV/provenance exports.
+No executable search, threshold change, score fusion, coverage aggregation or functional inference occurs.
+Core, scanners and neighborhood remain unchanged; CLI adds a thin `merge-evidence` adapter.
+See [evidence merger contracts](evidence_merger.md) for Purpose, Input, Output, Dependencies,
+Parameters, Error Handling, Test Cases and real-data acceptance.
