@@ -419,3 +419,40 @@ def reference_resolve(
         emit(resolved.model_dump(mode="json"))
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("merge-evidence")
+def merge_evidence(
+    prepared: Annotated[Path, typer.Option(help="Validated prepared genome/proteome")],
+    output: Annotated[Path, typer.Option(help="New evidence output directory")],
+    bctd_scan: Annotated[Path | None, typer.Option(help="Existing bctd-hmm-search output")] = None,
+    sprf_scan: Annotated[Path | None, typer.Option(help="Existing sprf-search output")] = None,
+    repeat_scan: Annotated[
+        Path | None, typer.Option(help="Existing sprb-repeat-search output")
+    ] = None,
+    rn28_scan: Annotated[
+        Path | None, typer.Option(help="Existing MMseqs2 RN28 search output")
+    ] = None,
+    registry: Path = Path("references/registry.json"),
+    window: Annotated[int, typer.Option(min=0, help="Neighbor CDS ranks on each side")] = 5,
+    neighborhood: bool = True,
+):
+    """Union existing evidence with explicit source states; never run a search."""
+    from sprb_scanner.evidence import run_merge
+
+    try:
+        emit(
+            run_merge(
+                prepared,
+                output,
+                bctd_scan=bctd_scan,
+                sprf_scan=sprf_scan,
+                repeat_scan=repeat_scan,
+                rn28_scan=rn28_scan,
+                registry=registry,
+                window=window,
+                neighborhood=neighborhood,
+            )
+        )
+    except (ScannerError, OSError, ValueError) as exc:
+        fail(exc)
