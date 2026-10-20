@@ -89,12 +89,19 @@ intervening CDS、直接邻接、distance/overlap/signed gap 和 circular origin
 | state | outcome | 含义 |
 |---|---|---|
 | `succeeded` | `local_hit` / `no_local_hit` | 两个 SprF 模型均成功，邻域查询完整 |
-| `partial` | `local_hit` / `unknown` | 一个 SprF 模型成功，另一个缺失或失败；观测到的数量是下界 |
+| `partial` | `local_hit` / `unknown` | 单条蛋白：一个 SprF 模型成功，另一个缺失或失败；观测到的数量是下界 |
 | `not_run` | `unknown` | 禁用邻域，或没有提供任何 SprF 来源 |
 | `failed` | `unknown` | SprF 没有成功来源但存在失败，或 CDS 索引/几何错误 |
 | `unavailable` | `unknown` | 仅蛋白序列，无基因组 CDS 坐标 |
 
 全局邻域状态即使候选数为零也输出。异常 CDS 的错误信息保留，不删除 CDS 或回退修改坐标。
+索引构建失败仍影响所有候选的邻域状态。索引构建成功后，逐候选 `query()` 的 `InputError`
+只将该蛋白的邻域标为 `failed / unknown`，保留 protein/CDS ID、原始错误及全部扫描证据；
+其他候选继续查询并正常导出。失败候选不输出部分邻接关系或假零命中数量。
+存在局部查询失败时，全局邻域状态汇总为 `partial`（仍有候选正常查询）或 `failed`（全部查询失败），
+保留失败数量与逐蛋白错误，`status.json` 的 `evidence_complete` 为 false。
+此汇总不会将其他蛋白已完成的邻域状态改为失败，也不会将模型缺失标记改成阴性。
+未知程序异常仍向上传播，不作为可忽略的局部输入异常。
 `no_local_hit` 不等于 orphan；任何 PorP/SprF HMM 命中都不自动代表功能性 shuttle。
 RN28-only 或 SprF-only 蛋白的邻域同样只是客观关系，不会被自动称为 cargo。
 SprD 的局部 domain coverage 保持独立，不自动判定为典型全长 SprF 或假阳性。
@@ -126,7 +133,8 @@ paired/native 冲突或不含注册 RN28 的 query 都报错（CLI exit 2），�
 ## Tests / real-data validation
 
 `tests/unit/test_evidence.py` 覆盖来源并集、三条 RN28-only 候选、弱/未报告 domain、多个 alignment、
-重叠 domain 不累加、六来源状态、部分/完整/失败邻域、环状 CDS、无坐标输入、空输出、CLI、
+重叠 domain 不累加、六来源状态、部分/完整/失败邻域、逐候选查询异常隔离与完整导出、
+环状 CDS、无坐标输入、空输出、CLI、
 SHA-256/ID/序列/模型/坐标/coverage 校验和不覆盖输出。
 
 2026-10-20，复用 21 株现有五模型 HMM 和 RN28 输出，未执行新搜索：

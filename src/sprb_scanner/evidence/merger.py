@@ -108,27 +108,39 @@ def merge(dataset, runs, hmm_hits=(), alignments=(), window=5, neighborhood=True
                 message="No genomic CDS coordinates",
             )
         else:
-            neighbors = []
-            for relation in index.query(p.gene_id, window).neighbors:
-                for neighbor in gene_proteins[relation.gene.gene_id]:
-                    if neighbor.protein_id in sprf:
-                        neighbors.append(
-                            LocalAssociation(
-                                protein_id=neighbor.protein_id,
-                                source_protein_id=neighbor.source_id,
-                                protein_length=neighbor.length,
-                                relationship=relation,
-                                domain_hit_ids=tuple(h.hit_id for h in sprf[neighbor.protein_id]),
+            try:
+                relations = index.query(p.gene_id, window).neighbors
+            except InputError as exc:
+                context = NeighborhoodEvidence(
+                    state="failed",
+                    outcome="unknown",
+                    **common,
+                    message=f"Neighborhood query failed for {pid} (CDS {p.gene_id}): {exc}",
+                )
+            else:
+                neighbors = []
+                for relation in relations:
+                    for neighbor in gene_proteins[relation.gene.gene_id]:
+                        if neighbor.protein_id in sprf:
+                            neighbors.append(
+                                LocalAssociation(
+                                    protein_id=neighbor.protein_id,
+                                    source_protein_id=neighbor.source_id,
+                                    protein_length=neighbor.length,
+                                    relationship=relation,
+                                    domain_hit_ids=tuple(
+                                        h.hit_id for h in sprf[neighbor.protein_id]
+                                    ),
+                                )
                             )
-                        )
-            complete = len(good_sprf) == len(SPRF_MODELS)
-            context = NeighborhoodEvidence(
-                state="succeeded" if complete else "partial",
-                outcome="local_hit" if neighbors else "no_local_hit" if complete else "unknown",
-                neighbors=tuple(neighbors),
-                **common,
-                message=None if complete else "Only one PorP/SprF model succeeded",
-            )
+                complete = len(good_sprf) == len(SPRF_MODELS)
+                context = NeighborhoodEvidence(
+                    state="succeeded" if complete else "partial",
+                    outcome="local_hit" if neighbors else "no_local_hit" if complete else "unknown",
+                    neighbors=tuple(neighbors),
+                    **common,
+                    message=None if complete else "Only one PorP/SprF model succeeded",
+                )
         profiles.append(
             EvidenceProfile(
                 protein_id=pid,
@@ -141,6 +153,17 @@ def merge(dataset, runs, hmm_hits=(), alignments=(), window=5, neighborhood=True
                 neighborhood=context,
             )
         )
+    if context_state in {"succeeded", "partial"}:
+        failed = sum(p.neighborhood.state == "failed" for p in profiles)
+        if failed:
+            evaluated = any(p.neighborhood.state in {"succeeded", "partial"} for p in profiles)
+            context_state = "partial" if evaluated else "failed"
+            query_message = (
+                f"{failed} candidate neighborhood queries failed; see per-protein messages"
+            )
+            context_message = (
+                f"{context_message}; {query_message}" if context_message else query_message
+            )
     return EvidenceResult(
         genome_id=dataset.genome.genome_id,
         runs=runs,

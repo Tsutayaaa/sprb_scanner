@@ -618,3 +618,117 @@ def test_unreported_domains_retained_without_a_new_reporting_cutoff(dataset):
     h = h.model_copy(update={"hmm": h.hmm.model_copy(update={"domain_reported": False})})
     result = merge(dataset, runs([h]), [h])
     assert result.profiles[0].sources["PF13573"].domains[0].hit == h
+
+
+@pytest.mark.parametrize(
+    ("failed_genes", "sprf_failed"),
+    [
+        (("g0",), False),
+        (("g1",), False),
+        (("g3",), False),
+        (("g0", "g1", "g2", "g3"), False),
+        (("g1",), True),
+    ],
+)
+def test_candidate_query_failures_are_isolated_and_exported(
+    tmp_path, dataset, monkeypatch, failed_genes, sprf_failed
+):
+    import csv
+
+    from sprb_scanner.neighborhood import NeighborhoodIndex
+
+    original_query = NeighborhoodIndex.query
+    queried = []
+
+    def fail_selected(self, gene_id, window=5):
+        # Use a real, successfully built index; fail only the requested candidate query.
+        assert gene_id in self.by_gene
+        queried.append(gene_id)
+        if gene_id in failed_genes:
+            raise InputError("synthetic candidate geometry error")
+        return original_query(self, gene_id, window)
+
+    monkeypatch.setattr(NeighborhoodIndex, "query", fail_selected)
+    bctd = pair(
+        tmp_path / "bctd",
+        ("TIGR04131", "PF13585"),
+        dataset,
+        [domain("p0", "TIGR04131", below=True)],
+    )
+    sprf = pair(
+        tmp_path / "sprf",
+        ("TIGR03519", "PF11751"),
+        dataset,
+        [domain("p2", "PF11751")],
+        failed=("TIGR03519",) if sprf_failed else (),
+    )
+    repeats = tmp_path / "repeats"
+    native(repeats, "PF13573", dataset, [domain("p1", "PF13573")])
+    rn28 = sequence_run(tmp_path / "rn28", dataset, [alignment()])
+    output = tmp_path / "merged"
+    report = run_merge(
+        prepared(tmp_path, dataset),
+        output,
+        bctd_scan=bctd,
+        sprf_scan=sprf,
+        repeat_scan=repeats,
+        rn28_scan=rn28,
+        registry=REGISTRY,
+    )
+    result = json.loads((output / "evidence_profiles.json").read_text())
+    assert queried == ["g0", "g1", "g2", "g3"]
+    assert report["profiles"] == len(result["profiles"]) == 4
+    expected_state = "failed" if len(failed_genes) == 4 else "partial"
+    assert report["neighborhood_run_state"] == result["neighborhood_state"] == expected_state
+    assert (
+        f"{len(failed_genes)} candidate neighborhood queries failed"
+        in (report["neighborhood_run_message"])
+    )
+    if sprf_failed:
+        assert "Only one PorP/SprF model succeeded" in report["neighborhood_run_message"]
+    expected_genes = {g.gene_id: g.model_dump(mode="json") for g in dataset.genes}
+    for profile in result["profiles"]:
+        context = profile["neighborhood"]
+        gene_id = profile["gene"]["gene_id"]
+        assert profile["gene"] == expected_genes[gene_id]
+        assert any(e["domains"] or e["alignments"] for e in profile["sources"].values())
+        if gene_id in failed_genes:
+            assert context["state"] == "failed" and context["outcome"] == "unknown"
+            assert not context["neighbors"]
+            assert profile["protein_id"] in context["message"] and gene_id in context["message"]
+            assert "synthetic candidate geometry error" in context["message"]
+        else:
+            assert context["state"] == ("partial" if sprf_failed else "succeeded")
+            assert context["message"] is None or "Only one PorP/SprF" in context["message"]
+    assert json.loads((output / "status.json").read_text()) == {
+        "state": "succeeded",
+        "evidence_complete": False,
+    }
+    with (output / "evidence_profiles.tsv").open() as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    for row in rows:
+        if row["gene_id"] in failed_genes:
+            assert (
+                row["neighborhood_state"] == "failed" and row["neighborhood_outcome"] == "unknown"
+            )
+            assert row["local_sprf_proteins"] == row["directly_adjacent_sprf_proteins"] == ""
+    with (output / "neighborhood_associations.tsv").open() as handle:
+        relations = list(csv.DictReader(handle, delimiter="\t"))
+    assert all("g" + r["protein_id"][1:] not in failed_genes for r in relations)
+    with (output / "evidence_records.tsv").open() as handle:
+        assert len(list(csv.DictReader(handle, delimiter="\t"))) == 4
+    metadata = json.loads((output / "run_metadata.json").read_text())
+    for name, digest in metadata["output_sha256"].items():
+        assert sha256(output / name) == digest
+
+
+def test_unexpected_query_exception_is_not_silently_ignored(dataset, monkeypatch):
+    from sprb_scanner.neighborhood import NeighborhoodIndex
+
+    def unexpected(self, gene_id, window=5):
+        raise RuntimeError("unexpected programming error")
+
+    monkeypatch.setattr(NeighborhoodIndex, "query", unexpected)
+    ali = [alignment()]
+    with pytest.raises(RuntimeError, match="unexpected programming error"):
+        merge(dataset, runs(alignments=ali), alignments=ali)
