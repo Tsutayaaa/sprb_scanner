@@ -1,0 +1,13 @@
+{
+  "partition": "cpu6348",
+  "account": "chunchan_igem",
+  "qos": "52cores",
+  "cpus": 4,
+  "memory": "8G",
+  "time": "00:30:00",
+  "concurrency": 6,
+  "max_array_tasks": 40,
+  "max_array_size": 1001,
+  "python": "/gpfs/work/bio/shuleihe23/sprb_scanner/environment/venv/bin/python",
+  "modules": ["mmseqs2/14-7e284-gcc-8.5.0-usbc5ct"]
+}
