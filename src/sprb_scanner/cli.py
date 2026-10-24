@@ -477,3 +477,132 @@ def run_genome(
             raise typer.Exit(3 if result["state"] == "partial" else 2)
     except (ScannerError, OSError, ValueError) as exc:
         fail(exc)
+
+
+@app.command("batch-plan")
+def batch_plan(
+    dataset: Annotated[Path, typer.Option(help="NCBI ncbi_dataset/data directory")],
+    config: Annotated[Path, typer.Option(help="Existing Pipeline Runner YAML")],
+    resources: Annotated[Path, typer.Option(help="Strict site-specific SLURM resources JSON")],
+    output: Annotated[Path, typer.Option(help="New immutable batch workspace")],
+    accession: Annotated[
+        list[str] | None, typer.Option(help="Optional assembly subset; repeatable")
+    ] = None,
+):
+    """Inventory inputs and pin config/resources; annotation validation happens in tasks."""
+    from sprb_scanner.batch import plan_batch
+
+    try:
+        emit(plan_batch(dataset, config, resources, output, accessions=accession))
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)
+
+
+@app.command("batch-task")
+def batch_task(
+    manifest: Annotated[Path, typer.Option()],
+    index: Annotated[int, typer.Option(min=0)],
+    prepare_only: bool = False,
+    local: Annotated[
+        bool, typer.Option(help="Explicit local test execution, outside SLURM")
+    ] = False,
+):
+    """Prepare/check one genome, then reuse Batch 6B execution/resume inside its allocation."""
+    from sprb_scanner.batch import run_task
+
+    try:
+        report = run_task(manifest, index, prepare_only=prepare_only, local=local)
+        emit(report)
+        if report["state"] not in {"succeeded", "prepared"}:
+            raise typer.Exit(3 if report["state"] == "partial" else 2)
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)
+
+
+@app.command("batch-submit")
+def batch_submit(
+    manifest: Annotated[Path, typer.Option()],
+    indexes: Annotated[str | None, typer.Option(help="Original indexes, e.g. 0-9,12")] = None,
+    prepare_only: bool = False,
+    dry_run: bool = False,
+    wait: bool = False,
+):
+    """Submit one bounded wave of previously unrun tasks with fixed array indexes."""
+    from sprb_scanner.batch import submit_batch
+
+    try:
+        emit(
+            submit_batch(
+                manifest, indexes=indexes, prepare_only=prepare_only, dry_run=dry_run, wait=wait
+            )
+        )
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)
+
+
+@app.command("batch-retry")
+def batch_retry(
+    manifest: Annotated[Path, typer.Option()],
+    indexes: str | None = None,
+    prepare_only: bool = False,
+    dry_run: bool = False,
+    wait: bool = False,
+):
+    """Retry only failed/partial/invalid tasks; successful stages remain protected by resume."""
+    from sprb_scanner.batch import submit_batch
+
+    try:
+        emit(
+            submit_batch(
+                manifest,
+                indexes=indexes,
+                retry=True,
+                prepare_only=prepare_only,
+                dry_run=dry_run,
+                wait=wait,
+            )
+        )
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)
+
+
+@app.command("batch-status")
+def batch_status_cli(
+    manifest: Annotated[Path, typer.Option()],
+    verify: Annotated[
+        bool, typer.Option(help="Rehash raw/prepared/stage files, potentially expensive")
+    ] = False,
+    scheduler: bool = True,
+):
+    """Report independent preparation, pipeline and scheduler states without searching."""
+    from sprb_scanner.batch import batch_status
+
+    try:
+        emit(batch_status(manifest, scheduler=scheduler, verify=verify))
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)
+
+
+@app.command("batch-collect")
+def batch_collect(
+    manifest: Annotated[Path, typer.Option()],
+    output: Annotated[Path, typer.Option(help="New compact scientific collection snapshot")],
+):
+    """Verify and concatenate scientific evidence; report missing/failed genomes separately."""
+    from sprb_scanner.batch import collect_batch
+
+    try:
+        emit(collect_batch(manifest, output))
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)
+
+
+@app.command("batch-disk-usage")
+def batch_disk_usage(manifest: Annotated[Path, typer.Option()]):
+    """Measure present logical/allocated bytes and file counts; never clean up results."""
+    from sprb_scanner.batch import measure_batch
+
+    try:
+        emit(measure_batch(manifest))
+    except (ScannerError, OSError, ValueError, KeyError) as exc:
+        fail(exc)

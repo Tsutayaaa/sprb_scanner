@@ -101,3 +101,6 @@ uv run pre-commit install
 
 依赖和锁文件管理遵循 [uv 项目文档](https://docs.astral.sh/uv/guides/projects/)。
 模型验证使用 [Pydantic validators](https://docs.pydantic.dev/latest/concepts/validators/)。
+
+新增轻量 [SLURM 批次工作流](docs/slurm_batch.md)：固定组装清单和数组索引，独立 prepare/run、
+状态与失败重试、逐证据科学分表和磁盘占用测量；不改动科学算法或自动清理结果。
