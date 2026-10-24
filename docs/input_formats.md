@@ -43,9 +43,10 @@ GenBank `GCA_` 也接受，但必须有完整注释包。下载一个组装时�
 - FAA 匹配顺序：显式 `protein_id` 精确匹配；没有该属性时，CDS ID 或去除 `cds-` 前缀后精确匹配。
   不用描述文本、locus tag 相似性或模糊匹配。歧义直接报错；FAA ID 必须唯一。
 - 多个 CDS 可以引用同一 FAA ID：保留独立内部蛋白 ID，并报告重复来源 ID。
-- 普通分段按生物学方向排序；显式 `part=X/Y` 时按 part 排序。环状越界坐标要求
-  `region` 上有 `Is_circular=true`，跨原点转换为两段。拆成多个原点两侧片段时要求提供
-  正确 `part` 顺序，程序不猜测环状连接顺序；重叠片段/复杂移码模型不支持。
+- 普通分段按生物学方向排序；显式 `part=X/Y` 优先。环状虚拟末端要求明确的 region/FNA
+  topology 元数据；virtual parent 可用于确定 multipart 顺序。保留原始虚拟坐标，内部使用
+  0-based half-open 分段。支持有明确 slippage 注释的合法连接，以及严格 FAA 核对的
+  1–2 bp 未标注重叠；不据此推断 slippage。详见 [完整规则](ncbi_gff_compatibility.md)。
 - 含 `##FASTA` 的 GFF（如部分注释软件输出）不直接接受，须先拆分；不支持 GTF/GFF2。
 - 没有可靠物种名称时 genome.organism 保持 null，不由文件名猜测。
 
@@ -58,7 +59,9 @@ GenBank `GCA_` 也接受，但必须有完整注释包。下载一个组装时�
 
 完整且无 exception 的 CDS 按 `transl_table` 校验翻译；未指定时默认表 11（可配置）。
 部分 CDS、假基因、未知方向、transl_except/exception 不做简单翻译一致性判断，报告跳过原因。
-GFF phase 不一致、缺失 FAA 对应记录、孤立 FAA 记录、翻译不一致均为 error。
+GFF phase 不一致、缺失 FAA 对应记录、孤立 FAA 记录、翻译不一致通常为 error。
+显式 slippage 的 phase 差异仅在保留 FAA 核对/不确定性记录的专门路径中作为 warning；
+不会放宽普通 CDS 校验。
 
 `prepare` 默认 `input.strict_quality: true`：有 error 就不导出。
 先用 `validate --input ...` 获取完整质量报告。显式设置 `strict_quality: false` 可导出带问题的

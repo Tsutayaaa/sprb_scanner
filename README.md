@@ -104,3 +104,6 @@ uv run pre-commit install
 
 新增轻量 [SLURM 批次工作流](docs/slurm_batch.md)：固定组装清单和数组索引，独立 prepare/run、
 状态与失败重试、逐证据科学分表和磁盘占用测量；不改动科学算法或自动清理结果。
+
+NCBI 的 slippage/环状跨原点 GFF 兼容规则、严格 FAA 核对和仅失败数据补跑见
+[Batch 6D](docs/ncbi_gff_compatibility.md)。
