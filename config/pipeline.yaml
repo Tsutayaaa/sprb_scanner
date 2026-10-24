@@ -1,0 +1,41 @@
+# All paths are relative to this YAML file, except absolute paths and ~/ paths.
+# External models must already exist locally and match the Reference Registry checksum.
+schema_version: "1.0.0"
+registry: ../references/registry.json
+mode: strict
+stages:
+  typeb_ctd: true
+  porp_sprf: true
+  sprb_repeat: true
+  rn28: true
+references:
+  TIGR04131:
+    artifact: ~/.local/share/sprb-scanner/models/TIGR04131.1/TIGR04131.1.HMM
+  PF13585:
+    artifact: ~/.local/share/sprb-scanner/models/sprb-pfam/PF13585.hmm
+  TIGR03519:
+    artifact: ~/.local/share/sprb-scanner/models/porp-sprf/TIGR03519.1.HMM
+  PF11751:
+    artifact: ~/.local/share/sprb-scanner/models/porp-sprf/PF11751.hmm
+  PF13573:
+    artifact: ~/.local/share/sprb-scanner/models/sprb-pfam/PF13573.hmm
+# Defaults are the existing scanner defaults. Use sensitivity: 7.5 explicitly to
+# reproduce the earlier RN28 pilot; changing it is an explicit user configuration.
+hmm:
+  sequence_report_evalue: 10.0
+  domain_report_evalue: 10.0
+  threads: 1
+  seed: 42
+  max_sensitivity: false
+mmseqs:
+  sensitivity: 5.7
+  evalue: 0.001
+  threads: 1
+  executable: mmseqs
+  max_seqs: null
+  alternative_alignments: null
+  split_memory_limit: 2G
+  timeout_seconds: 3600
+neighborhood:
+  enabled: true
+  window: 5

@@ -25,6 +25,10 @@ Evidence Profile；分别标记未运行、失败、成功无命中和成功有�
 
 新增独立的 [`neighborhood`](docs/neighborhood.md) 命令，查询任意CDS的坐标/转录上下游、间隔与重叠关系。
 
+新增统一 [`run`](docs/pipeline_runner.md)：从 validated prepared 数据出发，按严格 YAML 调用现有扫描器和
+Evidence Merger，记录阶段 identity/checksum，支持验证后 resume、选择性失效和独立 attempt 重试。
+见 [配置示例](config/pipeline.yaml)；不自动下载模型或改变科学参数。
+
 **首选输入是 NCBI 注释 GBFF。** 也支持 GFF3 + FNA + FAA（同一注释发布），或仅序列的 FAA。
 完整支持范围、配套要求与异常策略见 [输入文件标准](docs/input_formats.md)。
 

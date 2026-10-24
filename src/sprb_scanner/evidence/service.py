@@ -208,6 +208,9 @@ def run_merge(
     registry=Path("references/registry.json"),
     window=5,
     neighborhood=True,
+    source_states=None,
+    rn28_version=None,
+    rn28_artifact=None,
 ):
     """Merge existing runs only. Failed sources are data states, corrupt inputs are errors."""
     prepared, output = Path(prepared), Path(output)
@@ -215,6 +218,15 @@ def run_merge(
         raise InputError(f"Output already exists: {output}")
     fingerprints = {}
     runs = {source: SourceRun(source_id=source, state="not_run") for source in SOURCES}
+    for source, run in (source_states or {}).items():
+        if (
+            source not in runs
+            or not isinstance(run, SourceRun)
+            or run.source_id != source
+            or run.state not in {"not_run", "failed"}
+        ):
+            raise InputError("Explicit source states must be not_run/failed canonical sources")
+        runs[source] = run
     hits, alignments = [], ()
     try:
         prepared_meta = read_manifest(prepared, fingerprints)
@@ -224,14 +236,22 @@ def run_merge(
         for directory, models in ((bctd_scan, CTD_MODELS), (sprf_scan, SPRF_MODELS)):
             if directory is not None:
                 statuses, group = load_pair(directory, models, dataset, fingerprints)
+                if set(statuses) & set(source_states or {}):
+                    raise InputError("Source state conflicts with supplied scanner output")
                 runs.update(statuses)
                 hits.extend(group)
         if repeat_scan is not None:
+            if "PF13573" in (source_states or {}):
+                raise InputError("Source state conflicts with repeat output")
             run, group = load_hmm(repeat_scan, "PF13573", dataset, fingerprints)
             runs["PF13573"] = run
             hits.extend(group)
         if rn28_scan is not None:
-            run, alignments = load_rn28(rn28_scan, dataset, registry, fingerprints)
+            if "RN28" in (source_states or {}):
+                raise InputError("Source state conflicts with RN28 output")
+            run, alignments = load_rn28(
+                rn28_scan, dataset, registry, fingerprints, rn28_version, rn28_artifact
+            )
             runs["RN28"] = run
         result = merge(dataset, runs, hits, alignments, window, neighborhood)
         check_unchanged(fingerprints)
