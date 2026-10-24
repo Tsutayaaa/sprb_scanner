@@ -23,6 +23,7 @@ def software_identity():
     modules = (
         "io.prepare",
         "io.gff",
+        "core.locations",
         "io.fasta",
         "pipeline.runner",
         "pipeline.config",

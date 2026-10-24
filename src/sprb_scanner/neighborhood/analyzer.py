@@ -3,11 +3,12 @@
 from dataclasses import dataclass
 
 from sprb_scanner.core.exceptions import InputError
+from sprb_scanner.core.locations import faa_verified_overlap, progressive_path
 from sprb_scanner.core.models import GeneRecord, GenomeDataset, Interval
 from sprb_scanner.neighborhood.models import NeighborhoodResult, NeighborRecord
 
 GEOMETRY_POLICY = (
-    "cached genomic interval union for supported ribosomal-slippage CDS; "
+    "cached genomic interval union for annotated slippage or exactly FAA-verified CDS; "
     "original biological location_parts and qualifiers preserved"
 )
 
@@ -34,7 +35,6 @@ def genomic_union(parts):
 
 def index_gene(gene, contig):
     # Keep biological order for provenance; reverse only the coordinate-forward view.
-    forward = gene.location_parts if gene.strand != -1 else tuple(reversed(gene.location_parts))
     ordered = tuple(sorted(gene.location_parts, key=lambda p: (p.start, p.end)))
     overlapping = any(a.end > b.start for a, b in zip(ordered, ordered[1:], strict=False))
     if overlapping:
@@ -44,32 +44,20 @@ def index_gene(gene, contig):
         exceptions = tuple(v.strip().casefold() for v in gene.qualifiers.get("exception", ()))
         if flag and not flag_valid:
             raise InputError(f"Invalid value for /ribosomal_slippage: {gene.gene_id}")
-        if not (flag_valid or "ribosomal slippage" in exceptions):
+        verified = faa_verified_overlap(gene)
+        if not (flag_valid or "ribosomal slippage" in exceptions or verified):
             raise InputError(
-                f"Overlapping location parts require ribosomal slippage annotation: {gene.gene_id}"
+                "Overlapping location parts require ribosomal slippage annotation "
+                f"or exact FAA verification: {gene.gene_id}"
             )
-        if any(value and value != "ribosomal slippage" for value in exceptions):
+        if not verified and any(value and value != "ribosomal slippage" for value in exceptions):
             raise InputError(f"Unexplained exception on overlapping CDS: {gene.gene_id}")
-    drops = sum(b.start < a.start for a, b in zip(forward, forward[1:], strict=False))
-    circular = contig.topology == "circular"
-    if drops and not circular:
-        raise InputError(f"Origin-spanning or unordered CDS on non-circular contig: {gene.gene_id}")
-    if drops > 1:
-        raise InputError(f"CDS makes multiple origin traversals: {gene.gene_id}")
-    # Unroll the original forward path, including any circular-origin transition.
-    # A slippage join must still advance both start and end: annotation cannot
-    # authorize duplicated/contained segments, a reversed path or a second turn.
-    offset, previous_start, previous_end = 0, forward[0].start, forward[0].end
-    for previous, part in zip(forward, forward[1:], strict=False):
-        if part.start < previous.start:
-            offset += contig.length
-        start, end = part.start + offset, part.end + offset
-        if start <= previous_start or end <= previous_end:
-            raise InputError(f"Non-progressive/duplicated CDS location parts: {gene.gene_id}")
-        previous_start, previous_end = start, end
-    crosses = bool(drops)
-    if crosses and previous_end - forward[0].start > contig.length:
-        raise InputError(f"CDS span exceeds one circle: {gene.gene_id}")
+    try:
+        forward, crosses = progressive_path(
+            gene.location_parts, gene.strand, contig.length, contig.topology == "circular"
+        )
+    except InputError as exc:
+        raise InputError(f"{exc}: {gene.gene_id}") from exc
     return IndexedCDS(gene, genomic_union(ordered), forward[0].start, crosses)
 
 
