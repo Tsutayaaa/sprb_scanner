@@ -152,8 +152,10 @@ def combine_collections(collections, output):
                         elif name != "source_status.tsv":
                             raise InputError("Superseded unavailable genome has scientific rows")
         # Revalidate snapshots after copying, detecting concurrent changes.
-        for root, _, _, _ in sources:
-            _source(root)
+        for root, metadata, manifest, genome_rows in sources:
+            current = _source(root)
+            if current[1:] != (metadata, manifest, genome_rows):
+                raise InputError("Collection snapshot changed concurrently during migration")
         counts = {
             state: sum(sources[i][3][gid]["state"] == state for gid, i in selected.items())
             for state in sorted({sources[i][3][gid]["state"] for gid, i in selected.items()})

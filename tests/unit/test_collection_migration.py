@@ -2,6 +2,7 @@
 
 import csv
 import json
+from pathlib import Path
 
 import pytest
 
@@ -182,3 +183,27 @@ def test_incompatible_or_ambiguous_recovery_is_rejected_before_output(tmp_path, 
     with pytest.raises(InputError):
         combine_collections([old, new], tmp_path / "combined")
     assert not (tmp_path / "combined").exists()
+
+
+def test_concurrent_snapshot_metadata_change_fails_without_claiming_success(tmp_path, monkeypatch):
+    import sprb_scanner.batch.combine as migration
+
+    old = snapshot(tmp_path, "old", {A: "succeeded", B: "failed"})
+    new = snapshot(tmp_path, "new", {B: "succeeded"})
+    original = migration._source
+    calls = 0
+
+    def changed(path):
+        nonlocal calls
+        calls += 1
+        if calls == 3:
+            file = Path(path) / "collection_metadata.json"
+            data = json.loads(file.read_text())
+            data["created_at"] = "changed while copying"
+            file.write_text(json.dumps(data))
+        return original(path)
+
+    monkeypatch.setattr(migration, "_source", changed)
+    with pytest.raises(InputError, match="concurrently"):
+        migration.combine_collections([old, new], tmp_path / "combined")
+    assert json.loads((tmp_path / "combined/status.json").read_text())["state"] == "failed"
