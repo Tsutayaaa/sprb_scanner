@@ -93,3 +93,14 @@ when a pipeline stage fails before producing native output, plus RN28 resource v
 artifact selection. These adapters preserve the existing typed evidence/status semantics;
 they cannot inject success or override a supplied successful scanner directory.
 See [pipeline runner contracts](pipeline_runner.md) for configuration, storage, resume and validation.
+
+
+## SLURM batch orchestration (Batch 6C MVP)
+
+`batch.plan` freezes raw annotation identity, checksums, effective pipeline YAML and site resources.
+`batch.task` strictly prepares one assembly and delegates scanning/resume to Batch 6B.
+`batch.slurm` renders explicit-resource arrays with immutable original indexes and bounded waves;
+`batch.status` reconciles task artifacts with SLURM array JobID and preserves unknown/failed states.
+`batch.collect` validates existing native outputs and streams scientific tables without score fusion
+or filtering. Per-genome locks and append-only attempts isolate errors. Current apparent/allocated
+bytes are measured; no result cleanup/archive policy is introduced. See [batch contracts](slurm_batch.md).
