@@ -59,6 +59,7 @@ def implementation(stage):
             "association.analyzer",
             "association.models",
             "association.service",
+            "core.locations",
             "neighborhood.models",
             "neighborhood.analyzer",
         ],

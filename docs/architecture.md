@@ -104,3 +104,12 @@ See [pipeline runner contracts](pipeline_runner.md) for configuration, storage, 
 `batch.collect` validates existing native outputs and streams scientific tables without score fusion
 or filtering. Per-genome locks and append-only attempts isolate errors. Current apparent/allocated
 bytes are measured; no result cleanup/archive policy is introduced. See [batch contracts](slurm_batch.md).
+
+## NCBI GFF compatibility and recovery (Batch 6D)
+
+`io.gff` validates NCBI slippage and explicit circular locations while preserving FAA identity and source
+intervals. `core.locations` shares structural/provenance checks with the neighborhood index; no scanner
+algorithm or geometry change. The helper is included in batch and evidence implementation fingerprints.
+`batch.combine` unites validated immutable collection snapshots across software versions, identifies every
+row by its source manifest and refuses replacement of successful scientific output. See
+[compatibility and recovery contracts](ncbi_gff_compatibility.md).

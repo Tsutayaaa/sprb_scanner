@@ -164,3 +164,9 @@ associations.json逐字段不变，FJ仍为9个邻接型+3个no_local_hit，43/6
 `~/.local/share/sprb-scanner/analyses/batch4c-slippage-fix-20261019/`。
 其中validation_report.md、rerun_summary.tsv及cds_audit.tsv说明恢复情况；不把旧13株
 分母的比例与新21株比例混用。结果不代表功能性cargo–shuttle配对。
+
+## Batch 6D 兼容扩展
+
+除原有显式 slippage 依据外，接受由严格 GFF 解析器生成、绑定原始分段和 strand 的
+FAA 完整翻译核对凭据。它仅表示坐标表示可验证，不作 slippage 或组装错误诊断。
+区间并集与距离/邻接算法保持不变；详见 [NCBI GFF 兼容合同](ncbi_gff_compatibility.md)。
